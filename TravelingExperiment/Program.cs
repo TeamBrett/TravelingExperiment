@@ -14,22 +14,22 @@ namespace TravelingExperiment
             var jumpGate = new JumpGate();
             var spacePort = new SpacePort();
             var instance = new Instance();
-            var player = new Player();
+            var player = new Player() { InSolarSystem = 1 };
             var travel = new Travel();
 
-            var jumpGate1 = new JumpGate() { Name = "jg1" };
-            var jumpGate2 = new JumpGate() { Name = "jg2" };
-            var jumpGate3 = new JumpGate() { Name = "jg3" };
+            var jumpGate1 = new JumpGate() { InSolarSystem = 1, Name = "jg1" };
+            var jumpGate2 = new JumpGate() { InSolarSystem = 2, Name = "jg2" };
+            var jumpGate3 = new JumpGate() { InSolarSystem = 3, Name = "jg3" };
 
-            var spacePort1 = new SpacePort() { InSolarSystem = "ss1", Name = "sp1" };
-            var spacePort2 = new SpacePort() { InSolarSystem = "ss1", Name = "sp2" };
-            var spacePort3 = new SpacePort() { InSolarSystem = "ss1", Name = "sp3" };
-            var spacePort4 = new SpacePort() { InSolarSystem = "ss2", Name = "sp4" };
-            var spacePort5 = new SpacePort() { InSolarSystem = "ss2", Name = "sp5" };
-            var spacePort6 = new SpacePort() { InSolarSystem = "ss2", Name = "sp6" };
-            var spacePort7 = new SpacePort() { InSolarSystem = "ss3", Name = "sp7" };
-            var spacePort8 = new SpacePort() { InSolarSystem = "ss3", Name = "sp8" };
-            var spacePort9 = new SpacePort() { InSolarSystem = "ss3", Name = "sp9" };
+            var spacePort1 = new SpacePort() { InSolarSystem = 1, Name = "sp1" };
+            var spacePort2 = new SpacePort() { InSolarSystem = 1, Name = "sp2" };
+            var spacePort3 = new SpacePort() { InSolarSystem = 1, Name = "sp3" };
+            var spacePort4 = new SpacePort() { InSolarSystem = 2, Name = "sp4" };
+            var spacePort5 = new SpacePort() { InSolarSystem = 2, Name = "sp5" };
+            var spacePort6 = new SpacePort() { InSolarSystem = 2, Name = "sp6" };
+            var spacePort7 = new SpacePort() { InSolarSystem = 3, Name = "sp7" };
+            var spacePort8 = new SpacePort() { InSolarSystem = 3, Name = "sp8" };
+            var spacePort9 = new SpacePort() { InSolarSystem = 3, Name = "sp9" };
 
             var instance1 = new Instance() { InPlanet = "p1", Name = "i1" };
             var instance2 = new Instance() { InPlanet = "p1", Name = "i2" };
@@ -50,9 +50,9 @@ namespace TravelingExperiment
             var instance17 = new Instance() { InPlanet = "p9", Name = "i17"  };
             var instance18 = new Instance() { InPlanet = "p9", Name = "i18" };
 
-            list.listJumpGates.Add(jumpGate1);
-            list.listJumpGates.Add(jumpGate2);
-            list.listJumpGates.Add(jumpGate3);
+            list.listJumpGate.Add(jumpGate1);
+            list.listJumpGate.Add(jumpGate2);
+            list.listJumpGate.Add(jumpGate3);
 
             list.listSpacePort.Add(spacePort1);
             list.listSpacePort.Add(spacePort2);
@@ -84,26 +84,10 @@ namespace TravelingExperiment
             list.listInstance.Add(instance18);
 
 
-            foreach (JumpGate jg in list.listJumpGates)
-            {
-                Console.WriteLine(jg.Name);
-            }
+            
 
 
-            List<SpacePort> query = list.listSpacePort.Where(sp => sp.InSolarSystem == "ss1").ToList();
-
-
-            foreach (SpacePort sp in query) 
-            {
-                Console.WriteLine(query.IndexOf(sp) + ") " + sp.Name);
-            }
-            var travelTo = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine(travelTo);
-
-            player.SpacePortLocation = (query[travelTo].Name);
-
-            Console.WriteLine(player.SpacePortLocation);
+            travel.TravelToSpacePort(player, list, travel, spacePort, jumpGate);
 
 
 

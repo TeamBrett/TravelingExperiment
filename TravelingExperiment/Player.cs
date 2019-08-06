@@ -9,6 +9,7 @@ namespace TravelingExperiment
         public int ID { get; set; }
         public string JumpGateLocation { get; set; }
         public string SpacePortLocation { get; set; }
+        public int InSolarSystem { get; set; }
 
 
     }

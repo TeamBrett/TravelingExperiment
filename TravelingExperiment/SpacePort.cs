@@ -6,13 +6,12 @@ namespace TravelingExperiment
 {
     public class SpacePort : Place
     {
-        public string InSolarSystem { get; set; }
 
-        public void SpacePortOptions(PlayerCharacter player, Planet planet, Travel travel, SolarSystem solarSystem, SpacePort spacePort, JumpGate jumpGate)
+        public void SpacePortOptions(Player player, Lists list, Travel travel, SpacePort spacePort, JumpGate jumpGate)
         {
             string playerSelection;
 
-            Console.WriteLine("You are in " + spacePort.Name);
+            Console.WriteLine("You are in " + player.SpacePortLocation);
             Console.WriteLine("0) Save Game (Not yet implimented)");
             Console.WriteLine("1) Load Game (Not yet implimented)");
             Console.WriteLine("2) Quit Game (Not yet impliment)");
@@ -52,23 +51,15 @@ namespace TravelingExperiment
                     // TravelToInstance method here
                     Console.WriteLine("Instance01 Loaded (not really)");
                     break;
+                
                 case "6":
-                    // TravelToInstance method here
-                    Console.WriteLine("Instance02 Loaded (not really)");
+                    // TravelToSpacePorts method here (this line will be the caller)
+                    travel.TravelToSpacePort(player, list, travel, spacePort, jumpGate);
+                    Console.WriteLine("Travel to SpacePort (not really)");
                     break;
                 case "7":
-                    // TravelToInstance method here
-                    Console.WriteLine("Instance03 Loaded (not really)");
-                    break;
-                case "8":
-                    // TravelToSpacePorts method here (this line will be the caller)
-
-                    travel.TravelToSpacePort(player, spacePort, travel, solarSystem, planet, jumpGate);
-                    Console.WriteLine("Travel to JumpGate (not really)");
-                    break;
-                case "9":
                     // TravelToJumpGate method here
-                    travel.TravelToJumpGate(player, solarSystem, jumpGate, planet, travel, spacePort);
+                    travel.TravelToJumpGateFromSpacePort(player, list, travel, spacePort, jumpGate);
                     Console.WriteLine("Travel to JumpGate (not really)");
                     break;
             }
