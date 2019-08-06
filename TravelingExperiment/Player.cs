@@ -7,7 +7,9 @@ namespace TravelingExperiment
     public class Player
     {
         public int ID { get; set; }
-        public string Location { get; set; }
+        public string JumpGateLocation { get; set; }
+        public string SpacePortLocation { get; set; }
+
 
     }
 }

@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
 
 namespace TravelingExperiment
 {
@@ -85,11 +88,23 @@ namespace TravelingExperiment
             {
                 Console.WriteLine(jg.Name);
             }
+            //IEnumerable<string> query1 = fruits.Where(fruit => fruit.Length < 6);
 
-            foreach (SpacePort sp in list.listSpacePort) where: sp.InSolarSystem == "ss1"
+
+            List<SpacePort> query = list.listSpacePort.Where(sp => sp.InSolarSystem == "ss1").ToList();
+
+
+            foreach (SpacePort sp in query) 
             {
-
+                Console.WriteLine(query.IndexOf(sp) + ") " + sp.Name);
             }
+            var travelTo = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine(travelTo);
+
+            player.SpacePortLocation = (query[travelTo].Name);
+
+            Console.WriteLine(player.SpacePortLocation);
 
         }
     }
