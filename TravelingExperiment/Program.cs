@@ -88,7 +88,6 @@ namespace TravelingExperiment
             {
                 Console.WriteLine(jg.Name);
             }
-            //IEnumerable<string> query1 = fruits.Where(fruit => fruit.Length < 6);
 
 
             List<SpacePort> query = list.listSpacePort.Where(sp => sp.InSolarSystem == "ss1").ToList();
@@ -105,6 +104,8 @@ namespace TravelingExperiment
             player.SpacePortLocation = (query[travelTo].Name);
 
             Console.WriteLine(player.SpacePortLocation);
+
+
 
         }
     }
