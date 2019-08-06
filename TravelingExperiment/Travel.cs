@@ -17,7 +17,28 @@ namespace TravelingExperiment
                 Console.WriteLine(query.IndexOf(sp) + ") " + sp.Name);
             }
 
-            var travelTo = Convert.ToInt32(Console.ReadLine());
+            // trying to add some verification logic to the user input
+            int travelTo;
+            while (true)
+            {
+                if (int.TryParse(Console.ReadLine(), out travelTo))
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Input is not valid, try entering an integer");
+                }
+                //travelTo = Convert.ToInt32(Console.ReadLine());
+                if (travelTo > 0 && travelTo < query.Count)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("please enter an integer between zero and " + (query.Count - 1));
+                }
+            }
 
             player.SpacePortLocation = (query[travelTo].Name);
 
@@ -36,7 +57,28 @@ namespace TravelingExperiment
                 Console.WriteLine(query.IndexOf(jg) + ") " + jg.Name);
             }
 
-            var travelTo = Convert.ToInt32(Console.ReadLine());
+            // trying to add some verification logic to the user input
+            int travelTo;
+            while (true)
+            {
+                    if (int.TryParse(Console.ReadLine(), out travelTo))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Input is not valid, try entering an integer");
+                    }
+                    //travelTo = Convert.ToInt32(Console.ReadLine());
+                    if (travelTo > 0 && travelTo < query.Count)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("please enter an integer between zero and " + (query.Count - 1));
+                    }
+            }
 
             player.JumpGateLocation = (query[travelTo].Name);
 
@@ -47,21 +89,34 @@ namespace TravelingExperiment
 
         public void TravelToJumpGateFromJumpGate(Player player, Lists list, Travel travel, SpacePort spacePort, JumpGate jumpGate)
         {
-            List<JumpGate> query = list.listJumpGate.Where(sp => sp.InSolarSystem == player.InSolarSystem - 1).ToList();
-            List<JumpGate> query1 = list.listJumpGate.Where(sp => sp.InSolarSystem == player.InSolarSystem).ToList();
-            List<JumpGate> query2 = list.listJumpGate.Where(sp => sp.InSolarSystem == player.InSolarSystem + 1).ToList();
-            query.AddRange(query1);
-            query.AddRange(query2);
-
-
-
+            List<JumpGate> query = list.listJumpGate.Where(sp => sp.InSolarSystem == player.InSolarSystem - 1 || sp.InSolarSystem == player.InSolarSystem || sp.InSolarSystem == player.InSolarSystem + 1).ToList();
 
             foreach (JumpGate jg in query)
             {
                 Console.WriteLine(query.IndexOf(jg) + ") " + jg.Name);
             }
 
-            var travelTo = Convert.ToInt32(Console.ReadLine());
+            int travelTo;
+            while (true)
+            {
+                if (int.TryParse(Console.ReadLine(), out travelTo))
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Input is not valid, try entering an integer");
+                }
+                //travelTo = Convert.ToInt32(Console.ReadLine());
+                if (travelTo > 0 && travelTo < query.Count)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("please enter an integer between zero and " + (query.Count - 1));
+                }
+            }
 
             player.JumpGateLocation = (query[travelTo].Name);
             player.InSolarSystem = (query[travelTo].InSolarSystem);

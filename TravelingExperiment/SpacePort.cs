@@ -9,7 +9,7 @@ namespace TravelingExperiment
 
         public void SpacePortOptions(Player player, Lists list, Travel travel, SpacePort spacePort, JumpGate jumpGate)
         {
-            string playerSelection;
+            int playerSelection;
 
             Console.WriteLine("You are in " + player.SpacePortLocation);
             Console.WriteLine("0) Save Game (Not yet implimented)");
@@ -23,41 +23,62 @@ namespace TravelingExperiment
             Console.WriteLine();
             Console.WriteLine("Please enter your selection");
 
-            playerSelection = Console.ReadLine();
+            int userInput;
+            while (true)
+            {
+                if (int.TryParse(Console.ReadLine(), out userInput))
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Input is not valid, try entering an integer");
+                }
+                //travelTo = Convert.ToInt32(Console.ReadLine());
+                if (userInput > 0 && userInput < 8)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("please enter an integer between zero and " + (7));
+                }
+            }
 
+            playerSelection = userInput;
             switch (playerSelection)
             {
-                case "0":
+                case 0:
                     // save game method here
                     Console.WriteLine("Game Saved (not really)");
                     break;
-                case "1":
+                case 1:
                     // load game method here
                     Console.WriteLine("Game Loaded (not really)");
                     break;
-                case "2":
+                case 2:
                     // quit game method here
                     Console.WriteLine("Game Quit (not really)");
                     break;
-                case "3":
+                case 3:
                     // open store method here
                     Console.WriteLine("Store Loaded (not really)");
                     break;
-                case "4":
+                case 4:
                     // repair method here
                     Console.WriteLine("Stuff Repaired (not really)");
                     break;
-                case "5":
+                case 5:
                     // TravelToInstance method here
                     Console.WriteLine("Instance01 Loaded (not really)");
                     break;
                 
-                case "6":
+                case 6:
                     // TravelToSpacePorts method here (this line will be the caller)
                     travel.TravelToSpacePort(player, list, travel, spacePort, jumpGate);
                     Console.WriteLine("Travel to SpacePort (not really)");
                     break;
-                case "7":
+                case 7:
                     // TravelToJumpGate method here
                     travel.TravelToJumpGateFromSpacePort(player, list, travel, spacePort, jumpGate);
                     Console.WriteLine("Travel to JumpGate (not really)");
