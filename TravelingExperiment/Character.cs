@@ -14,10 +14,10 @@ namespace TravelingExperiment
         public double Experience { get; set; }
         public double CurrentHitPoints { get; set; } = 100;
         public double TotalHitPoints { get; set; } = 100;
-        public int WeaponSkill { get; set; }
-        public int ArmorSkill { get; set; }
-        public int NavigationSkill { get; set; }
-        public int TimeSkill { get; set; }
+        public double WeaponSkill { get; set; }
+        public double ArmorSkill { get; set; }
+        public double NavigationSkill { get; set; }
+        public double TimeSkill { get; set; }
         public double CurrentWeaponDamage { get; set; }
         public double Roll { get; set; }
         public double Attack { get; set; }

@@ -13,6 +13,10 @@ namespace TravelingExperiment
 
         public void Instance1(GameContext gameContext)
         {
+            // PlayerMaker part of the game
+            gameContext.PlayerMaker.CreatePlayer(gameContext);
+
+
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
             // need to fix the formating of all this text 

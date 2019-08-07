@@ -18,6 +18,7 @@ namespace TravelingExperiment
         public PlayerAttackCalculator PlayerAttackCalculator { get; set; }
         public PlayerStats PlayerStats { get; set; }
         public WeaponMaker WeaponMaker { get; set; }
+        public PlayerMaker PlayerMaker { get; set; }
 
 
         // Fighting stuff

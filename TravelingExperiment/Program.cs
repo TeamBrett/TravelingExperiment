@@ -17,9 +17,11 @@ namespace TravelingExperiment
             var player = new Player() { InSolarSystem = 1 };
             var travel = new Travel();
             var inventory = new Inventory();
+            var playerInventory = new Inventory();
             var playerAttackCalculator = new PlayerAttackCalculator();
             var playerStats = new PlayerStats();
             var weaponMaker = new WeaponMaker();
+            var playerMaker = new PlayerMaker();
 
             // Mechanics for Fighting
             var fight = new Fight();
@@ -38,13 +40,14 @@ namespace TravelingExperiment
                 Player = player,
                 Travel = travel,
                 Inventory = inventory,
+                PlayerInventory = playerInventory,
                 PlayerAttackCalculator = playerAttackCalculator,
                 PlayerStats = playerStats,
                 WeaponMaker = weaponMaker,
                 Fight = fight,
                 Roller = roller,
                 MonsterMaker = monsterMaker,
-                
+                PlayerMaker = playerMaker
             };
 
             // Monster Creation for Fighting
