@@ -37,7 +37,7 @@ namespace TravelingExperiment
 
         }
 
-        public void Instance3(GameContext gameContext)
+        public void Instance10(GameContext gameContext)
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
@@ -50,7 +50,7 @@ namespace TravelingExperiment
 
         }
 
-        public void Instance4(GameContext gameContext)
+        public void Instance11(GameContext gameContext)
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
@@ -63,7 +63,7 @@ namespace TravelingExperiment
 
         }
 
-        public void Instance5(GameContext gameContext)
+        public void Instance20(GameContext gameContext)
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
@@ -76,7 +76,7 @@ namespace TravelingExperiment
 
         }
 
-        public void Instance6(GameContext gameContext)
+        public void Instance21(GameContext gameContext)
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
@@ -89,7 +89,7 @@ namespace TravelingExperiment
 
         }
 
-        public void Instance7(GameContext gameContext)
+        public void Instance30(GameContext gameContext)
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
@@ -102,7 +102,7 @@ namespace TravelingExperiment
 
         }
 
-        public void Instance8(GameContext gameContext)
+        public void Instance31(GameContext gameContext)
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
@@ -115,7 +115,7 @@ namespace TravelingExperiment
 
         }
 
-        public void Instance9(GameContext gameContext)
+        public void Instance40(GameContext gameContext)
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
@@ -128,7 +128,7 @@ namespace TravelingExperiment
 
         }
 
-        public void Instance10(GameContext gameContext)
+        public void Instance41(GameContext gameContext)
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
@@ -141,7 +141,7 @@ namespace TravelingExperiment
 
         }
 
-        public void Instance11(GameContext gameContext)
+        public void Instance50(GameContext gameContext)
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
@@ -154,7 +154,7 @@ namespace TravelingExperiment
 
         }
 
-        public void Instance12(GameContext gameContext)
+        public void Instance51(GameContext gameContext)
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
@@ -167,7 +167,7 @@ namespace TravelingExperiment
 
         }
 
-        public void Instance13(GameContext gameContext)
+        public void Instance60(GameContext gameContext)
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
@@ -180,7 +180,7 @@ namespace TravelingExperiment
 
         }
 
-        public void Instance14(GameContext gameContext)
+        public void Instance61(GameContext gameContext)
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
@@ -193,7 +193,7 @@ namespace TravelingExperiment
 
         }
 
-        public void Instance15(GameContext gameContext)
+        public void Instance70(GameContext gameContext)
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
@@ -206,7 +206,7 @@ namespace TravelingExperiment
 
         }
 
-        public void Instance16(GameContext gameContext)
+        public void Instance71(GameContext gameContext)
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
@@ -219,7 +219,7 @@ namespace TravelingExperiment
 
         }
 
-        public void Instance17(GameContext gameContext)
+        public void Instance80(GameContext gameContext)
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
@@ -232,7 +232,7 @@ namespace TravelingExperiment
 
         }
 
-        public void Instance18(GameContext gameContext)
+        public void Instance81(GameContext gameContext)
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 

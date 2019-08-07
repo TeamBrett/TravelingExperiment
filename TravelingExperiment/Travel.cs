@@ -169,53 +169,53 @@ namespace TravelingExperiment
                 case "i2":      
                     gameContext.Instance.Instance2(gameContext);
                     break;      
-                case "i3":      
-                    gameContext.Instance.Instance3(gameContext);
-                    break;      
-                case "i4":      
-                    gameContext.Instance.Instance4(gameContext);
-                    break;      
-                case "i5":      
-                    gameContext.Instance.Instance5(gameContext);
-                    break;      
-                case "i6":      
-                    gameContext.Instance.Instance6(gameContext);
-                    break;      
-                case "i7":      
-                    gameContext.Instance.Instance7(gameContext);
-                    break;      
-                case "i8":      
-                    gameContext.Instance.Instance8(gameContext);
-                    break;      
-                case "i9":      
-                    gameContext.Instance.Instance9(gameContext);
-                    break;      
-                case "i10":     
+                case "i10":      
                     gameContext.Instance.Instance10(gameContext);
                     break;      
-                case "i11":     
+                case "i11":      
                     gameContext.Instance.Instance11(gameContext);
                     break;      
-                case "i12":     
-                    gameContext.Instance.Instance12(gameContext);
+                case "i20":      
+                    gameContext.Instance.Instance20(gameContext);
                     break;      
-                case "i13":     
-                    gameContext.Instance.Instance13(gameContext);
+                case "i21":      
+                    gameContext.Instance.Instance21(gameContext);
                     break;      
-                case "i14":     
-                    gameContext.Instance.Instance14(gameContext);
+                case "i30":      
+                    gameContext.Instance.Instance30(gameContext);
                     break;      
-                case "i15":     
-                    gameContext.Instance.Instance15(gameContext);
+                case "i31":      
+                    gameContext.Instance.Instance31(gameContext);
                     break;      
-                case "i16":     
-                    gameContext.Instance.Instance16(gameContext);
+                case "i40":      
+                    gameContext.Instance.Instance40(gameContext);
                     break;      
-                case "i17":     
-                    gameContext.Instance.Instance17(gameContext);
+                case "i41":     
+                    gameContext.Instance.Instance41(gameContext);
                     break;      
-                case "i18":     
-                    gameContext.Instance.Instance18(gameContext);
+                case "i50":     
+                    gameContext.Instance.Instance50(gameContext);
+                    break;      
+                case "i51":     
+                    gameContext.Instance.Instance51(gameContext);
+                    break;      
+                case "i60":     
+                    gameContext.Instance.Instance60(gameContext);
+                    break;      
+                case "i61":     
+                    gameContext.Instance.Instance61(gameContext);
+                    break;      
+                case "i70":     
+                    gameContext.Instance.Instance70(gameContext);
+                    break;      
+                case "i71":     
+                    gameContext.Instance.Instance71(gameContext);
+                    break;      
+                case "i80":     
+                    gameContext.Instance.Instance80(gameContext);
+                    break;      
+                case "i81":     
+                    gameContext.Instance.Instance81(gameContext);
                     break;
             }
         }

@@ -74,14 +74,12 @@ namespace TravelingExperiment
                     break;
                 
                 case 6:
-                    // TravelToSpacePorts method here (this line will be the caller)
+                    // TravelToSpacePorts method here 
                     gameContext.Travel.TravelToSpacePort(gameContext);
-                    Console.WriteLine("Travel to SpacePort (not really)");
                     break;
                 case 7:
                     // TravelToJumpGate method here
                     gameContext.Travel.TravelToJumpGateFromSpacePort(gameContext);
-                    Console.WriteLine("Travel to JumpGate (not really)");
                     break;
             }
 

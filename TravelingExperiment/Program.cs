@@ -33,32 +33,42 @@ namespace TravelingExperiment
             var spacePort1 = new SpacePort() { InSolarSystem = 1, Name = "sp1" };
             var spacePort2 = new SpacePort() { InSolarSystem = 1, Name = "sp2" };
             var spacePort3 = new SpacePort() { InSolarSystem = 1, Name = "sp3" };
-            var spacePort4 = new SpacePort() { InSolarSystem = 2, Name = "sp4" };
-            var spacePort5 = new SpacePort() { InSolarSystem = 2, Name = "sp5" };
-            var spacePort6 = new SpacePort() { InSolarSystem = 2, Name = "sp6" };
-            var spacePort7 = new SpacePort() { InSolarSystem = 3, Name = "sp7" };
-            var spacePort8 = new SpacePort() { InSolarSystem = 3, Name = "sp8" };
-            var spacePort9 = new SpacePort() { InSolarSystem = 3, Name = "sp9" };
+
+            var spacePort10 = new SpacePort() { InSolarSystem = 2, Name = "sp10" };
+            var spacePort11 = new SpacePort() { InSolarSystem = 2, Name = "sp11" };
+            var spacePort12 = new SpacePort() { InSolarSystem = 2, Name = "sp12" };
+
+            var spacePort20 = new SpacePort() { InSolarSystem = 3, Name = "sp20" };
+            var spacePort21 = new SpacePort() { InSolarSystem = 3, Name = "sp21" };
+            var spacePort22 = new SpacePort() { InSolarSystem = 3, Name = "sp22" };
 
             // Creating Instances
             var instance1 = new Instance() { InSpacePort = "sp1", Name = "i1" };
             var instance2 = new Instance() { InSpacePort = "sp1", Name = "i2" };
-            var instance3 = new Instance() { InSpacePort = "sp2", Name = "i3" };
-            var instance4 = new Instance() { InSpacePort = "sp2", Name = "i4" };
-            var instance5 = new Instance() { InSpacePort = "sp3", Name = "i5" };
-            var instance6 = new Instance() { InSpacePort = "sp3", Name = "i6" };
-            var instance7 = new Instance() { InSpacePort = "sp4", Name = "i7" };
-            var instance8 = new Instance() { InSpacePort = "sp4", Name = "i8" };
-            var instance9 = new Instance() { InSpacePort = "sp5", Name = "i9" };
-            var instance10 = new Instance() { InSpacePort = "sp5", Name = "i10" };
-            var instance11 = new Instance() { InSpacePort = "sp6", Name = "i11" };
-            var instance12 = new Instance() { InSpacePort = "sp6", Name = "i12" };
-            var instance13 = new Instance() { InSpacePort = "sp7", Name = "i13" };
-            var instance14 = new Instance() { InSpacePort = "sp7", Name = "i14" };
-            var instance15 = new Instance() { InSpacePort = "sp8", Name = "i15" };
-            var instance16 = new Instance() { InSpacePort = "sp8", Name = "i16" };
-            var instance17 = new Instance() { InSpacePort = "sp9", Name = "i17" };
-            var instance18 = new Instance() { InSpacePort = "sp9", Name = "i18" };
+
+            var instance10 = new Instance() { InSpacePort = "sp2", Name = "i10" };
+            var instance11 = new Instance() { InSpacePort = "sp2", Name = "i11" };
+
+            var instance20 = new Instance() { InSpacePort = "sp3", Name = "i20" };
+            var instance21 = new Instance() { InSpacePort = "sp3", Name = "i21" };
+
+            var instance30 = new Instance() { InSpacePort = "sp10", Name = "i30" };
+            var instance31 = new Instance() { InSpacePort = "sp10", Name = "i31" };
+
+            var instance40 = new Instance() { InSpacePort = "sp11", Name = "i40" };
+            var instance41 = new Instance() { InSpacePort = "sp11", Name = "i41" };
+
+            var instance50 = new Instance() { InSpacePort = "sp12", Name = "i50" };
+            var instance51 = new Instance() { InSpacePort = "sp12", Name = "i51" };
+
+            var instance60 = new Instance() { InSpacePort = "sp20", Name = "i60" };
+            var instance61 = new Instance() { InSpacePort = "sp20", Name = "i61" };
+
+            var instance70 = new Instance() { InSpacePort = "sp21", Name = "i70" };
+            var instance71 = new Instance() { InSpacePort = "sp21", Name = "i71" };
+
+            var instance80 = new Instance() { InSpacePort = "sp22", Name = "i80" };
+            var instance81 = new Instance() { InSpacePort = "sp22", Name = "i81" };
 
             // Adding JumpGates to the list
             gameContext.List.listJumpGate.Add(jumpGate1);
@@ -69,32 +79,42 @@ namespace TravelingExperiment
             gameContext.List.listSpacePort.Add(spacePort1);
             gameContext.List.listSpacePort.Add(spacePort2);
             gameContext.List.listSpacePort.Add(spacePort3);
-            gameContext.List.listSpacePort.Add(spacePort4);
-            gameContext.List.listSpacePort.Add(spacePort5);
-            gameContext.List.listSpacePort.Add(spacePort6);
-            gameContext.List.listSpacePort.Add(spacePort7);
-            gameContext.List.listSpacePort.Add(spacePort8);
-            gameContext.List.listSpacePort.Add(spacePort9);
+
+            gameContext.List.listSpacePort.Add(spacePort10);
+            gameContext.List.listSpacePort.Add(spacePort11);
+            gameContext.List.listSpacePort.Add(spacePort12);
+
+            gameContext.List.listSpacePort.Add(spacePort20);
+            gameContext.List.listSpacePort.Add(spacePort21);
+            gameContext.List.listSpacePort.Add(spacePort22);
 
             // Adding Instances to the list
             gameContext.List.listInstance.Add(instance1);
             gameContext.List.listInstance.Add(instance2);
-            gameContext.List.listInstance.Add(instance3);
-            gameContext.List.listInstance.Add(instance4);
-            gameContext.List.listInstance.Add(instance5);
-            gameContext.List.listInstance.Add(instance6);
-            gameContext.List.listInstance.Add(instance7);
-            gameContext.List.listInstance.Add(instance8);
-            gameContext.List.listInstance.Add(instance9);
+
             gameContext.List.listInstance.Add(instance10);
             gameContext.List.listInstance.Add(instance11);
-            gameContext.List.listInstance.Add(instance12);
-            gameContext.List.listInstance.Add(instance13);
-            gameContext.List.listInstance.Add(instance14);
-            gameContext.List.listInstance.Add(instance15);
-            gameContext.List.listInstance.Add(instance16);
-            gameContext.List.listInstance.Add(instance17);
-            gameContext.List.listInstance.Add(instance18);
+
+            gameContext.List.listInstance.Add(instance20);
+            gameContext.List.listInstance.Add(instance21);
+
+            gameContext.List.listInstance.Add(instance30);
+            gameContext.List.listInstance.Add(instance31);
+
+            gameContext.List.listInstance.Add(instance40);
+            gameContext.List.listInstance.Add(instance41);
+
+            gameContext.List.listInstance.Add(instance50);
+            gameContext.List.listInstance.Add(instance51);
+
+            gameContext.List.listInstance.Add(instance60);
+            gameContext.List.listInstance.Add(instance61);
+
+            gameContext.List.listInstance.Add(instance70);
+            gameContext.List.listInstance.Add(instance71);
+
+            gameContext.List.listInstance.Add(instance80);
+            gameContext.List.listInstance.Add(instance81);
 
 
             // Test area
