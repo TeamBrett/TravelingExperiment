@@ -7,10 +7,10 @@ namespace TravelingExperiment
     public class FightContext
     {
         // Mechanics Properties
+        public Fight Fight { get; set; }
         public Roller Roller { get; set; }
         //Factory Properties
         public MonsterMaker MonsterMaker { get; set; }
-        public WeaponMaker WeaponMaker { get; set; }
         // Monster Properties
         public Monster WhiteMonster01  { get; set; }
         public Monster WhiteMonster02  { get; set; }

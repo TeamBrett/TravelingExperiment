@@ -19,8 +19,18 @@ namespace TravelingExperiment
             var inventory = new Inventory();
             var playerAttackCalculator = new PlayerAttackCalculator();
             var playerStats = new PlayerStats();
+            var weaponMaker = new WeaponMaker();
+
+            // Mechanics for Fighting
+            var fight = new Fight();
+            var roller = new Roller();
+
+            // Factories for Fighting
+            var monsterMaker = new MonsterMaker();
 
             
+
+
 
             // GameContext Variable
             var gameContext = new GameContext()
@@ -34,19 +44,14 @@ namespace TravelingExperiment
                 Inventory = inventory,
                 PlayerAttackCalculator = playerAttackCalculator,
                 PlayerStats = playerStats,
-
+                WeaponMaker = weaponMaker,
+                Fight = fight,
+                Roller = roller,
+                MonsterMaker = monsterMaker,
+                
             };
 
-
-            // Mechanics for FightContext
-
-            var roller = new Roller();
-
-            // Factories for FightContext
-            var monsterMaker = new MonsterMaker();
-            var weaponMaker = new WeaponMaker();
-
-            // Monster Creation for FightContext
+            // Monster Creation for Fighting
 
             var whiteMonster01 = monsterMaker.CreateWhiteMonster(gameContext);
             var whiteMonster02 = monsterMaker.CreateWhiteMonster(gameContext);
@@ -58,12 +63,25 @@ namespace TravelingExperiment
             var redMonster02 = monsterMaker.CreateRedMonster(gameContext);
             var redMonster03 = monsterMaker.CreateRedMonster(gameContext);
 
+            gameContext.WhiteMonster01 = whiteMonster01;
+            gameContext.WhiteMonster02 = whiteMonster02;
+            gameContext.WhiteMonster03 = whiteMonster03;
+            gameContext.GreenMonster01 = greenMonster01;
+            gameContext.GreenMonster02 = greenMonster02;
+            gameContext.GreenMonster03 = greenMonster03;
+            gameContext.RedMonster01 = redMonster01;
+            gameContext.RedMonster02 = redMonster02;
+            gameContext.RedMonster03 = redMonster03;
+
+
+
+
             // FightContext Variable
             var fightContext = new FightContext()
             {
+                Fight = fight,
                 Roller = roller,
                 MonsterMaker = monsterMaker,
-                WeaponMaker = weaponMaker,
                 WhiteMonster01 = whiteMonster01,
                 WhiteMonster02 = whiteMonster02,
                 WhiteMonster03 = whiteMonster03,
