@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TravelingExperiment
+namespace CelestialTravels0_1
 {
     public class GameContext
     {

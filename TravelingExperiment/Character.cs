@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TravelingExperiment
+namespace CelestialTravels0_1
 {
     public class Character : Entity
     {
@@ -14,7 +14,7 @@ namespace TravelingExperiment
         public double Experience { get; set; }
         public double CurrentHitPoints { get; set; } = 100;
         public double TotalHitPoints { get; set; } = 100;
-        public double WeaponSkill { get; set; }
+        public double WeaponSkill { get; set; } = 1;
         public double ArmorSkill { get; set; }
         public double NavigationSkill { get; set; }
         public double TimeSkill { get; set; }

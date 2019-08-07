@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-namespace TravelingExperiment
+namespace CelestialTravels0_1
 {
     class Program
     {
@@ -14,7 +14,7 @@ namespace TravelingExperiment
             var jumpGate = new JumpGate();
             var spacePort = new SpacePort();
             var instance = new Instance();
-            var player = new Player() { InSolarSystem = 1 };
+            var player = new Player() { InSolarSystem = 1, Level = 1 };
             var travel = new Travel();
             var inventory = new Inventory();
             var playerInventory = new Inventory();
@@ -48,6 +48,7 @@ namespace TravelingExperiment
                 Roller = roller,
                 MonsterMaker = monsterMaker,
                 PlayerMaker = playerMaker
+                
             };
 
             // Monster Creation for Fighting
@@ -171,6 +172,9 @@ namespace TravelingExperiment
 
 
             // Test area
+            
+
+
             gameContext.Instance.Instance1(gameContext);
 
 

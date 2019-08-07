@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace TravelingExperiment
+namespace CelestialTravels0_1
 {
     public class Travel
     {

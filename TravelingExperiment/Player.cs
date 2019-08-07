@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TravelingExperiment
+namespace CelestialTravels0_1
 {
     public class Player : Character
     {
@@ -11,6 +11,10 @@ namespace TravelingExperiment
         public string InstanceLocation { get; set; }
         public int InSolarSystem { get; set; }
         public PlayerStats PlayerStats { get; set; }
+        public double BaseAttack { get; set; }
+
+
+        
 
         public static class Options
         {

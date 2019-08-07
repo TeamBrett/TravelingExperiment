@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TravelingExperiment
+namespace CelestialTravels0_1
 {
     public class Fight
     {
         public void DoFight(GameContext gameContext)
         {
-            var monster = gameContext.WhiteMonster01;
+            PlayerAttackCalculator.CalculatePlayerAttack(gameContext);
+
             var fightOver = false;
             Character winner = gameContext.Player;
             Character looser = gameContext.Player;
@@ -22,6 +23,7 @@ namespace TravelingExperiment
             while (fightOver == false)
             {
                 // Select Weapon
+
                 ChooseWeaponToAttackWith(attacker, gameContext);
 
 
@@ -36,6 +38,7 @@ namespace TravelingExperiment
                 // Apply damage to defender
                 defender.CurrentHitPoints = defender.CurrentHitPoints - damage;
                 Console.WriteLine("Defender's HP  " + defender.CurrentHitPoints + "\n");
+                Console.WriteLine("Return to continue");
                 Console.ReadLine();
 
                 // End fight and declare winner or switch roles 
@@ -91,13 +94,19 @@ namespace TravelingExperiment
             gameContext.Player.Roll = gameContext.Roller.GetRandomNumber(1, 100);
             gameContext.WhiteMonster01.Roll = gameContext.Roller.GetRandomNumber(1, 100);
 
+            // Stuff for testing why my monster had no attack
+            Console.WriteLine("Monsters name " + gameContext.WhiteMonster01.Name);
+            Console.WriteLine("monsters attack " + gameContext.WhiteMonster01.Attack);
+            Console.WriteLine("Monsters Level " + gameContext.WhiteMonster01.Level);
+
             if (gameContext.Player.Roll > gameContext.WhiteMonster01.Roll)
             {
                 attacker = gameContext.Player;
                 defender = gameContext.WhiteMonster01;
                 Console.WriteLine("Player wins the toss and is the Attacker");
-                Console.WriteLine("player health   " + gameContext.Player.CurrentHitPoints);
+                Console.WriteLine("player health   " + attacker.CurrentHitPoints);
                 Console.WriteLine("monster health   " + defender.CurrentHitPoints);
+
 
             }
             else
@@ -105,7 +114,7 @@ namespace TravelingExperiment
                 attacker = gameContext.WhiteMonster01;
                 defender = gameContext.Player;
                 Console.WriteLine("Monster wins the toss and is the Attacker");
-                Console.WriteLine("player health   " + gameContext.Player.CurrentHitPoints);
+                Console.WriteLine("player health   " + defender.CurrentHitPoints);
                 Console.WriteLine("Monster health   " + attacker.CurrentHitPoints);
                 Console.WriteLine("");
 
