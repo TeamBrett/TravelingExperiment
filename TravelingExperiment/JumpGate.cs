@@ -8,11 +8,11 @@ namespace TravelingExperiment
     {
 
 
-        public void JumpGateOptions(Player player, Lists list, Travel travel, Instance instance, SpacePort spacePort, JumpGate jumpGate)
+        public void JumpGateOptions(GameContext gameContext)
         {
             int playerSelection;
 
-            Console.WriteLine("You are in " + player.JumpGateLocation);
+            Console.WriteLine("You are in " + gameContext.Player.JumpGateLocation);
             Console.WriteLine("0) Travel to SpacePort in solar system (Not yet implimented)");
             Console.WriteLine("1) Travel to nearby JumpGate (Not yet implimented)");
             Console.WriteLine();
@@ -46,12 +46,12 @@ namespace TravelingExperiment
             {
                 case 0:
                     // TravelToSpacePorts method here (this line will be the caller)
-                    travel.TravelToSpacePort(player, list, travel, instance, spacePort, jumpGate);
+                    gameContext.Travel.TravelToSpacePort(gameContext);
                     Console.WriteLine("Travel to SpacePort (not really)");
                     break;
                 case 1:
                     // TravelToJumpGate method here
-                    travel.TravelToJumpGateFromJumpGate(player, list, travel, instance, spacePort, jumpGate);
+                    gameContext.Travel.TravelToJumpGateFromJumpGate(gameContext);
                     Console.WriteLine("Travel to JumpGate (not really)");
                     break;
             }

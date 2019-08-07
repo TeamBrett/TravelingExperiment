@@ -7,9 +7,9 @@ namespace TravelingExperiment
 {
     public class Travel
     {
-        public void TravelToSpacePort(Player player, Lists list, Travel travel, Instance instance, SpacePort spacePort, JumpGate jumpGate)
+        public void TravelToSpacePort(GameContext gameContext)
         {
-            List<SpacePort> query = list.listSpacePort.Where(sp => sp.InSolarSystem == player.InSolarSystem).ToList();
+            List<SpacePort> query = gameContext.List.listSpacePort.Where(sp => sp.InSolarSystem == gameContext.Player.InSolarSystem).ToList();
 
 
             foreach (SpacePort sp in query)
@@ -40,16 +40,16 @@ namespace TravelingExperiment
                 }
             }
 
-            player.SpacePortLocation = (query[travelTo].Name);
+            gameContext.Player.SpacePortLocation = (query[travelTo].Name);
 
-            Console.WriteLine(player.SpacePortLocation);
+            Console.WriteLine(gameContext.Player.SpacePortLocation);
 
-            spacePort.SpacePortOptions(player, list, travel, instance, spacePort, jumpGate);
+            gameContext.SpacePort.SpacePortOptions(gameContext);
         }
 
-        public void TravelToJumpGateFromSpacePort(Player player, Lists list, Travel travel, Instance instance, SpacePort spacePort, JumpGate jumpGate)
+        public void TravelToJumpGateFromSpacePort(GameContext gameContext)
         {
-            List<JumpGate> query = list.listJumpGate.Where(sp => sp.InSolarSystem == player.InSolarSystem).ToList();
+            List<JumpGate> query = gameContext.List.listJumpGate.Where(sp => sp.InSolarSystem == gameContext.Player.InSolarSystem).ToList();
 
 
             foreach (JumpGate jg in query)
@@ -80,16 +80,16 @@ namespace TravelingExperiment
                     }
             }
 
-            player.JumpGateLocation = (query[travelTo].Name);
+            gameContext.Player.JumpGateLocation = (query[travelTo].Name);
 
-            Console.WriteLine(player.JumpGateLocation);
+            Console.WriteLine(gameContext.Player.JumpGateLocation);
 
-            jumpGate.JumpGateOptions(player, list, travel, instance, spacePort, jumpGate);
+            gameContext.JumpGate.JumpGateOptions(gameContext);
         }
 
-        public void TravelToJumpGateFromJumpGate(Player player, Lists list, Travel travel, Instance instance, SpacePort spacePort, JumpGate jumpGate)
+        public void TravelToJumpGateFromJumpGate(GameContext gameContext)
         {
-            List<JumpGate> query = list.listJumpGate.Where(sp => sp.InSolarSystem == player.InSolarSystem - 1 || sp.InSolarSystem == player.InSolarSystem || sp.InSolarSystem == player.InSolarSystem + 1).ToList();
+            List<JumpGate> query = gameContext.List.listJumpGate.Where(sp => sp.InSolarSystem == gameContext.Player.InSolarSystem - 1 || sp.InSolarSystem == gameContext.Player.InSolarSystem || sp.InSolarSystem == gameContext.Player.InSolarSystem + 1).ToList();
 
             foreach (JumpGate jg in query)
             {
@@ -118,17 +118,17 @@ namespace TravelingExperiment
                 }
             }
 
-            player.JumpGateLocation = (query[travelTo].Name);
-            player.InSolarSystem = (query[travelTo].InSolarSystem);
+            gameContext.Player.JumpGateLocation = (query[travelTo].Name);
+            gameContext.Player.InSolarSystem = (query[travelTo].InSolarSystem);
 
-            Console.WriteLine(player.JumpGateLocation);
+            Console.WriteLine(gameContext.Player.JumpGateLocation);
 
-            jumpGate.JumpGateOptions(player, list, travel, instance, spacePort, jumpGate);
+            gameContext.JumpGate.JumpGateOptions(gameContext);
         }
 
-        public void TravelToInstance(Player player, Lists list, Travel travel, Instance instance, SpacePort spacePort, JumpGate jumpGate)
+        public void TravelToInstance(GameContext gameContext)
         {
-            List<Instance> query = list.listInstance.Where(inst => inst.InSpacePort == player.SpacePortLocation).ToList();
+            List<Instance> query = gameContext.List.listInstance.Where(inst => inst.InSpacePort == gameContext.Player.SpacePortLocation).ToList();
 
 
             foreach (Instance inst in query)
@@ -159,63 +159,63 @@ namespace TravelingExperiment
                 }
             }
 
-            player.InstanceLocation = (query[travelTo].Name);
+            gameContext.Player.InstanceLocation = (query[travelTo].Name);
 
-            switch (player.InstanceLocation)
+            switch (gameContext.Player.InstanceLocation)
             {
                 case "i1":
-                    instance.Instance1(player, list, travel, instance, spacePort, jumpGate);
-                    break;
-                case "i2":
-                    instance.Instance2(player, list, travel, instance, spacePort, jumpGate);
-                    break;
-                case "i3":
-                    instance.Instance3(player, list, travel, instance, spacePort, jumpGate);
-                    break;
-                case "i4":
-                    instance.Instance4(player, list, travel, instance, spacePort, jumpGate);
-                    break;
-                case "i5":
-                    instance.Instance5(player, list, travel, instance, spacePort, jumpGate);
-                    break;
-                case "i6":
-                    instance.Instance6(player, list, travel, instance, spacePort, jumpGate);
-                    break;
-                case "i7":
-                    instance.Instance7(player, list, travel, instance, spacePort, jumpGate);
-                    break;
-                case "i8":
-                    instance.Instance8(player, list, travel, instance, spacePort, jumpGate);
-                    break;
-                case "i9":
-                    instance.Instance9(player, list, travel, instance, spacePort, jumpGate);
-                    break;
-                case "i10":
-                    instance.Instance10(player, list, travel, instance, spacePort, jumpGate);
-                    break;
-                case "i11":
-                    instance.Instance11(player, list, travel, instance, spacePort, jumpGate);
-                    break;
-                case "i12":
-                    instance.Instance12(player, list, travel, instance, spacePort, jumpGate);
-                    break;
-                case "i13":
-                    instance.Instance13(player, list, travel, instance, spacePort, jumpGate);
-                    break;
-                case "i14":
-                    instance.Instance14(player, list, travel, instance, spacePort, jumpGate);
-                    break;
-                case "i15":
-                    instance.Instance15(player, list, travel, instance, spacePort, jumpGate);
-                    break;
-                case "i16":
-                    instance.Instance16(player, list, travel, instance, spacePort, jumpGate);
-                    break;
-                case "i17":
-                    instance.Instance17(player, list, travel, instance, spacePort, jumpGate);
-                    break;
-                case "i18":
-                    instance.Instance18(player, list, travel, instance, spacePort, jumpGate);
+                    gameContext.Instance.Instance1(gameContext);
+                    break;      
+                case "i2":      
+                    gameContext.Instance.Instance2(gameContext);
+                    break;      
+                case "i3":      
+                    gameContext.Instance.Instance3(gameContext);
+                    break;      
+                case "i4":      
+                    gameContext.Instance.Instance4(gameContext);
+                    break;      
+                case "i5":      
+                    gameContext.Instance.Instance5(gameContext);
+                    break;      
+                case "i6":      
+                    gameContext.Instance.Instance6(gameContext);
+                    break;      
+                case "i7":      
+                    gameContext.Instance.Instance7(gameContext);
+                    break;      
+                case "i8":      
+                    gameContext.Instance.Instance8(gameContext);
+                    break;      
+                case "i9":      
+                    gameContext.Instance.Instance9(gameContext);
+                    break;      
+                case "i10":     
+                    gameContext.Instance.Instance10(gameContext);
+                    break;      
+                case "i11":     
+                    gameContext.Instance.Instance11(gameContext);
+                    break;      
+                case "i12":     
+                    gameContext.Instance.Instance12(gameContext);
+                    break;      
+                case "i13":     
+                    gameContext.Instance.Instance13(gameContext);
+                    break;      
+                case "i14":     
+                    gameContext.Instance.Instance14(gameContext);
+                    break;      
+                case "i15":     
+                    gameContext.Instance.Instance15(gameContext);
+                    break;      
+                case "i16":     
+                    gameContext.Instance.Instance16(gameContext);
+                    break;      
+                case "i17":     
+                    gameContext.Instance.Instance17(gameContext);
+                    break;      
+                case "i18":     
+                    gameContext.Instance.Instance18(gameContext);
                     break;
             }
         }
