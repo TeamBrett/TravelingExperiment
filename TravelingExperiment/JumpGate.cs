@@ -8,7 +8,7 @@ namespace TravelingExperiment
     {
 
 
-        public void JumpGateOptions(Player player, Lists list, Travel travel, SpacePort spacePort, JumpGate jumpGate)
+        public void JumpGateOptions(Player player, Lists list, Travel travel, Instance instance, SpacePort spacePort, JumpGate jumpGate)
         {
             int playerSelection;
 
@@ -46,12 +46,12 @@ namespace TravelingExperiment
             {
                 case 0:
                     // TravelToSpacePorts method here (this line will be the caller)
-                    travel.TravelToSpacePort(player, list, travel, spacePort, jumpGate);
+                    travel.TravelToSpacePort(player, list, travel, instance, spacePort, jumpGate);
                     Console.WriteLine("Travel to SpacePort (not really)");
                     break;
                 case 1:
                     // TravelToJumpGate method here
-                    travel.TravelToJumpGateFromJumpGate(player, list, travel, spacePort, jumpGate);
+                    travel.TravelToJumpGateFromJumpGate(player, list, travel, instance, spacePort, jumpGate);
                     Console.WriteLine("Travel to JumpGate (not really)");
                     break;
             }

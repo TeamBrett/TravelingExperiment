@@ -31,24 +31,24 @@ namespace TravelingExperiment
             var spacePort8 = new SpacePort() { InSolarSystem = 3, Name = "sp8" };
             var spacePort9 = new SpacePort() { InSolarSystem = 3, Name = "sp9" };
 
-            var instance1 = new Instance() { InPlanet = "p1", Name = "i1" };
-            var instance2 = new Instance() { InPlanet = "p1", Name = "i2" };
-            var instance3 = new Instance() { InPlanet = "p2", Name = "i3" };
-            var instance4 = new Instance() { InPlanet = "p2", Name = "i4" };
-            var instance5 = new Instance() { InPlanet = "p4", Name = "i5" };
-            var instance6 = new Instance() { InPlanet = "p3", Name = "i6" };
-            var instance7 = new Instance() { InPlanet = "p4", Name = "i7" };
-            var instance8 = new Instance() { InPlanet = "p4", Name = "i8" };
-            var instance9 = new Instance() { InPlanet = "p5", Name = "i9" };
-            var instance10 = new Instance() { InPlanet = "p5", Name = "i10"  };
-            var instance11 = new Instance() { InPlanet = "p6", Name = "i11"  };
-            var instance12 = new Instance() { InPlanet = "p6", Name = "i12"  };
-            var instance13 = new Instance() { InPlanet = "p7", Name = "i13"  };
-            var instance14 = new Instance() { InPlanet = "p7", Name = "i14"  };
-            var instance15 = new Instance() { InPlanet = "p8", Name = "i15"  };
-            var instance16 = new Instance() { InPlanet = "p8", Name = "i16"  };
-            var instance17 = new Instance() { InPlanet = "p9", Name = "i17"  };
-            var instance18 = new Instance() { InPlanet = "p9", Name = "i18" };
+            var instance1 = new Instance() { InSpacePort = "sp1", Name = "i1" };
+            var instance2 = new Instance() { InSpacePort = "sp1", Name = "i2" };
+            var instance3 = new Instance() { InSpacePort = "sp2", Name = "i3" };
+            var instance4 = new Instance() { InSpacePort = "sp2", Name = "i4" };
+            var instance5 = new Instance() { InSpacePort = "sp3", Name = "i5" };
+            var instance6 = new Instance() { InSpacePort = "sp3", Name = "i6" };
+            var instance7 = new Instance() { InSpacePort = "sp4", Name = "i7" };
+            var instance8 = new Instance() { InSpacePort = "sp4", Name = "i8" };
+            var instance9 = new Instance() { InSpacePort = "sp5", Name = "i9" };
+            var instance10 = new Instance() { InSpacePort = "sp5", Name = "i10"  };
+            var instance11 = new Instance() { InSpacePort = "sp6", Name = "i11"  };
+            var instance12 = new Instance() { InSpacePort = "sp6", Name = "i12"  };
+            var instance13 = new Instance() { InSpacePort = "sp7", Name = "i13"  };
+            var instance14 = new Instance() { InSpacePort = "sp7", Name = "i14"  };
+            var instance15 = new Instance() { InSpacePort = "sp8", Name = "i15"  };
+            var instance16 = new Instance() { InSpacePort = "sp8", Name = "i16"  };
+            var instance17 = new Instance() { InSpacePort = "sp9", Name = "i17"  };
+            var instance18 = new Instance() { InSpacePort = "sp9", Name = "i18" };
 
             list.listJumpGate.Add(jumpGate1);
             list.listJumpGate.Add(jumpGate2);
@@ -87,7 +87,7 @@ namespace TravelingExperiment
             
 
 
-            travel.TravelToSpacePort(player, list, travel, spacePort, jumpGate);
+            travel.TravelToSpacePort(player, list, travel, instance, spacePort, jumpGate);
 
 
 

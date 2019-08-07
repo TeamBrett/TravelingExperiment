@@ -4,10 +4,10 @@ using System.Text;
 
 namespace TravelingExperiment
 {
-    public class Place
+    public class Place : Entity
     {
         public int ID { get; set; }
-        public string Name { get; set; }
+        public override string Name { get; set; }
         public int InSolarSystem { get; set; }
 
     }
