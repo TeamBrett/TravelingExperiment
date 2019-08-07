@@ -13,6 +13,10 @@ namespace TravelingExperiment
         public Instance Instance { get; set; }
         public Player Player { get; set; }
         public Travel Travel { get; set; }
+        public Inventory Inventory { get; set; }
+        public Inventory PlayerInventory { get; set; }
+        public PlayerAttackCalculator PlayerAttackCalculator { get; set; }
+        public PlayerStats PlayerStats { get; set; }
 
         
     }

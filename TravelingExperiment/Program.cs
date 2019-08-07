@@ -16,13 +16,73 @@ namespace TravelingExperiment
             var instance = new Instance();
             var player = new Player() { InSolarSystem = 1 };
             var travel = new Travel();
+            var inventory = new Inventory();
+            var playerAttackCalculator = new PlayerAttackCalculator();
+            var playerStats = new PlayerStats();
+
+            
 
             // GameContext Variable
-            var gameContext = new GameContext() { List = list, JumpGate = jumpGate, SpacePort = spacePort, Instance = instance, Player = player, Travel = travel };
+            var gameContext = new GameContext()
+            {
+                List = list,
+                JumpGate = jumpGate,
+                SpacePort = spacePort,
+                Instance = instance,
+                Player = player,
+                Travel = travel,
+                Inventory = inventory,
+                PlayerAttackCalculator = playerAttackCalculator,
+                PlayerStats = playerStats,
+
+            };
+
+
+            // Mechanics for FightContext
+
+            var roller = new Roller();
+
+            // Factories for FightContext
+            var monsterMaker = new MonsterMaker();
+            var weaponMaker = new WeaponMaker();
+
+            // Monster Creation for FightContext
+
+            var whiteMonster01 = monsterMaker.CreateWhiteMonster(gameContext);
+            var whiteMonster02 = monsterMaker.CreateWhiteMonster(gameContext);
+            var whiteMonster03 = monsterMaker.CreateWhiteMonster(gameContext);
+            var greenMonster01 = monsterMaker.CreateGreenMonster(gameContext);
+            var greenMonster02 = monsterMaker.CreateGreenMonster(gameContext);
+            var greenMonster03 = monsterMaker.CreateGreenMonster(gameContext);
+            var redMonster01 = monsterMaker.CreateRedMonster(gameContext);
+            var redMonster02 = monsterMaker.CreateRedMonster(gameContext);
+            var redMonster03 = monsterMaker.CreateRedMonster(gameContext);
+
+            // FightContext Variable
+            var fightContext = new FightContext()
+            {
+                Roller = roller,
+                MonsterMaker = monsterMaker,
+                WeaponMaker = weaponMaker,
+                WhiteMonster01 = whiteMonster01,
+                WhiteMonster02 = whiteMonster02,
+                WhiteMonster03 = whiteMonster03,
+                GreenMonster01 = greenMonster01,
+                GreenMonster02 = greenMonster02,
+                GreenMonster03 = greenMonster03,
+                RedMonster01 = redMonster01,
+                RedMonster02 = redMonster02,
+                RedMonster03 = redMonster03
+            };
 
 
             // Creating base variables
             var place = new Place();
+
+            
+
+            
+
 
             // Creating JumpGates
             var jumpGate1 = new JumpGate() { InSolarSystem = 1, Name = "jg1" };
