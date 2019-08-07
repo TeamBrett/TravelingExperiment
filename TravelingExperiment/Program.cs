@@ -28,10 +28,6 @@ namespace TravelingExperiment
             // Factories for Fighting
             var monsterMaker = new MonsterMaker();
 
-            
-
-
-
             // GameContext Variable
             var gameContext = new GameContext()
             {
@@ -74,32 +70,8 @@ namespace TravelingExperiment
             gameContext.RedMonster03 = redMonster03;
 
 
-
-
-            // FightContext Variable
-            var fightContext = new FightContext()
-            {
-                Fight = fight,
-                Roller = roller,
-                MonsterMaker = monsterMaker,
-                WhiteMonster01 = whiteMonster01,
-                WhiteMonster02 = whiteMonster02,
-                WhiteMonster03 = whiteMonster03,
-                GreenMonster01 = greenMonster01,
-                GreenMonster02 = greenMonster02,
-                GreenMonster03 = greenMonster03,
-                RedMonster01 = redMonster01,
-                RedMonster02 = redMonster02,
-                RedMonster03 = redMonster03
-            };
-
-
             // Creating base variables
             var place = new Place();
-
-            
-
-            
 
 
             // Creating JumpGates
@@ -196,7 +168,7 @@ namespace TravelingExperiment
 
 
             // Test area
-            gameContext.Travel.TravelToSpacePort(gameContext);
+            gameContext.Instance.Instance1(gameContext);
 
 
 
