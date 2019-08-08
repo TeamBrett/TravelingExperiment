@@ -23,7 +23,14 @@ namespace CelestialTravels0_1
             {
                 if (int.TryParse(Console.ReadLine(), out travelTo))
                 {
-                    break;
+                    if (travelTo > 0 && travelTo < query.Count)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("please enter an integer between zero and " + (query.Count - 1));
+                    }
                 }
                 else
                 {

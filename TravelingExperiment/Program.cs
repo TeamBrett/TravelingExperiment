@@ -172,10 +172,10 @@ namespace CelestialTravels0_1
 
 
             // Test area
-            
 
 
-            gameContext.Instance.Instance1(gameContext);
+
+
 
 
 
@@ -184,7 +184,7 @@ namespace CelestialTravels0_1
 
             // Game Starts here
 
-
+            gameContext.Instance.Instance1(gameContext);
 
 
 

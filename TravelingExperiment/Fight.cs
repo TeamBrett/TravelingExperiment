@@ -94,10 +94,6 @@ namespace CelestialTravels0_1
             gameContext.Player.Roll = gameContext.Roller.GetRandomNumber(1, 100);
             gameContext.WhiteMonster01.Roll = gameContext.Roller.GetRandomNumber(1, 100);
 
-            // Stuff for testing why my monster had no attack
-            Console.WriteLine("Monsters name " + gameContext.WhiteMonster01.Name);
-            Console.WriteLine("monsters attack " + gameContext.WhiteMonster01.Attack);
-            Console.WriteLine("Monsters Level " + gameContext.WhiteMonster01.Level);
 
             if (gameContext.Player.Roll > gameContext.WhiteMonster01.Roll)
             {
@@ -127,12 +123,26 @@ namespace CelestialTravels0_1
             {
                 Console.WriteLine("Choose which weapon to attack with (enter the number) ");
                 gameContext.PlayerInventory.EunumerateWeapons();
-                var TempChosenWeaponToAttackWith = Console.ReadLine();
-
-                // Need to check if the input is an int or else it throws exeption when I type wrong.
-
-
-                int ChosenWeaponToAttackWith = Convert.ToInt32(TempChosenWeaponToAttackWith);
+                int ChosenWeaponToAttackWith;
+                while(true)
+                {
+                    if (int.TryParse(Console.ReadLine(), out ChosenWeaponToAttackWith))
+                    {
+                        if (ChosenWeaponToAttackWith > 0 && ChosenWeaponToAttackWith < gameContext.PlayerInventory.WeaponList.Count)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("please enter an integer between zero and " + (gameContext.PlayerInventory.WeaponList.Count - 1));
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Input is not valid, try entering an integer");
+                    }
+                }
+                
 
                 gameContext.Player.CurrentWeaponDamage = gameContext.PlayerInventory.WeaponList[ChosenWeaponToAttackWith].Attack;
 
