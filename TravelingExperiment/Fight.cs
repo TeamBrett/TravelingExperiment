@@ -86,9 +86,6 @@ namespace CelestialTravels0_1
 
 
 
-
-
-
         public static void PreBattleRoll(GameContext gameContext, out Character attacker, out Character defender)
         {
             gameContext.Player.Roll = gameContext.Roller.GetRandomNumber(1, 100);
