@@ -22,6 +22,8 @@ namespace CelestialTravels0_1
             var playerStats = new PlayerStats();
             var weaponMaker = new WeaponMaker();
             var playerMaker = new PlayerMaker();
+            var loadGame = new LoadGame();
+            var saveGame = new SaveGame();
 
             // Mechanics for Fighting
             var fight = new Fight();
@@ -47,7 +49,9 @@ namespace CelestialTravels0_1
                 Fight = fight,
                 Roller = roller,
                 MonsterMaker = monsterMaker,
-                PlayerMaker = playerMaker
+                PlayerMaker = playerMaker,
+                LoadGame = loadGame,
+                SaveGame = saveGame
                 
             };
 
@@ -76,6 +80,7 @@ namespace CelestialTravels0_1
 
             // Creating base variables
             var place = new Place();
+            var startUpScreen = new StartUpScreen();
 
 
             // Creating JumpGates
@@ -184,7 +189,12 @@ namespace CelestialTravels0_1
 
             // Game Starts here
 
-            gameContext.Instance.Instance1(gameContext);
+            startUpScreen.StartUp(gameContext);
+
+
+
+
+            //gameContext.Instance.Instance1(gameContext);
 
 
 

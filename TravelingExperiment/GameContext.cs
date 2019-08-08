@@ -19,6 +19,8 @@ namespace CelestialTravels0_1
         public PlayerStats PlayerStats { get; set; }
         public WeaponMaker WeaponMaker { get; set; }
         public PlayerMaker PlayerMaker { get; set; }
+        public LoadGame LoadGame { get; set; }
+        public SaveGame SaveGame { get; set; }
 
 
         // Fighting stuff

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CelestialTravels0.1", "TravelingExperiment\CelestialTravels0.1.csproj", "{B26D1938-8A9B-472F-8570-D062A57F9101}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CelestialTravels0_1", "TravelingExperiment\CelestialTravels0_1.csproj", "{B26D1938-8A9B-472F-8570-D062A57F9101}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

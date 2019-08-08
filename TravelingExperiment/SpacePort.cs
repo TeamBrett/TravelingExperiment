@@ -20,6 +20,7 @@ namespace CelestialTravels0_1
             Console.WriteLine("5) Travel to instance on current planet (Not yet implimented)");
             Console.WriteLine("6) Travel to SpacePort in solar system (Not yet implimented)");
             Console.WriteLine("7) Travel to JumpGate in solar system (Not yet implimented)");
+            Console.WriteLine("8) Print Player Stats");
             Console.WriteLine();
             Console.WriteLine("Please enter your selection");
 
@@ -41,7 +42,7 @@ namespace CelestialTravels0_1
                 }
                 else
                 {
-                    Console.WriteLine("please enter an integer between zero and " + (7));
+                    Console.WriteLine("please enter an integer between zero and " + (8));
                 }
             }
 
@@ -50,6 +51,8 @@ namespace CelestialTravels0_1
             {
                 case 0:
                     // save game method here
+                    gameContext.SaveGame.Save(gameContext);
+
                     Console.WriteLine("Game Saved (not really)");
                     break;
                 case 1:
@@ -80,6 +83,10 @@ namespace CelestialTravels0_1
                 case 7:
                     // TravelToJumpGate method here
                     gameContext.Travel.TravelToJumpGateFromSpacePort(gameContext);
+                    break;
+                case 8:
+                    // Print Player Stats
+                    gameContext.PlayerStats.PrintPlayerStats(gameContext);
                     break;
             }
 
