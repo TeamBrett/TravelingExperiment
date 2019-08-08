@@ -52,12 +52,13 @@ namespace CelestialTravels0_1
                 case 0:
                     // save game method here
                     gameContext.SaveGame.Save(gameContext);
-
-                    Console.WriteLine("Game Saved (not really)");
+                    Console.WriteLine("Game Saved");
+                    gameContext.SpacePort.SpacePortOptions(gameContext);
                     break;
                 case 1:
-                    // load game method here
-                    Console.WriteLine("Game Loaded (not really)");
+                    gameContext.LoadGame.Load(gameContext);
+                    Console.WriteLine("Game Loaded");
+                    gameContext.SpacePort.SpacePortOptions(gameContext);
                     break;
                 case 2:
                     // quit game method here
@@ -87,6 +88,7 @@ namespace CelestialTravels0_1
                 case 8:
                     // Print Player Stats
                     gameContext.PlayerStats.PrintPlayerStats(gameContext);
+                    gameContext.SpacePort.SpacePortOptions(gameContext);
                     break;
             }
 

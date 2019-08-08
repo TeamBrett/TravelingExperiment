@@ -45,6 +45,7 @@ namespace CelestialTravels0_1
                     break;
                 case 1:
                     gameContext.LoadGame.Load(gameContext);
+                    gameContext.SpacePort.SpacePortOptions(gameContext);
                     break;
                 case 2:
                     // quit the fucking game
