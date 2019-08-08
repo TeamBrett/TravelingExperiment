@@ -125,7 +125,7 @@ namespace CelestialTravels0_1
                 {
                     if (int.TryParse(Console.ReadLine(), out ChosenWeaponToAttackWith))
                     {
-                        if (ChosenWeaponToAttackWith > 0 && ChosenWeaponToAttackWith < gameContext.PlayerInventory.WeaponList.Count)
+                        if (ChosenWeaponToAttackWith >= 0 && ChosenWeaponToAttackWith < gameContext.PlayerInventory.WeaponList.Count)
                         {
                             break;
                         }
