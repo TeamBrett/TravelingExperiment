@@ -56,7 +56,7 @@ namespace CelestialTravels0_1
                 $"protect yourself and smite your enemies.  You will also need some Credits if you are going to venture " +
                 $"across the stars\n");
 
-            Console.WriteLine(@"Hey thanks for the Cash, Map and Gun man!");
+            Console.WriteLine(@"Hey thanks for the Cash and Gun man!");
 
 
             // Weapon Made/Received
@@ -69,7 +69,6 @@ namespace CelestialTravels0_1
             }
 
             Console.WriteLine($"{gameContext.Player.Name} has {gameContext.Player.Credits} Credits\n");
-            Console.WriteLine($"{gameContext.Player.Name} has received the map for Alpha solar system");
             Console.WriteLine("Return to continue...");
             Console.ReadLine();
 
@@ -85,6 +84,7 @@ namespace CelestialTravels0_1
             
             // This is where you travel out of the instance back to the planet
             Console.WriteLine("Sending you back to the SpacePort");
+            gameContext.Player.SpacePortLocation = "sp1";
             Console.WriteLine("Return to continue...");
             Console.ReadLine();
             gameContext.SpacePort.SpacePortOptions(gameContext);

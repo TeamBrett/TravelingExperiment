@@ -12,14 +12,14 @@ namespace CelestialTravels0_1
             int playerSelection;
 
             Console.WriteLine("You are in " + gameContext.Player.SpacePortLocation);
-            Console.WriteLine("0) Save Game (Not yet implimented)");
-            Console.WriteLine("1) Load Game (Not yet implimented)");
+            Console.WriteLine("0) Save Game");
+            Console.WriteLine("1) Load Game");
             Console.WriteLine("2) Quit Game (Not yet impliment)");
             Console.WriteLine("3) Buy Consumable (Not yet implimented)");
             Console.WriteLine("4) Repair (Not yet implimented)");
-            Console.WriteLine("5) Travel to instance on current planet (Not yet implimented)");
-            Console.WriteLine("6) Travel to SpacePort in solar system (Not yet implimented)");
-            Console.WriteLine("7) Travel to JumpGate in solar system (Not yet implimented)");
+            Console.WriteLine("5) Travel to instance on current planet");
+            Console.WriteLine("6) Travel to SpacePort in solar system");
+            Console.WriteLine("7) Travel to JumpGate in solar system");
             Console.WriteLine("8) Print Player Stats");
             Console.WriteLine();
             Console.WriteLine("Please enter your selection");

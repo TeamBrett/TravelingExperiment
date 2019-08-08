@@ -10,6 +10,7 @@ namespace CelestialTravels0_1
         {
 
             PlayerAttackCalculator.CalculatePlayerAttack(gameContext);
+            Console.WriteLine($"SpacePort Location..{gameContext.Player.SpacePortLocation}");
             Console.WriteLine($"NAME:...............{gameContext.Player.Name}");
             Console.WriteLine($"GENDER:.............{gameContext.Player.Gender}");
             Console.WriteLine($"RACE:...............{gameContext.Player.Race}");
