@@ -42,12 +42,6 @@ namespace CelestialTravels0_1
                 break;
 
             }
-           
-            
-
-           
         }
-
-        
     }
 }

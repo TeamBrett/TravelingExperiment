@@ -59,16 +59,9 @@ namespace CelestialTravels0_1
             int travelTo;
             while (true)
             {
-                    if (int.TryParse(Console.ReadLine(), out travelTo))
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Input is not valid, try entering an integer");
-                    }
-                    //travelTo = Convert.ToInt32(Console.ReadLine());
-                    if (travelTo > 0 && travelTo < query.Count)
+                if (int.TryParse(Console.ReadLine(), out travelTo))
+                {
+                    if (travelTo >= 0 && travelTo < query.Count)
                     {
                         break;
                     }
@@ -76,6 +69,14 @@ namespace CelestialTravels0_1
                     {
                         Console.WriteLine("please enter an integer between zero and " + (query.Count - 1));
                     }
+                }
+                
+                else
+                {
+                    Console.WriteLine("Input is not valid, try entering an integer");
+                }
+                
+                
             }
 
             gameContext.Player.JumpGateLocation = (query[travelTo].Name);
@@ -99,21 +100,20 @@ namespace CelestialTravels0_1
             {
                 if (int.TryParse(Console.ReadLine(), out travelTo))
                 {
-                    break;
+                    if (travelTo >= 0 && travelTo < query.Count)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("please enter an integer between zero and " + (query.Count - 1));
+                    }
                 }
                 else
                 {
                     Console.WriteLine("Input is not valid, try entering an integer");
                 }
-                //travelTo = Convert.ToInt32(Console.ReadLine());
-                if (travelTo > 0 && travelTo < query.Count)
-                {
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("please enter an integer between zero and " + (query.Count - 1));
-                }
+                
             }
 
             gameContext.Player.JumpGateLocation = (query[travelTo].Name);
@@ -140,21 +140,21 @@ namespace CelestialTravels0_1
             {
                 if (int.TryParse(Console.ReadLine(), out travelTo))
                 {
+                    if (travelTo >= 0 && travelTo < query.Count)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("please enter an integer between zero and " + (query.Count - 1));
+                    }
                     break;
                 }
                 else
                 {
                     Console.WriteLine("Input is not valid, try entering an integer");
                 }
-                //travelTo = Convert.ToInt32(Console.ReadLine());
-                if (travelTo > 0 && travelTo < query.Count)
-                {
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("please enter an integer between zero and " + (query.Count - 1));
-                }
+                
             }
 
             gameContext.Player.InstanceLocation = (query[travelTo].Name);

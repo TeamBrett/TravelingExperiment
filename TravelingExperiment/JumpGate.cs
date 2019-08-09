@@ -23,21 +23,20 @@ namespace CelestialTravels0_1
             {
                 if (int.TryParse(Console.ReadLine(), out userInput))
                 {
-                    break;
+                    if (userInput >= 0 && userInput < 2)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("please enter an integer between zero and " + (1));
+                    }
                 }
                 else
                 {
                     Console.WriteLine("Input is not valid, try entering an integer");
                 }
-                //travelTo = Convert.ToInt32(Console.ReadLine());
-                if (userInput > 0 && userInput < 2)
-                {
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("please enter an integer between zero and " + (1));
-                }
+                
             }
 
             playerSelection = userInput;

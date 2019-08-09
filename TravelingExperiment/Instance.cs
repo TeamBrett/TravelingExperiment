@@ -110,7 +110,7 @@ namespace CelestialTravels0_1
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
-            Console.WriteLine("you are in instance 3");
+            Console.WriteLine("you are in instance 10");
             Console.ReadLine();
 
             // This is where you travel out of the instance back to the planet
@@ -125,7 +125,7 @@ namespace CelestialTravels0_1
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
-            Console.WriteLine("you are in instance 4");
+            Console.WriteLine("you are in instance 11");
             Console.ReadLine();
 
             // This is where you travel out of the instance back to the planet
@@ -140,7 +140,7 @@ namespace CelestialTravels0_1
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
-            Console.WriteLine("you are in instance 5");
+            Console.WriteLine("you are in instance 20");
             Console.ReadLine();
 
             // This is where you travel out of the instance back to the planet
@@ -155,7 +155,7 @@ namespace CelestialTravels0_1
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
-            Console.WriteLine("you are in instance 6");
+            Console.WriteLine("you are in instance 21");
             Console.ReadLine();
 
             // This is where you travel out of the instance back to the planet
@@ -170,7 +170,7 @@ namespace CelestialTravels0_1
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
-            Console.WriteLine("you are in instance 7");
+            Console.WriteLine("you are in instance 30");
             Console.ReadLine();
 
             // This is where you travel out of the instance back to the planet
@@ -185,7 +185,7 @@ namespace CelestialTravels0_1
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
-            Console.WriteLine("you are in instance 8");
+            Console.WriteLine("you are in instance 31");
             Console.ReadLine();
 
             // This is where you travel out of the instance back to the planet
@@ -200,7 +200,7 @@ namespace CelestialTravels0_1
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
-            Console.WriteLine("you are in instance 9");
+            Console.WriteLine("you are in instance 40");
             Console.ReadLine();
 
             // This is where you travel out of the instance back to the planet
@@ -215,7 +215,7 @@ namespace CelestialTravels0_1
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
-            Console.WriteLine("you are in instance 10");
+            Console.WriteLine("you are in instance 41");
             Console.ReadLine();
 
             // This is where you travel out of the instance back to the planet
@@ -230,7 +230,7 @@ namespace CelestialTravels0_1
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
-            Console.WriteLine("you are in instance 11");
+            Console.WriteLine("you are in instance 50");
             Console.ReadLine();
 
             // This is where you travel out of the instance back to the planet
@@ -245,7 +245,7 @@ namespace CelestialTravels0_1
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
-            Console.WriteLine("you are in instance 12");
+            Console.WriteLine("you are in instance 51");
             Console.ReadLine();
 
             // This is where you travel out of the instance back to the planet
@@ -260,7 +260,7 @@ namespace CelestialTravels0_1
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
-            Console.WriteLine("you are in instance 13");
+            Console.WriteLine("you are in instance 60");
             Console.ReadLine();
 
             // This is where you travel out of the instance back to the planet
@@ -275,7 +275,7 @@ namespace CelestialTravels0_1
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
-            Console.WriteLine("you are in instance 14");
+            Console.WriteLine("you are in instance 61");
             Console.ReadLine();
 
             // This is where you travel out of the instance back to the planet
@@ -290,7 +290,7 @@ namespace CelestialTravels0_1
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
-            Console.WriteLine("you are in instance 15");
+            Console.WriteLine("you are in instance 70");
             Console.ReadLine();
 
             // This is where you travel out of the instance back to the planet
@@ -305,7 +305,7 @@ namespace CelestialTravels0_1
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
-            Console.WriteLine("you are in instance 16");
+            Console.WriteLine("you are in instance 71");
             Console.ReadLine();
 
             // This is where you travel out of the instance back to the planet
@@ -320,7 +320,7 @@ namespace CelestialTravels0_1
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
-            Console.WriteLine("you are in instance 17");
+            Console.WriteLine("you are in instance 80");
             Console.ReadLine();
 
             // This is where you travel out of the instance back to the planet
@@ -335,7 +335,7 @@ namespace CelestialTravels0_1
         {
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
-            Console.WriteLine("you are in instance 18");
+            Console.WriteLine("you are in instance 81");
             Console.ReadLine();
 
             // This is where you travel out of the instance back to the planet
