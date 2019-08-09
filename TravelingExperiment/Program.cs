@@ -24,6 +24,7 @@ namespace CelestialTravels0_1
             var playerMaker = new PlayerMaker();
             var loadGame = new LoadGame();
             var saveGame = new SaveGame();
+            var randomNameGenerator = new RandomNameGenerator();
 
             // Mechanics for Fighting
             var fight = new Fight();
@@ -51,7 +52,8 @@ namespace CelestialTravels0_1
                 MonsterMaker = monsterMaker,
                 PlayerMaker = playerMaker,
                 LoadGame = loadGame,
-                SaveGame = saveGame
+                SaveGame = saveGame,
+                RandomNameGenerator = randomNameGenerator
                 
             };
 
@@ -177,7 +179,6 @@ namespace CelestialTravels0_1
 
 
             // Test area
-
 
 
 

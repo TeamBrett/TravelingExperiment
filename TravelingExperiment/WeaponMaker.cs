@@ -12,7 +12,7 @@ namespace CelestialTravels0_1
         {
             var blaster = new Weapon();
             blaster.Type = "Blaster";
-            blaster.Name = NameWeapon();
+            blaster.Name = NameWeapon(gameContext);
             blaster.Attack = 10;
             blaster.Durability = 100;
             blaster.Equiped = false;
@@ -24,7 +24,7 @@ namespace CelestialTravels0_1
         {
             var doubleBlaster = new Weapon();
             doubleBlaster.Type = "Double Blaster";
-            doubleBlaster.Name = NameWeapon();
+            doubleBlaster.Name = NameWeapon(gameContext);
             doubleBlaster.Attack = 20;
             doubleBlaster.Durability = 75;
             doubleBlaster.Equiped = false;
@@ -36,7 +36,7 @@ namespace CelestialTravels0_1
         {
             var photonSword = new Weapon();
             photonSword.Type = "PhotonSword";
-            photonSword.Name = NameWeapon();
+            photonSword.Name = NameWeapon(gameContext);
             photonSword.Attack = 30;
             photonSword.Durability = 50;
             photonSword.Equiped = false;
@@ -44,11 +44,19 @@ namespace CelestialTravels0_1
             gameContext.PlayerInventory.WeaponList.Add(photonSword);
         }
 
-        public string NameWeapon()
+        public string NameWeapon(GameContext gameContext)
         {
-
-            Console.WriteLine("Please name your new weapon");
+            Console.WriteLine("\n");
+            Console.WriteLine(@"Please name your new weapon. Enter ""random"" to get a random name ");
             temporaryWeaponNameVariable = Console.ReadLine();
+
+            if (temporaryWeaponNameVariable == "random")
+            {
+                temporaryWeaponNameVariable = gameContext.RandomNameGenerator.RandomNameGen(gameContext);
+            }
+            
+            Console.WriteLine("\n");
+            Console.WriteLine("Your new weapon's name is " + temporaryWeaponNameVariable);
             Console.WriteLine("\n");
             return temporaryWeaponNameVariable;
         }

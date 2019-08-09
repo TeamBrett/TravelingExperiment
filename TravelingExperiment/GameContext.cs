@@ -6,7 +6,7 @@ namespace CelestialTravels0_1
 {
     public class GameContext
     {
-        
+
         public Lists List { get; set; }
         public JumpGate JumpGate { get; set; }
         public SpacePort SpacePort { get; set; }
@@ -21,6 +21,7 @@ namespace CelestialTravels0_1
         public PlayerMaker PlayerMaker { get; set; }
         public LoadGame LoadGame { get; set; }
         public SaveGame SaveGame { get; set; }
+        public RandomNameGenerator RandomNameGenerator { get; set; }
 
 
         // Fighting stuff
