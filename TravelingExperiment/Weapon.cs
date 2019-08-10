@@ -10,6 +10,7 @@ namespace CelestialTravels0_1
         public override string Name { get; set; }
         public int Attack { get; set; }
         public bool Equiped { get; set; }
-        public int Durability { get; set; }
+        public int DurabilityMax { get; set; }
+        public int DurabilityCurrent { get; set; }
     }
 }

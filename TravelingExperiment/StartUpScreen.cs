@@ -41,14 +41,17 @@ namespace CelestialTravels0_1
             switch(userInput)
             {
                 case 0:
+                    // New game
                     gameContext.Instance.Instance1(gameContext);
                     break;
                 case 1:
+                    // Load game
                     gameContext.LoadGame.Load(gameContext);
                     gameContext.SpacePort.SpacePortOptions(gameContext);
                     break;
                 case 2:
-                    // quit the fucking game
+                    // Quit the fucking game
+                    Environment.Exit(0);
                     break;
 
             }

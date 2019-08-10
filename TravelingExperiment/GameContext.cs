@@ -22,6 +22,8 @@ namespace CelestialTravels0_1
         public LoadGame LoadGame { get; set; }
         public SaveGame SaveGame { get; set; }
         public RandomNameGenerator RandomNameGenerator { get; set; }
+        public RepairShop RepairShop { get; set; }
+
 
 
         // Fighting stuff

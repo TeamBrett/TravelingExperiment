@@ -11,12 +11,15 @@ namespace CelestialTravels0_1
         {
             int playerSelection;
 
+            Console.WriteLine();
+            Console.WriteLine();
+
             Console.WriteLine("You are in " + gameContext.Player.SpacePortLocation);
             Console.WriteLine("0) Save Game");
             Console.WriteLine("1) Load Game");
-            Console.WriteLine("2) Quit Game (Not yet impliment)");
+            Console.WriteLine("2) Quit Game");
             Console.WriteLine("3) Buy Consumable (Not yet implimented)");
-            Console.WriteLine("4) Repair (Not yet implimented)");
+            Console.WriteLine("4) Repair/Heal");
             Console.WriteLine("5) Travel to instance on current planet");
             Console.WriteLine("6) Travel to SpacePort in solar system");
             Console.WriteLine("7) Travel to JumpGate in solar system");
@@ -50,17 +53,15 @@ namespace CelestialTravels0_1
                 case 0:
                     // save game method here
                     gameContext.SaveGame.Save(gameContext);
-                    Console.WriteLine("Game Saved");
                     gameContext.SpacePort.SpacePortOptions(gameContext);
                     break;
                 case 1:
                     gameContext.LoadGame.Load(gameContext);
-                    Console.WriteLine("Game Loaded");
                     gameContext.SpacePort.SpacePortOptions(gameContext);
                     break;
                 case 2:
                     // quit game method here
-                    Console.WriteLine("Game Quit (not really)");
+                    Environment.Exit(0);
                     break;
                 case 3:
                     // open store method here
@@ -68,7 +69,7 @@ namespace CelestialTravels0_1
                     break;
                 case 4:
                     // repair method here
-                    Console.WriteLine("Stuff Repaired (not really)");
+                    gameContext.RepairShop.Repair(gameContext);
                     break;
                 case 5:
                     // TravelToInstance method here

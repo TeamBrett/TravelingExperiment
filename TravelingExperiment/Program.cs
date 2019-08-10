@@ -25,6 +25,7 @@ namespace CelestialTravels0_1
             var loadGame = new LoadGame();
             var saveGame = new SaveGame();
             var randomNameGenerator = new RandomNameGenerator();
+            var repairShop = new RepairShop();
 
             // Mechanics for Fighting
             var fight = new Fight();
@@ -53,7 +54,8 @@ namespace CelestialTravels0_1
                 PlayerMaker = playerMaker,
                 LoadGame = loadGame,
                 SaveGame = saveGame,
-                RandomNameGenerator = randomNameGenerator
+                RandomNameGenerator = randomNameGenerator,
+                RepairShop = repairShop
                 
             };
 
@@ -179,7 +181,7 @@ namespace CelestialTravels0_1
 
 
             // Test area
-
+            
 
 
 

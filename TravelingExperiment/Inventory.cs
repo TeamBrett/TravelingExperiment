@@ -12,7 +12,7 @@ namespace CelestialTravels0_1
         {
             foreach (Weapon weapon in WeaponList)
             {
-                Console.WriteLine((WeaponList.IndexOf(weapon) + ")  " + (weapon.Type) + " " + (weapon.Name) + " Atk =" + (weapon.Attack) + "  Durability =" + (weapon.Durability)));
+                Console.WriteLine((WeaponList.IndexOf(weapon) + ")  " + (weapon.Type) + " " + (weapon.Name) + " Atk =" + (weapon.Attack) + "  Durability =" + (weapon.DurabilityCurrent) +"/" + (weapon.DurabilityMax)));
             }
         }
     }

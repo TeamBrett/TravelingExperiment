@@ -14,7 +14,8 @@ namespace CelestialTravels0_1
             blaster.Type = "Blaster";
             blaster.Name = NameWeapon(gameContext);
             blaster.Attack = 10;
-            blaster.Durability = 100;
+            blaster.DurabilityMax = 100;
+            blaster.DurabilityCurrent = 80;
             blaster.Equiped = false;
 
             gameContext.PlayerInventory.WeaponList.Add(blaster);
@@ -26,7 +27,8 @@ namespace CelestialTravels0_1
             doubleBlaster.Type = "Double Blaster";
             doubleBlaster.Name = NameWeapon(gameContext);
             doubleBlaster.Attack = 20;
-            doubleBlaster.Durability = 75;
+            doubleBlaster.DurabilityMax = 75;
+            doubleBlaster.DurabilityCurrent = 60;
             doubleBlaster.Equiped = false;
 
             gameContext.PlayerInventory.WeaponList.Add(doubleBlaster);
@@ -38,7 +40,8 @@ namespace CelestialTravels0_1
             photonSword.Type = "PhotonSword";
             photonSword.Name = NameWeapon(gameContext);
             photonSword.Attack = 30;
-            photonSword.Durability = 50;
+            photonSword.DurabilityMax = 50;
+            photonSword.DurabilityCurrent = 40;
             photonSword.Equiped = false;
 
             gameContext.PlayerInventory.WeaponList.Add(photonSword);

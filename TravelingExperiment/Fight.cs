@@ -36,13 +36,13 @@ namespace CelestialTravels0_1
                 Console.WriteLine("Damage " + (damage) + "\n");
 
                 // Apply damage to defender
-                defender.CurrentHitPoints = defender.CurrentHitPoints - damage;
-                Console.WriteLine("Defender's HP  " + defender.CurrentHitPoints + "\n");
+                defender.HitPointsCurrent = defender.HitPointsCurrent - damage;
+                Console.WriteLine("Defender's HP  " + defender.HitPointsCurrent + "\n");
                 Console.WriteLine("Return to continue");
                 Console.ReadLine();
 
                 // End fight and declare winner or switch roles 
-                if (defender.CurrentHitPoints <= 0)
+                if (defender.HitPointsCurrent <= 0)
                 {
                     // End the fight
                     fightOver = true;
@@ -65,12 +65,12 @@ namespace CelestialTravels0_1
             if (winner.Name == gameContext.Player.Name)
             {
                 gameContext.Player = (Player)winner;
-                gameContext.Player.Experience += looser.TotalHitPoints;
-                gameContext.Player.CurrentHitPoints = gameContext.Player.TotalHitPoints;
+                gameContext.Player.Experience += looser.HitPointsTotal;
+                gameContext.Player.HitPointsCurrent = gameContext.Player.HitPointsTotal;
 
 
                 Console.WriteLine("YOU ARE A WINNER");
-                Console.WriteLine("You received " + looser.TotalHitPoints + " Experience Points.");
+                Console.WriteLine("You received " + looser.HitPointsTotal + " Experience Points.");
                 gameContext.PlayerStats.PrintPlayerStats(gameContext);
             }
             else
@@ -97,8 +97,8 @@ namespace CelestialTravels0_1
                 attacker = gameContext.Player;
                 defender = gameContext.WhiteMonster01;
                 Console.WriteLine("Player wins the toss and is the Attacker");
-                Console.WriteLine("player health   " + attacker.CurrentHitPoints);
-                Console.WriteLine("monster health   " + defender.CurrentHitPoints);
+                Console.WriteLine("player health   " + attacker.HitPointsCurrent);
+                Console.WriteLine("monster health   " + defender.HitPointsCurrent);
 
 
             }
@@ -107,8 +107,8 @@ namespace CelestialTravels0_1
                 attacker = gameContext.WhiteMonster01;
                 defender = gameContext.Player;
                 Console.WriteLine("Monster wins the toss and is the Attacker");
-                Console.WriteLine("player health   " + defender.CurrentHitPoints);
-                Console.WriteLine("Monster health   " + attacker.CurrentHitPoints);
+                Console.WriteLine("player health   " + defender.HitPointsCurrent);
+                Console.WriteLine("Monster health   " + attacker.HitPointsCurrent);
                 Console.WriteLine("");
 
             }
@@ -141,11 +141,11 @@ namespace CelestialTravels0_1
                 }
                 
 
-                gameContext.Player.CurrentWeaponDamage = gameContext.PlayerInventory.WeaponList[ChosenWeaponToAttackWith].Attack;
+                gameContext.Player.WeaponDamageCurrent = gameContext.PlayerInventory.WeaponList[ChosenWeaponToAttackWith].Attack;
 
                 PlayerAttackCalculator.CalculatePlayerAttack(gameContext);
 
-                gameContext.PlayerInventory.WeaponList[ChosenWeaponToAttackWith].Durability -= 1;
+                gameContext.PlayerInventory.WeaponList[ChosenWeaponToAttackWith].DurabilityCurrent -= 1;
             }
 
         }

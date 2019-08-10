@@ -27,6 +27,7 @@ namespace CelestialTravels0_1
 
                     // serialize JSON to a string and then write string to a file
                     File.WriteAllText(@"c:\CelestialTravels\Save\" + saveGameName + ".json", JsonConvert.SerializeObject(gameContext));
+                    Console.WriteLine("Game Saved");
                     break;
                 }
                 catch(Exception ex)
