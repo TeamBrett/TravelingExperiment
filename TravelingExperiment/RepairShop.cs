@@ -16,13 +16,13 @@ namespace CelestialTravels0_1
                 Console.WriteLine(gameContext.Player.Name + " fully healed");
                 Console.WriteLine();
                 gameContext.Player.HitPointsCurrent = gameContext.Player.HitPointsTotal;
-                Console.WriteLine(@"Choose which weapon to repair (enter the number).  Or type ""done"" to exit.");
+                Console.WriteLine(@"Choose which weapon to repair (enter the number).  Or type ""exit"" to exit.");
                 gameContext.PlayerInventory.EunumerateWeapons();
                 string tempUserInput;
                 int ChosenWeaponToRepair;
                 tempUserInput = Console.ReadLine();
 
-                if (tempUserInput == "done")
+                if (tempUserInput == "exit")
                 {
                     gameContext.SpacePort.SpacePortOptions(gameContext);
                 }

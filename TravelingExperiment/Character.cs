@@ -14,8 +14,8 @@ namespace CelestialTravels0_1
         public double Experience { get; set; }
         public double HitPointsCurrent { get; set; } = 100;
         public double HitPointsTotal { get; set; } = 100;
-        public double ManaTotal { get; set; }
-        public double ManaCurretn { get; set; }
+        public double EnergyTotal { get; set; }
+        public double EnergyCurrent { get; set; }
         public double WeaponSkill { get; set; } = 1;
         public double ArmorSkill { get; set; }
         public double NavigationSkill { get; set; }
@@ -24,5 +24,16 @@ namespace CelestialTravels0_1
         public double Roll { get; set; }
         public double Attack { get; set; }
         public int Level { get; set; }
+
+        // Consumables
+
+        public int HealthKitSmallCount { get; set; }
+        public int HealthKitLargeCount { get; set; }
+        public int HealthKitTotalCount { get; set; }
+        public int EnergyKitSmallCount { get; set; }
+        public int EnergyKitLargeCount { get; set; }
+        public int EnergyKitTotalCount { get; set; }
+        public int SmokeGrenadeCount { get; set; }
+
     }
 }

@@ -15,8 +15,8 @@ namespace CelestialTravels0_1
                 Name = "White Monster",
                 Level = gameContext.Player.Level,
                 Attack = (gameContext.Player.BaseAttack) - (gameContext.Player.BaseAttack / 2),
-                CurrentHitPoints = (gameContext.Player.TotalHitPoints - (gameContext.Player.TotalHitPoints / 2)),
-                TotalHitPoints = (gameContext.Player.TotalHitPoints - (gameContext.Player.TotalHitPoints / 2)),
+                HitPointsCurrent = (gameContext.Player.HitPointsTotal - (gameContext.Player.HitPointsTotal / 2)),
+                HitPointsTotal = (gameContext.Player.HitPointsTotal - (gameContext.Player.HitPointsTotal / 2)),
             };
             return whiteMonster01;
         }
@@ -28,8 +28,8 @@ namespace CelestialTravels0_1
                 greenMonster01.Name = "Green Monster";
                 greenMonster01.Level = gameContext.Player.Level;
                 greenMonster01.Attack = (gameContext.Player.Attack - (gameContext.Player.Attack / 2));
-                greenMonster01.CurrentHitPoints = (gameContext.Player.TotalHitPoints);
-                greenMonster01.TotalHitPoints = (gameContext.Player.TotalHitPoints);
+                greenMonster01.HitPointsCurrent = (gameContext.Player.HitPointsTotal);
+                greenMonster01.HitPointsTotal = (gameContext.Player.HitPointsTotal);
             }
             return greenMonster01;
         }
@@ -41,8 +41,8 @@ namespace CelestialTravels0_1
                 redMonster01.Name = "Red Monster";
                 redMonster01.Level = gameContext.Player.Level;
                 redMonster01.Attack = (gameContext.Player.Attack - (gameContext.Player.Attack / 2));
-                redMonster01.CurrentHitPoints = (gameContext.Player.TotalHitPoints + (gameContext.Player.TotalHitPoints / 2));
-                redMonster01.TotalHitPoints = (gameContext.Player.TotalHitPoints + (gameContext.Player.TotalHitPoints / 2));
+                redMonster01.HitPointsCurrent = (gameContext.Player.HitPointsTotal + (gameContext.Player.HitPointsTotal / 2));
+                redMonster01.HitPointsTotal = (gameContext.Player.HitPointsTotal + (gameContext.Player.HitPointsTotal / 2));
             }
             return redMonster01;
         }

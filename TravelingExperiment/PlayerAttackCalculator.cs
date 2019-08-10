@@ -8,7 +8,7 @@ namespace CelestialTravels0_1
     {
         public static void CalculatePlayerAttack(GameContext gameContext)
         {
-            gameContext.Player.Attack = (gameContext.Player.CurrentWeaponDamage) * (gameContext.Player.WeaponSkill);
+            gameContext.Player.Attack = (gameContext.Player.WeaponDamageCurrent) * (gameContext.Player.WeaponSkill);
             gameContext.Player.BaseAttack = (gameContext.Player.Level) * (10);
         }
     }

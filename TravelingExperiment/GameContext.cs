@@ -23,6 +23,18 @@ namespace CelestialTravels0_1
         public SaveGame SaveGame { get; set; }
         public RandomNameGenerator RandomNameGenerator { get; set; }
         public RepairShop RepairShop { get; set; }
+        public Store Store { get; set; }
+
+        // Consumables
+        public HealthKitSmall HealthKitSmall { get; set; }
+        public HealthKitLarge HealthKitLarge { get; set; }
+        public HealthKitTotal HealthKitTotal { get; set; }
+        public EnergyKitSmall EnergyKitSmall { get; set; }
+        public EnergyKitLarge EnergyKitLarge { get; set; }
+        public EnergyKitTotal EnergyKitTotal { get; set; }
+        public SmokeGrenade SmokeGrenade { get; set; }
+
+
 
 
 

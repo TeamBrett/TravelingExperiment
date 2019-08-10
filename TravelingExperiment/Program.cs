@@ -26,6 +26,15 @@ namespace CelestialTravels0_1
             var saveGame = new SaveGame();
             var randomNameGenerator = new RandomNameGenerator();
             var repairShop = new RepairShop();
+            var store = new Store();
+            var healthKitSmall = new HealthKitSmall() { Name = "Small Health Kit", Price = 100 };
+            var healthKitLarge = new HealthKitLarge() { Name = "Large Health Kit", Price = 250 };
+            var healthKitTotal = new HealthKitTotal() { Name = "Total Health Kit", Price = 1000 };
+            var energyKitSmall = new EnergyKitSmall() { Name = "Small Energy Kit", Price = 100 };
+            var energyKitLarge = new EnergyKitLarge() { Name = "Large Energy Kit", Price = 250 };
+            var energyKitTotal = new EnergyKitTotal() { Name = "Total Energy Kit", Price = 1000 };
+            var smokeGrenade = new SmokeGrenade() { Name = "Smoke Grenade", Price = 2000 };
+
 
             // Mechanics for Fighting
             var fight = new Fight();
@@ -55,7 +64,15 @@ namespace CelestialTravels0_1
                 LoadGame = loadGame,
                 SaveGame = saveGame,
                 RandomNameGenerator = randomNameGenerator,
-                RepairShop = repairShop
+                RepairShop = repairShop,
+                Store = store,
+                HealthKitSmall = healthKitSmall,
+                HealthKitLarge = healthKitLarge,
+                HealthKitTotal = healthKitTotal,
+                EnergyKitSmall = energyKitSmall,
+                EnergyKitLarge = energyKitLarge,
+                EnergyKitTotal = energyKitTotal,
+                SmokeGrenade = smokeGrenade
                 
             };
 
@@ -197,7 +214,6 @@ namespace CelestialTravels0_1
 
 
 
-            //gameContext.Instance.Instance1(gameContext);
 
 
 

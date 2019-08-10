@@ -22,13 +22,13 @@ namespace CelestialTravels0_1
             Console.WriteLine($"LEVEL:..............{gameContext.Player.Level}");
             Console.WriteLine("");
 
-            Console.WriteLine($"CURRENT HIT POINTS..{gameContext.Player.CurrentHitPoints}");
-            Console.WriteLine($"TOTAL HIT POINTS....{gameContext.Player.TotalHitPoints}");
+            Console.WriteLine($"CURRENT HIT POINTS..{gameContext.Player.HitPointsCurrent}");
+            Console.WriteLine($"TOTAL HIT POINTS....{gameContext.Player.HitPointsTotal}");
             Console.WriteLine("");
 
             Console.WriteLine($"ATTACK:.............{gameContext.Player.Attack}");
             Console.WriteLine($"WEAPON SKILL:.......{gameContext.Player.WeaponSkill}");
-            Console.WriteLine($"WEAPON DAMAGE.......{gameContext.Player.CurrentWeaponDamage}");
+            Console.WriteLine($"WEAPON DAMAGE.......{gameContext.Player.WeaponDamageCurrent}");
             Console.WriteLine("");
 
             Console.WriteLine($"ARMOR SKILL:........{gameContext.Player.ArmorSkill}");

@@ -18,7 +18,7 @@ namespace CelestialTravels0_1
             Console.WriteLine("0) Save Game");
             Console.WriteLine("1) Load Game");
             Console.WriteLine("2) Quit Game");
-            Console.WriteLine("3) Buy Consumable (Not yet implimented)");
+            Console.WriteLine("3) Go To Store (Not yet implimented)");
             Console.WriteLine("4) Repair/Heal");
             Console.WriteLine("5) Travel to instance on current planet");
             Console.WriteLine("6) Travel to SpacePort in solar system");
@@ -27,12 +27,12 @@ namespace CelestialTravels0_1
             Console.WriteLine();
             Console.WriteLine("Please enter your selection");
 
-            int userInput;
+            int playerInput;
             while (true)
             {
-                if (int.TryParse(Console.ReadLine(), out userInput))
+                if (int.TryParse(Console.ReadLine(), out playerInput))
                 {
-                    if (userInput > 0 && userInput < 8)
+                    if (playerInput > 0 && playerInput < 8)
                     {
                         break;
                     }
@@ -47,7 +47,7 @@ namespace CelestialTravels0_1
                 }
             }
 
-            playerSelection = userInput;
+            playerSelection = playerInput;
             switch (playerSelection)
             {
                 case 0:
@@ -56,6 +56,7 @@ namespace CelestialTravels0_1
                     gameContext.SpacePort.SpacePortOptions(gameContext);
                     break;
                 case 1:
+                    // Load Game method here
                     gameContext.LoadGame.Load(gameContext);
                     gameContext.SpacePort.SpacePortOptions(gameContext);
                     break;
@@ -65,6 +66,8 @@ namespace CelestialTravels0_1
                     break;
                 case 3:
                     // open store method here
+                    gameContext.Store.ConsumablesStore(gameContext);
+
                     Console.WriteLine("Store Loaded (not really)");
                     break;
                 case 4:
