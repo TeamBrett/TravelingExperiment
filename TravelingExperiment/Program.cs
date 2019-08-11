@@ -34,9 +34,9 @@ namespace CelestialTravels0_1
             var energyKitLarge = new EnergyKitLarge() { Name = "Large Energy Kit", Price = 250 };
             var energyKitTotal = new EnergyKitTotal() { Name = "Total Energy Kit", Price = 1000 };
             var smokeGrenade = new SmokeGrenade() { Name = "Smoke Grenade", Price = 2000 };
-            var blaster = new Weapon();
-            var doubleBlaster = new Weapon();
-            var photonSword = new Weapon();
+            var blaster = new Weapon() { Price = player.Level * 150 };
+            var doubleBlaster = new Weapon() { Price = player.Level * 300 };
+            var photonSword = new Weapon() { Price = player.Level * 450 };
 
 
             // Mechanics for Fighting

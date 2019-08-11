@@ -20,7 +20,8 @@ namespace CelestialTravels0_1
                 Equiped = false,
                 Price = gameContext.Player.Level * 150,
             };
-            
+            gameContext.PlayerInventory.WeaponList.Add(blaster);
+
         }
 
         public void CreateWeaponDoubleBlaster(GameContext gameContext)
@@ -29,11 +30,11 @@ namespace CelestialTravels0_1
             {
                 Type = "Double Blaster",
                 Name = NameWeapon(gameContext),
-                Attack = gameContext.Player.Level * 200,
+                Attack = gameContext.Player.Level * 20,
                 DurabilityMax = 75,
                 DurabilityCurrent = 75,
                 Equiped = false,
-                Price = gameContext.Player.Level * 30,
+                Price = gameContext.Player.Level * 300,
             };
             
 
