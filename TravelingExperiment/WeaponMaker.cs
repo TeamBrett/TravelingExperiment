@@ -10,42 +10,49 @@ namespace CelestialTravels0_1
 
         public void CreateWeaponBlaster(GameContext gameContext)
         {
-            var blaster = new Weapon();
-            blaster.Type = "Blaster";
-            blaster.Name = NameWeapon(gameContext);
-            blaster.Attack = gameContext.Player.Level * 10;
-            blaster.DurabilityMax = 100;
-            blaster.DurabilityCurrent = 100;
-            blaster.Equiped = false;
-            blaster.Price = gameContext.Player.Level * 150;
-
-            gameContext.PlayerInventory.WeaponList.Add(blaster);
+            var blaster = new Weapon()
+            {
+                Type = "Blaster",
+                Name = NameWeapon(gameContext),
+                Attack = gameContext.Player.Level * 10,
+                DurabilityMax = 100,
+                DurabilityCurrent = 100,
+                Equiped = false,
+                Price = gameContext.Player.Level * 150,
+            };
+            
         }
 
         public void CreateWeaponDoubleBlaster(GameContext gameContext)
         {
-            var doubleBlaster = new Weapon();
-            doubleBlaster.Type = "Double Blaster";
-            doubleBlaster.Name = NameWeapon(gameContext);
-            doubleBlaster.Attack = gameContext.Player.Level * 200;
-            doubleBlaster.DurabilityMax = 75;
-            doubleBlaster.DurabilityCurrent = 75;
-            doubleBlaster.Equiped = false;
-            doubleBlaster.Price = gameContext.Player.Level * 30;
+            var doubleBlaster = new Weapon()
+            {
+                Type = "Double Blaster",
+                Name = NameWeapon(gameContext),
+                Attack = gameContext.Player.Level * 200,
+                DurabilityMax = 75,
+                DurabilityCurrent = 75,
+                Equiped = false,
+                Price = gameContext.Player.Level * 30,
+            };
+            
 
             gameContext.PlayerInventory.WeaponList.Add(doubleBlaster);
         }
 
         public void CreateWeaponPhotonSword(GameContext gameContext)
         {
-            var photonSword = new Weapon();
-            photonSword.Type = "PhotonSword";
-            photonSword.Name = NameWeapon(gameContext);
-            photonSword.Attack = gameContext.Player.Level * 30;
-            photonSword.DurabilityMax = 50;
-            photonSword.DurabilityCurrent = 50;
-            photonSword.Equiped = false;
-            photonSword.Price = gameContext.Player.Level * 450;
+            var photonSword = new Weapon()
+            {
+                Type = "PhotonSword",
+                Name = NameWeapon(gameContext),
+                Attack = gameContext.Player.Level * 30,
+                DurabilityMax = 50,
+                DurabilityCurrent = 50,
+                Equiped = false,
+                Price = gameContext.Player.Level * 450,
+            };
+            
 
             gameContext.PlayerInventory.WeaponList.Add(photonSword);
         }

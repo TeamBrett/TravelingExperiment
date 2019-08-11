@@ -49,13 +49,15 @@ namespace CelestialTravels0_1
                 case 0:
                     {
                         // Consumables 
-                        gameContext.Store.ConsumablesStore(gameContext);
+                        gameContext.Store.ConsumablesDepartment(gameContext);
 
                         break;
                     }
                 case 1:
                     {
                         // Weapons
+                        gameContext.Store.WeaponsDepartment(gameContext);
+
                         break;
                     }
                 case 2:
@@ -68,7 +70,7 @@ namespace CelestialTravels0_1
 
 
 
-        public void ConsumablesStore(GameContext gameContext)
+        public void ConsumablesDepartment(GameContext gameContext)
         {
             string playerInput;
             int playerSelection;
@@ -86,7 +88,7 @@ namespace CelestialTravels0_1
             Console.WriteLine(@"6) Smoke Grenade (Allows you to leave the instance while in Battle, Costs 2,000)");
             Console.WriteLine("7) Exit the store");
             Console.WriteLine();
-            Console.WriteLine(@"Please select a consumable, or ""exit"" to leave the store");
+            Console.WriteLine(@"Please select a consumable, or ""exit"" to leave the department");
 
 
             while (true)
@@ -162,7 +164,7 @@ namespace CelestialTravels0_1
                     }
                 case 7:
                     {
-                        gameContext.SpacePort.SpacePortOptions(gameContext);
+                        gameContext.Store.ConsumablesDepartment(gameContext);
                         break;
                     }
             }
@@ -192,7 +194,7 @@ namespace CelestialTravels0_1
                             Console.WriteLine($"You bought " + quantitySelection + " " + consumable.Name + " for " + (quantitySelection * consumable.Price) + " Credits");
                             Console.WriteLine();
 
-                            gameContext.Store.ConsumablesStore(gameContext);
+                            gameContext.Store.ConsumablesDepartment(gameContext);
 
                             break;
                         }
@@ -278,6 +280,8 @@ namespace CelestialTravels0_1
                         break;
                     }
             }
+        gameContext.Store.WeaponsDepartment(gameContext);
+
         }
     }
 }

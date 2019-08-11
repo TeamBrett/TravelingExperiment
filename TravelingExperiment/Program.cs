@@ -36,7 +36,7 @@ namespace CelestialTravels0_1
             var smokeGrenade = new SmokeGrenade() { Name = "Smoke Grenade", Price = 2000 };
             var blaster = new Weapon();
             var doubleBlaster = new Weapon();
-            var photonSword = new Weapon;
+            var photonSword = new Weapon();
 
 
             // Mechanics for Fighting
