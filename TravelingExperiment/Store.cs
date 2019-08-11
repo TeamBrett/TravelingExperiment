@@ -27,7 +27,6 @@ namespace CelestialTravels0_1
             // Input verification and exit.
             while(true)
             {
-                
                 if(int.TryParse(playerInput, out playerSelection))
                 {
                     if(playerSelection >= 0 && playerSelection <=2)
