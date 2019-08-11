@@ -32,7 +32,7 @@ namespace CelestialTravels0_1
             {
                 if (int.TryParse(Console.ReadLine(), out playerInput))
                 {
-                    if (playerInput > 0 && playerInput < 8)
+                    if (playerInput >= 0 && playerInput <= 8)
                     {
                         break;
                     }
@@ -66,9 +66,8 @@ namespace CelestialTravels0_1
                     break;
                 case 3:
                     // open store method here
-                    gameContext.Store.ConsumablesStore(gameContext);
+                    gameContext.Store.StoreOptions(gameContext);
 
-                    Console.WriteLine("Store Loaded (not really)");
                     break;
                 case 4:
                     // repair method here
