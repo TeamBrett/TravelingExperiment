@@ -34,6 +34,9 @@ namespace CelestialTravels0_1
             var energyKitLarge = new EnergyKitLarge() { Name = "Large Energy Kit", Price = 250 };
             var energyKitTotal = new EnergyKitTotal() { Name = "Total Energy Kit", Price = 1000 };
             var smokeGrenade = new SmokeGrenade() { Name = "Smoke Grenade", Price = 2000 };
+            var blaster = new Weapon();
+            var doubleBlaster = new Weapon();
+            var photonSword = new Weapon;
 
 
             // Mechanics for Fighting
@@ -72,8 +75,10 @@ namespace CelestialTravels0_1
                 EnergyKitSmall = energyKitSmall,
                 EnergyKitLarge = energyKitLarge,
                 EnergyKitTotal = energyKitTotal,
-                SmokeGrenade = smokeGrenade
-                
+                SmokeGrenade = smokeGrenade,
+                Blaster = blaster,
+                DoubleBlaster = doubleBlaster,
+                PhotonSword = photonSword,
             };
 
             // Monster Creation for Fighting

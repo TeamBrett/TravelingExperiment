@@ -210,7 +210,7 @@ namespace CelestialTravels0_1
             }
         }
 
-        public void WeaponsDepartment()
+        public void WeaponsDepartment(GameContext gameContext)
         {
             string playerInput;
             int playerSelection;
@@ -219,10 +219,10 @@ namespace CelestialTravels0_1
             Console.WriteLine("Welcome to the Weapons Department");
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine(@"0) Blaster (Restores 50 HP, Costs 100 Credits)");
-            Console.WriteLine(@"1) Double Blaster (Restores 100 HP, Costs 250 Credits)");
-            Console.WriteLine(@"2) Photon Sword (Restores ALL HP, Costs 1,000 Credits)");
-            Console.WriteLine("7) Exit the store");
+            Console.WriteLine(@"0) Blaster (Costs " + gameContext.Blaster.Price + " Credits)");
+            Console.WriteLine(@"1) Double Blaster (Costs " + gameContext.DoubleBlaster.Price + " Credits)");
+            Console.WriteLine(@"2) Photon Sword (Costs " + gameContext.PhotonSword.Price + " Credits)");
+            Console.WriteLine("3) Exit the store");
             Console.WriteLine();
             Console.WriteLine(@"Please select a consumable, or ""exit"" to leave the store");
 
@@ -234,19 +234,50 @@ namespace CelestialTravels0_1
                 playerInput = Console.ReadLine();
                 if (int.TryParse(playerInput, out playerSelection))
                 {
-                    if (playerSelection >= 0 && playerSelection <= 7)
+                    if (playerSelection >= 0 && playerSelection <= 3)
                     {
                         break;
                     }
                     else
                     {
-                        Console.WriteLine("please enter an integer between zero and " + (7));
+                        Console.WriteLine("please enter an integer between zero and " + (3));
                     }
                 }
                 else
                 {
                     Console.WriteLine("Input is not valid, try entering an integer");
                 }
+            }
+
+            switch (playerSelection)
+            {
+
+                case 0:
+                    {
+                        // Create Blaster
+                        gameContext.WeaponMaker.CreateWeaponBlaster(gameContext);
+
+                        break;
+                    }
+                case 1:
+                    {
+                        // Create Double Blaster
+                        gameContext.WeaponMaker.CreateWeaponDoubleBlaster(gameContext);
+                        break;
+                    }
+                case 2:
+                    {
+                        // Create Photon Sword
+                        gameContext.WeaponMaker.CreateWeaponPhotonSword(gameContext);
+                        break;
+                    }
+                case 3:
+                    {
+                        // Exit Department
+                        gameContext.Store.StoreOptions(gameContext);
+
+                        break;
+                    }
             }
         }
     }

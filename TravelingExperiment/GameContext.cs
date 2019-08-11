@@ -24,6 +24,10 @@ namespace CelestialTravels0_1
         public RandomNameGenerator RandomNameGenerator { get; set; }
         public RepairShop RepairShop { get; set; }
         public Store Store { get; set; }
+        public Weapon Blaster { get; set; }
+        public Weapon DoubleBlaster { get; set; }
+        public Weapon PhotonSword { get; set; }
+
 
         // Consumables
         public HealthKitSmall HealthKitSmall { get; set; }
