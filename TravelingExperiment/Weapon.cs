@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CelestialTravels0_1
 {
-    public class Weapon : Entity
+    public class Weapon : Consumable
     {
         public string Type { get; set; }
         public override string Name { get; set; }

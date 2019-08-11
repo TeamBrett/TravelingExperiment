@@ -13,10 +13,11 @@ namespace CelestialTravels0_1
             var blaster = new Weapon();
             blaster.Type = "Blaster";
             blaster.Name = NameWeapon(gameContext);
-            blaster.Attack = 10;
+            blaster.Attack = gameContext.Player.Level * 10;
             blaster.DurabilityMax = 100;
-            blaster.DurabilityCurrent = 80;
+            blaster.DurabilityCurrent = 100;
             blaster.Equiped = false;
+            blaster.Price = gameContext.Player.Level * 150;
 
             gameContext.PlayerInventory.WeaponList.Add(blaster);
         }
@@ -26,10 +27,11 @@ namespace CelestialTravels0_1
             var doubleBlaster = new Weapon();
             doubleBlaster.Type = "Double Blaster";
             doubleBlaster.Name = NameWeapon(gameContext);
-            doubleBlaster.Attack = 20;
+            doubleBlaster.Attack = gameContext.Player.Level * 200;
             doubleBlaster.DurabilityMax = 75;
-            doubleBlaster.DurabilityCurrent = 60;
+            doubleBlaster.DurabilityCurrent = 75;
             doubleBlaster.Equiped = false;
+            doubleBlaster.Price = gameContext.Player.Level * 30;
 
             gameContext.PlayerInventory.WeaponList.Add(doubleBlaster);
         }
@@ -39,10 +41,11 @@ namespace CelestialTravels0_1
             var photonSword = new Weapon();
             photonSword.Type = "PhotonSword";
             photonSword.Name = NameWeapon(gameContext);
-            photonSword.Attack = 30;
+            photonSword.Attack = gameContext.Player.Level * 30;
             photonSword.DurabilityMax = 50;
-            photonSword.DurabilityCurrent = 40;
+            photonSword.DurabilityCurrent = 50;
             photonSword.Equiped = false;
+            photonSword.Price = gameContext.Player.Level * 450;
 
             gameContext.PlayerInventory.WeaponList.Add(photonSword);
         }

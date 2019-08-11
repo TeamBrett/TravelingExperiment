@@ -209,5 +209,45 @@ namespace CelestialTravels0_1
                 }
             }
         }
+
+        public void WeaponsDepartment()
+        {
+            string playerInput;
+            int playerSelection;
+
+            Console.WriteLine();
+            Console.WriteLine("Welcome to the Weapons Department");
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine(@"0) Blaster (Restores 50 HP, Costs 100 Credits)");
+            Console.WriteLine(@"1) Double Blaster (Restores 100 HP, Costs 250 Credits)");
+            Console.WriteLine(@"2) Photon Sword (Restores ALL HP, Costs 1,000 Credits)");
+            Console.WriteLine("7) Exit the store");
+            Console.WriteLine();
+            Console.WriteLine(@"Please select a consumable, or ""exit"" to leave the store");
+
+
+            while (true)
+            {
+
+                Console.WriteLine();
+                playerInput = Console.ReadLine();
+                if (int.TryParse(playerInput, out playerSelection))
+                {
+                    if (playerSelection >= 0 && playerSelection <= 7)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("please enter an integer between zero and " + (7));
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Input is not valid, try entering an integer");
+                }
+            }
+        }
     }
 }
