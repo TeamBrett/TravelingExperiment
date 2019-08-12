@@ -23,7 +23,7 @@ namespace CelestialTravels0_1.Players
 
             do
             {
-                Player.GenderOptions.ListGenders();
+                GenderOptions.ListGenders();
 
                 Console.WriteLine($"\nWhat is your gender? ");
 
@@ -58,7 +58,7 @@ namespace CelestialTravels0_1.Players
 
             do
             {
-                Player.RaceOptions.ListRaces();
+                RaceOptions.ListRaces();
 
                 Console.WriteLine("\nWhat is your race?");
 
@@ -89,7 +89,7 @@ namespace CelestialTravels0_1.Players
 
             do
             {
-                Player.JobOptions.ListJobs();
+                JobOptions.ListJobs();
 
                 Console.WriteLine("\nWhat is your job?");
 
@@ -148,7 +148,7 @@ namespace CelestialTravels0_1.Players
                 name = Console.ReadLine();
 
                 // Verification here
-                if (VerifyStringIsNotNull.StringIsNotNull(name))
+                if (Verify.StringIsNotNull(name))
                 {
                     Console.WriteLine($"Hello { name} \n");
                     break;
