@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.IO;
 using Newtonsoft.Json;
 
-namespace CelestialTravels0_1
+using CelestialTravels0_1.GameContexts;
+
+
+namespace CelestialTravels0_1.Save_Load
 {
     public class LoadGame
     {

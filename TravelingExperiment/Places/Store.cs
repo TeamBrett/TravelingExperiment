@@ -1,8 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace CelestialTravels0_1
+using CelestialTravels0_1.Consumables;
+using CelestialTravels0_1.GameContexts;
+
+
+namespace CelestialTravels0_1.Places
 {
     public class Store
     {

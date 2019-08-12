@@ -2,6 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 
+using CelestialTravels0_1.Bases;
+using CelestialTravels0_1.Consumables;
+using CelestialTravels0_1.Consumables.EnergyKits;
+using CelestialTravels0_1.Consumables.HealthKits;
+using CelestialTravels0_1.Fights;
+using CelestialTravels0_1.GameContexts;
+using CelestialTravels0_1.Monsters;
+using CelestialTravels0_1.Places;
+using CelestialTravels0_1.Players;
+using CelestialTravels0_1.Save_Load;
+using CelestialTravels0_1.Travels;
+using CelestialTravels0_1.Verifications;
+using CelestialTravels0_1.Weapons;
+
+
 
 namespace CelestialTravels0_1
 {
