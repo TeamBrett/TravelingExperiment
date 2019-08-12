@@ -1,6 +1,8 @@
 ﻿using System;
 
 using CelestialTravels0_1.GameContexts;
+using CelestialTravels0_1.Verifications;
+
 
 
 namespace CelestialTravels0_1.Players
@@ -21,15 +23,14 @@ namespace CelestialTravels0_1.Players
 
             do
             {
-                foreach (string gender in Player.Options.Genders)
-                {
-                    Console.WriteLine(gender);
-                }
-
+                Player.GenderOptions.ListGenders();
 
                 Console.WriteLine($"\nWhat is your gender? ");
 
                 var enteredGender = Console.ReadLine();
+
+                // Verify Gender 
+
 
                 if (enteredGender == "Male")
                 {
@@ -57,10 +58,7 @@ namespace CelestialTravels0_1.Players
 
             do
             {
-                foreach (string race in Player.Options.Races)
-                {
-                    Console.WriteLine(race);
-                }
+                Player.RaceOptions.ListRaces();
 
                 Console.WriteLine("\nWhat is your race?");
 
@@ -91,10 +89,7 @@ namespace CelestialTravels0_1.Players
 
             do
             {
-                foreach (string job in Player.Options.Jobs)
-                {
-                    Console.WriteLine(job);
-                }
+                Player.JobOptions.ListJobs();
 
                 Console.WriteLine("\nWhat is your job?");
 
@@ -146,13 +141,25 @@ namespace CelestialTravels0_1.Players
 
         public string GetPlayerName()
         {
-            Console.WriteLine("Hello Hero...What is your name?");
-            var name = Console.ReadLine();
+            string name;
+            while (true)
+            {
+                Console.WriteLine("Hello Hero...What is your name?");
+                name = Console.ReadLine();
 
-            // Verification here
+                // Verification here
+                if (VerifyStringIsNotNull.StringIsNotNull(name))
+                {
+                    Console.WriteLine($"Hello { name} \n");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("You must enter a valid name");
+                }
+            }
+            
 
-
-            Console.WriteLine($"Hello { name} \n");
 
             return name;
         }
