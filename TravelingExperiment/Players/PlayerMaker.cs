@@ -42,6 +42,8 @@ namespace CelestialTravels0_1.Players
 
             // Race Selection
 
+            menuMax = MenuOptions.ListOptions(gameContext.List.RaceList);
+
             Console.WriteLine("\nWhat is your race?");
 
             var enteredRace = Verify.UserInputForNumberedOptionMenu(menuMax);
@@ -66,7 +68,7 @@ namespace CelestialTravels0_1.Players
 
             // Job Selection
 
-            menuMax = MenuOptions.ListOptions(gameContext.List.RaceList);
+            menuMax = MenuOptions.ListOptions(gameContext.List.JobList);
 
             Console.WriteLine("\nWhat is your job?");
 
@@ -83,8 +85,7 @@ namespace CelestialTravels0_1.Players
                 }
                 Console.WriteLine("NavigationSkill +5\n");
                 gameContext.PlayerStats.PrintPlayerStats(gameContext);
-                Console.WriteLine("Return any key to continue...");
-                Console.ReadLine();
+                StandardMessages.ReturnToContinue();
             }
 
             else if (enteredJob == 1)
@@ -94,9 +95,7 @@ namespace CelestialTravels0_1.Players
                 gameContext.Player.WeaponSkill += 5;
                 Console.WriteLine("WeaponSkill +5\n");
                 gameContext.PlayerStats.PrintPlayerStats(gameContext);
-                Console.WriteLine("Return any key to continue...");
-                Console.ReadLine();
-
+                StandardMessages.ReturnToContinue();
             }
 
             else if (enteredJob == 2)
@@ -106,8 +105,7 @@ namespace CelestialTravels0_1.Players
                 gameContext.Player.TimeSkill += 5;
                 Console.WriteLine("TimeSkill +5\n");
                 gameContext.PlayerStats.PrintPlayerStats(gameContext);
-                Console.WriteLine("Return any key to continue...");
-                Console.ReadLine();
+                StandardMessages.ReturnToContinue();
             }
         }
 
@@ -130,7 +128,6 @@ namespace CelestialTravels0_1.Players
                     Console.WriteLine("You must enter a valid name");
                 }
             }
-
             return name;
         }
 
