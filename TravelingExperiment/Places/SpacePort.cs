@@ -28,8 +28,8 @@ namespace CelestialTravels0_1.Places
             Console.WriteLine("8) Print Player Stats");
             Console.WriteLine();
             Console.WriteLine("Please enter your selection");
-
-            playerSelection = Verify.UserInputForNumberedOptionMenu(8);
+            var tempUserInput = Console.ReadLine();
+            playerSelection = Verify.UserInputForNumberedOptionMenu(tempUserInput, 9);
             
             switch (playerSelection)
             {

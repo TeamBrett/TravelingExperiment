@@ -20,12 +20,12 @@ namespace CelestialTravels0_1.Verifications
             }
         }
 
-        public static int UserInputForNumberedOptionMenu(int max)
+        public static int UserInputForNumberedOptionMenu(string tempUserInput, int max)
         {
             int playerSelection;
             while (true)
             {
-                if (int.TryParse(Console.ReadLine(), out int playerInput))
+                if (int.TryParse(tempUserInput, out int playerInput))
                 {
                     if (playerInput >= 0 && playerInput < max)
                     {

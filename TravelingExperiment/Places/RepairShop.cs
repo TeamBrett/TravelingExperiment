@@ -34,7 +34,7 @@ namespace CelestialTravels0_1.Places
                 }
                 else
                 {
-                    ChosenWeaponToRepair = Verify.UserInputForNumberedOptionMenu(gameContext.List.WeaponList.Count);
+                    ChosenWeaponToRepair = Verify.UserInputForNumberedOptionMenu(tempUserInput, gameContext.List.WeaponList.Count);
 
                     // Verify player has enough credits
                     var price = gameContext.List.WeaponList[ChosenWeaponToRepair].DurabilityMax - gameContext.List.WeaponList[ChosenWeaponToRepair].DurabilityCurrent;

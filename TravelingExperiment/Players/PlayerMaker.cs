@@ -18,8 +18,9 @@ namespace CelestialTravels0_1.Players
             var menuMax = MenuOptions.ListOptions(gameContext.List.GenderList);
 
             Console.WriteLine($"\nWhat is your gender? ");
+            var tempUserInput = Console.ReadLine();
 
-            var enteredGender = Verify.UserInputForNumberedOptionMenu(menuMax);
+            var enteredGender = Verify.UserInputForNumberedOptionMenu(tempUserInput, menuMax);
 
 
             if (enteredGender == 0)
@@ -45,8 +46,9 @@ namespace CelestialTravels0_1.Players
             menuMax = MenuOptions.ListOptions(gameContext.List.RaceList);
 
             Console.WriteLine("\nWhat is your race?");
+            tempUserInput = Console.ReadLine();
 
-            var enteredRace = Verify.UserInputForNumberedOptionMenu(menuMax);
+            var enteredRace = Verify.UserInputForNumberedOptionMenu(tempUserInput, menuMax);
 
             if (enteredRace == 0)
             {
@@ -71,8 +73,9 @@ namespace CelestialTravels0_1.Players
             menuMax = MenuOptions.ListOptions(gameContext.List.JobList);
 
             Console.WriteLine("\nWhat is your job?");
+            tempUserInput = Console.ReadLine();
 
-            var enteredJob = Verify.UserInputForNumberedOptionMenu(menuMax);
+            var enteredJob = Verify.UserInputForNumberedOptionMenu(tempUserInput, menuMax);
 
             if (enteredJob == 0)
             {

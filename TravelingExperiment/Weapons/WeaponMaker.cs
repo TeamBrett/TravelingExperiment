@@ -21,7 +21,7 @@ namespace CelestialTravels0_1.Weapons
                 Equiped = false,
                 Price = gameContext.Player.Level * 150,
             };
-            gameContext.PlayerInventory.WeaponList.Add(blaster);
+            gameContext.List.WeaponList.Add(blaster);
 
         }
 
@@ -39,7 +39,7 @@ namespace CelestialTravels0_1.Weapons
             };
             
 
-            gameContext.PlayerInventory.WeaponList.Add(doubleBlaster);
+            gameContext.List.WeaponList.Add(doubleBlaster);
         }
 
         public void CreateWeaponPhotonSword(GameContext gameContext)
@@ -56,7 +56,7 @@ namespace CelestialTravels0_1.Weapons
             };
             
 
-            gameContext.PlayerInventory.WeaponList.Add(photonSword);
+            gameContext.List.WeaponList.Add(photonSword);
         }
 
         public string NameWeapon(GameContext gameContext)

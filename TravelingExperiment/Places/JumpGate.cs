@@ -19,7 +19,9 @@ namespace CelestialTravels0_1.Places
             Console.WriteLine();
             Console.WriteLine("Please enter your selection");
 
-            var playerSelection = Verify.UserInputForNumberedOptionMenu(1);
+            var tempUserInput = Console.ReadLine();
+
+            var playerSelection = Verify.UserInputForNumberedOptionMenu(tempUserInput, 2);
 
 
             switch (playerSelection)
