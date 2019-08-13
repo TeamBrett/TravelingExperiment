@@ -34,12 +34,7 @@ namespace CelestialTravels0_1.Places
                 }
                 else if(tempUserInput == "drop")
                 {
-                    Console.WriteLine(@"Choose which weapon to drop (enter the number).  Or type ""exit"" to exit.");
-                    gameContext.Inventory.EunumerateWeapons(gameContext);
-
-                    var ChosenWeaponToDrop = Verify.UserInputForNumberedOptionMenuWithExit(gameContext, tempUserInput, gameContext.List.WeaponList.Count);
-
-                    gameContext.List.WeaponList.RemoveAt(ChosenWeaponToDrop);
+                    gameContext.Store.DropWeapon(gameContext);
 
                 }
                 else

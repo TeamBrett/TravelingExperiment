@@ -191,12 +191,13 @@ namespace CelestialTravels0_1.Places
             Console.WriteLine(@"0) Blaster (Costs " + gameContext.Blaster.Price + " Credits)");
             Console.WriteLine(@"1) Double Blaster (Costs " + gameContext.DoubleBlaster.Price + " Credits)");
             Console.WriteLine(@"2) Photon Sword (Costs " + gameContext.PhotonSword.Price + " Credits)");
-            Console.WriteLine("3) Exit the store");
+            Console.WriteLine(@"3) Drop a weapon");
+            Console.WriteLine("4) Exit the store");
             Console.WriteLine();
             Console.WriteLine(@"Please select a weapon");
             tempUserInput = Console.ReadLine();
 
-            playerSelection = Verify.UserInputForNumberedOptionMenu(tempUserInput, 4);
+            playerSelection = Verify.UserInputForNumberedOptionMenu(tempUserInput, 5);
 
 
 
@@ -224,6 +225,13 @@ namespace CelestialTravels0_1.Places
                     }
                 case 3:
                     {
+                        // Drop Weapon
+                        gameContext.Store.DropWeapon(gameContext);
+
+                        break;
+                    }
+                case 4:
+                    {
                         // Exit Department
                         gameContext.Store.StoreOptions(gameContext);
 
@@ -232,6 +240,18 @@ namespace CelestialTravels0_1.Places
             }
             gameContext.Store.WeaponsDepartment(gameContext);
 
+        }
+
+        public void DropWeapon(GameContext gameContext)
+        {
+            Console.WriteLine(@"Choose which weapon to drop (enter the number).  Or type ""exit"" to exit.");
+            gameContext.Inventory.EunumerateWeapons(gameContext);
+
+            var tempUserInput = Console.ReadLine();
+
+            var ChosenWeaponToDrop = Verify.UserInputForNumberedOptionMenuWithExit(gameContext, tempUserInput, gameContext.List.WeaponList.Count);
+
+            gameContext.List.WeaponList.RemoveAt(ChosenWeaponToDrop);
         }
     }
 }
