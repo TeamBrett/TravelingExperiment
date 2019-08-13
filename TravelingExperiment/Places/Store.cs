@@ -23,13 +23,13 @@ namespace CelestialTravels0_1.Places
             Console.WriteLine("1) Weapons Department");
             Console.WriteLine("2) Exit Store");
             Console.WriteLine();
-            Console.WriteLine(@"Please select a department, or ""exit"" to leave the store");
+            Console.WriteLine(@"Please select a department");
             Console.WriteLine();
             tempUserInput = Console.ReadLine();
 
             // Input verification and exit.
 
-            playerSelection = Verify.UserInputForNumberedOptionMenuWithExit(gameContext, tempUserInput, 3);
+            playerSelection = Verify.UserInputForNumberedOptionMenu(tempUserInput, 3);
 
 
             switch(playerSelection)
@@ -134,6 +134,7 @@ namespace CelestialTravels0_1.Places
                         break;
                     }
             }
+
         }
 
         public void BuyConsumable(GameContext gameContext, Consumable consumable)
