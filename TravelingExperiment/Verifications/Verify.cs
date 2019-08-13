@@ -45,6 +45,20 @@ namespace CelestialTravels0_1.Verifications
             return playerSelection;
         }
 
+        public static int UserInputForNumberedOptionMenuWithExit(GameContext gameContext, string tempUserInput, int max)
+        {
+            if (tempUserInput == "exit")
+            {
+                gameContext.SpacePort.SpacePortOptions(gameContext);
+                return -1;
+            }
+            else
+            {
+                var playerSelection = Verify.UserInputForNumberedOptionMenu(tempUserInput, 3);
+                return playerSelection;
+            }
+        }
+
         public static bool HasEnoughMoneyToPurchase(GameContext gameContext, int price)
         {
             if (price <= gameContext.Player.Credits)

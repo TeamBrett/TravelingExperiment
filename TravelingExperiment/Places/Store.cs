@@ -2,6 +2,7 @@
 
 using CelestialTravels0_1.Consumables;
 using CelestialTravels0_1.GameContexts;
+using CelestialTravels0_1.Verifications;
 
 
 namespace CelestialTravels0_1.Places
@@ -11,7 +12,7 @@ namespace CelestialTravels0_1.Places
         public void StoreOptions(GameContext gameContext)
         {
             gameContext.Player.Credits = 500000;
-            string playerInput;
+            string tempUserInput;
             int playerSelection;
 
             Console.WriteLine();
@@ -24,27 +25,12 @@ namespace CelestialTravels0_1.Places
             Console.WriteLine();
             Console.WriteLine(@"Please select a department, or ""exit"" to leave the store");
             Console.WriteLine();
-            playerInput = Console.ReadLine();
+            tempUserInput = Console.ReadLine();
 
             // Input verification and exit.
-            while(true)
-            {
-                if(int.TryParse(playerInput, out playerSelection))
-                {
-                    if(playerSelection >= 0 && playerSelection <=2)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("please enter an integer between zero and 2");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Input is not valid, try entering an integer");
-                }
-            }
+
+            playerSelection = Verify.UserInputForNumberedOptionMenuWithExit(gameContext, tempUserInput, 3);
+
 
             switch(playerSelection)
             {
@@ -64,6 +50,7 @@ namespace CelestialTravels0_1.Places
                     }
                 case 2:
                     {
+                        // Exit
                         gameContext.SpacePort.SpacePortOptions(gameContext);
                         break;
                     }
@@ -74,7 +61,7 @@ namespace CelestialTravels0_1.Places
 
         public void ConsumablesDepartment(GameContext gameContext)
         {
-            string playerInput;
+            string tempUserInput;
             int playerSelection;
 
             Console.WriteLine();
@@ -90,33 +77,10 @@ namespace CelestialTravels0_1.Places
             Console.WriteLine(@"6) Smoke Grenade (Allows you to leave the instance while in Battle, Costs 2,000)");
             Console.WriteLine("7) Exit the store");
             Console.WriteLine();
-            Console.WriteLine(@"Please select a consumable, or ""exit"" to leave the department");
+            Console.WriteLine(@"Please select a consumable");
+            tempUserInput = Console.ReadLine();
 
-
-            while (true)
-            {
-                
-                Console.WriteLine();
-                playerInput = Console.ReadLine();
-                if (int.TryParse(playerInput, out playerSelection))
-                {
-                    if (playerSelection >= 0 && playerSelection <= 7)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("please enter an integer between zero and " + (7));
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Input is not valid, try entering an integer");
-                }
-            }
-
-
-
+            playerSelection = Verify.UserInputForNumberedOptionMenu(tempUserInput, 8);
 
             switch (playerSelection)
             {
@@ -215,7 +179,7 @@ namespace CelestialTravels0_1.Places
 
         public void WeaponsDepartment(GameContext gameContext)
         {
-            string playerInput;
+            string tempUserInput;
             int playerSelection;
 
             Console.WriteLine();
@@ -227,30 +191,12 @@ namespace CelestialTravels0_1.Places
             Console.WriteLine(@"2) Photon Sword (Costs " + gameContext.PhotonSword.Price + " Credits)");
             Console.WriteLine("3) Exit the store");
             Console.WriteLine();
-            Console.WriteLine(@"Please select a consumable, or ""exit"" to leave the store");
+            Console.WriteLine(@"Please select a weapon");
+            tempUserInput = Console.ReadLine();
+
+            playerSelection = Verify.UserInputForNumberedOptionMenu(tempUserInput, 4);
 
 
-            while (true)
-            {
-
-                Console.WriteLine();
-                playerInput = Console.ReadLine();
-                if (int.TryParse(playerInput, out playerSelection))
-                {
-                    if (playerSelection >= 0 && playerSelection <= 3)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("please enter an integer between zero and " + (3));
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Input is not valid, try entering an integer");
-                }
-            }
 
             switch (playerSelection)
             {
@@ -282,7 +228,7 @@ namespace CelestialTravels0_1.Places
                         break;
                     }
             }
-        gameContext.Store.WeaponsDepartment(gameContext);
+            gameContext.Store.WeaponsDepartment(gameContext);
 
         }
     }
