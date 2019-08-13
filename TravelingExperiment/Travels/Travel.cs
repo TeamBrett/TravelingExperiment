@@ -220,5 +220,12 @@ namespace CelestialTravels0_1.Travels
                     break;
             }
         }
+
+        public void ReturnToSpacePortFromInstance(GameContext gameContext)
+        {
+            Console.WriteLine("Sending you back to the SpacePort");
+            StandardMessages.ReturnToContinue();
+            gameContext.SpacePort.SpacePortOptions(gameContext);
+        }
     }
 }

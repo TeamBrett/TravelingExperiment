@@ -26,14 +26,12 @@ namespace CelestialTravels0_1.Places
                 "Fae.  In their invasion they have decapitated your parents, disembowled your siblings, and stolen everything you ever had.  You are" +
                 "left to torment, and starvation in a blood bath.");
 
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
+            StandardMessages.ReturnToContinue();
 
             Console.WriteLine("After the carnage, a pilot shows up to find you.  He shepards you onto his spaceship " +
                 "and flies you to the Capital, Brettopia, where you are presented to the Space King of Knowledge.");
 
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
+            StandardMessages.ReturnToContinue();
 
             Console.WriteLine($"SPACE KING BRETT: Young {gameContext.Player.Name} I have heard the tale of your strife at the hand of " +
                 "the Space Sharks.  I weep for your misfortune.  I would avenge your family for you, but our vast " +
@@ -45,14 +43,12 @@ namespace CelestialTravels0_1.Places
                 "with you my most trusted advisor... Mr. Piddles.  Go forth, collect the data, and find a way to defeat " +
                 "the cruel Space Sharks!\n");
 
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
+            StandardMessages.ReturnToContinue();
 
             Console.WriteLine("You gratefully accept your quest, thank the king, and begin to leave with Mr. Piddles.  " +
                 "when you are almost to the door the pilot who found you stops you.\n");
 
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
+            StandardMessages.ReturnToContinue();
 
             Console.WriteLine($"PILOT:  {gameContext.Player.Name} you will need 3 more things on your journey.  Here take my Blaster to " +
                 $"protect yourself and smite your enemies.  You will also need some Credits if you are going to venture " +
@@ -71,26 +67,19 @@ namespace CelestialTravels0_1.Places
             }
 
             Console.WriteLine($"{gameContext.Player.Name} has {gameContext.Player.Credits} Credits\n");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
+            StandardMessages.ReturnToContinue();
 
             Console.WriteLine($"{gameContext.Player.Name.ToUpper()}: Come on Mr. Piddles, Let's go Shark hunting!");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
+            StandardMessages.ReturnToContinue();
 
             Console.WriteLine("MR. PIDDLES: Meow meow meow, meow meow meow meow!\n");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
+            StandardMessages.ReturnToContinue();
 
             gameContext.Fight.DoFight(gameContext);
-            
-            // This is where you travel out of the instance back to the planet
-            Console.WriteLine("Sending you back to the SpacePort");
-            gameContext.Player.SpacePortLocation = "sp1";
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
-            gameContext.SpacePort.SpacePortOptions(gameContext);
 
+            // This is where you travel out of the instance back to the planet
+            gameContext.Player.SpacePortLocation = "sp1";
+            gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
         }
 
         public void Instance2(GameContext gameContext)
@@ -98,13 +87,10 @@ namespace CelestialTravels0_1.Places
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
             Console.WriteLine("you are in instance 2");
-            Console.ReadLine();
-
+            StandardMessages.ReturnToContinue();
             // This is where you travel out of the instance back to the planet
-            Console.WriteLine("Sending you back to the SpacePort");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
-            gameContext.SpacePort.SpacePortOptions(gameContext);
+            gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
+
 
         }
 
@@ -113,13 +99,10 @@ namespace CelestialTravels0_1.Places
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
             Console.WriteLine("you are in instance 10");
-            Console.ReadLine();
-
+            StandardMessages.ReturnToContinue();
             // This is where you travel out of the instance back to the planet
-            Console.WriteLine("Sending you back to the SpacePort");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
-            gameContext.SpacePort.SpacePortOptions(gameContext);
+            gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
+
 
         }
 
@@ -128,13 +111,10 @@ namespace CelestialTravels0_1.Places
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
             Console.WriteLine("you are in instance 11");
-            Console.ReadLine();
-
+            StandardMessages.ReturnToContinue();
             // This is where you travel out of the instance back to the planet
-            Console.WriteLine("Sending you back to the SpacePort");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
-            gameContext.SpacePort.SpacePortOptions(gameContext);
+            gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
+
 
         }
 
@@ -143,13 +123,10 @@ namespace CelestialTravels0_1.Places
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
             Console.WriteLine("you are in instance 20");
-            Console.ReadLine();
-
+            StandardMessages.ReturnToContinue();
             // This is where you travel out of the instance back to the planet
-            Console.WriteLine("Sending you back to the SpacePort");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
-            gameContext.SpacePort.SpacePortOptions(gameContext);
+            gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
+
 
         }
 
@@ -158,13 +135,10 @@ namespace CelestialTravels0_1.Places
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
             Console.WriteLine("you are in instance 21");
-            Console.ReadLine();
-
+            StandardMessages.ReturnToContinue();
             // This is where you travel out of the instance back to the planet
-            Console.WriteLine("Sending you back to the SpacePort");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
-            gameContext.SpacePort.SpacePortOptions(gameContext);
+            gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
+
 
         }
 
@@ -173,13 +147,10 @@ namespace CelestialTravels0_1.Places
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
             Console.WriteLine("you are in instance 30");
-            Console.ReadLine();
-
+            StandardMessages.ReturnToContinue();
             // This is where you travel out of the instance back to the planet
-            Console.WriteLine("Sending you back to the SpacePort");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
-            gameContext.SpacePort.SpacePortOptions(gameContext);
+            gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
+
 
         }
 
@@ -188,13 +159,10 @@ namespace CelestialTravels0_1.Places
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
             Console.WriteLine("you are in instance 31");
-            Console.ReadLine();
-
+            StandardMessages.ReturnToContinue();
             // This is where you travel out of the instance back to the planet
-            Console.WriteLine("Sending you back to the SpacePort");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
-            gameContext.SpacePort.SpacePortOptions(gameContext);
+            gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
+
 
         }
 
@@ -203,13 +171,10 @@ namespace CelestialTravels0_1.Places
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
             Console.WriteLine("you are in instance 40");
-            Console.ReadLine();
-
+            StandardMessages.ReturnToContinue();
             // This is where you travel out of the instance back to the planet
-            Console.WriteLine("Sending you back to the SpacePort");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
-            gameContext.SpacePort.SpacePortOptions(gameContext);
+            gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
+
 
         }
 
@@ -218,13 +183,10 @@ namespace CelestialTravels0_1.Places
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
             Console.WriteLine("you are in instance 41");
-            Console.ReadLine();
-
+            StandardMessages.ReturnToContinue();
             // This is where you travel out of the instance back to the planet
-            Console.WriteLine("Sending you back to the SpacePort");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
-            gameContext.SpacePort.SpacePortOptions(gameContext);
+            gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
+
 
         }
 
@@ -233,13 +195,10 @@ namespace CelestialTravels0_1.Places
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
             Console.WriteLine("you are in instance 50");
-            Console.ReadLine();
-
+            StandardMessages.ReturnToContinue();
             // This is where you travel out of the instance back to the planet
-            Console.WriteLine("Sending you back to the SpacePort");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
-            gameContext.SpacePort.SpacePortOptions(gameContext);
+            gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
+
 
         }
 
@@ -248,13 +207,10 @@ namespace CelestialTravels0_1.Places
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
             Console.WriteLine("you are in instance 51");
-            Console.ReadLine();
-
+            StandardMessages.ReturnToContinue();
             // This is where you travel out of the instance back to the planet
-            Console.WriteLine("Sending you back to the SpacePort");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
-            gameContext.SpacePort.SpacePortOptions(gameContext);
+            gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
+
 
         }
 
@@ -263,13 +219,10 @@ namespace CelestialTravels0_1.Places
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
             Console.WriteLine("you are in instance 60");
-            Console.ReadLine();
-
+            StandardMessages.ReturnToContinue();
             // This is where you travel out of the instance back to the planet
-            Console.WriteLine("Sending you back to the SpacePort");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
-            gameContext.SpacePort.SpacePortOptions(gameContext);
+            gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
+
 
         }
 
@@ -278,13 +231,10 @@ namespace CelestialTravels0_1.Places
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
             Console.WriteLine("you are in instance 61");
-            Console.ReadLine();
-
+            StandardMessages.ReturnToContinue();
             // This is where you travel out of the instance back to the planet
-            Console.WriteLine("Sending you back to the SpacePort");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
-            gameContext.SpacePort.SpacePortOptions(gameContext);
+            gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
+
 
         }
 
@@ -293,13 +243,10 @@ namespace CelestialTravels0_1.Places
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
             Console.WriteLine("you are in instance 70");
-            Console.ReadLine();
-
+            StandardMessages.ReturnToContinue();
             // This is where you travel out of the instance back to the planet
-            Console.WriteLine("Sending you back to the SpacePort");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
-            gameContext.SpacePort.SpacePortOptions(gameContext);
+            gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
+
 
         }
 
@@ -308,13 +255,10 @@ namespace CelestialTravels0_1.Places
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
             Console.WriteLine("you are in instance 71");
-            Console.ReadLine();
-
+            StandardMessages.ReturnToContinue();
             // This is where you travel out of the instance back to the planet
-            Console.WriteLine("Sending you back to the SpacePort");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
-            gameContext.SpacePort.SpacePortOptions(gameContext);
+            gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
+
 
         }
 
@@ -323,13 +267,10 @@ namespace CelestialTravels0_1.Places
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
             Console.WriteLine("you are in instance 80");
-            Console.ReadLine();
-
+            StandardMessages.ReturnToContinue();
             // This is where you travel out of the instance back to the planet
-            Console.WriteLine("Sending you back to the SpacePort");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
-            gameContext.SpacePort.SpacePortOptions(gameContext);
+            gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
+
 
         }
 
@@ -338,13 +279,12 @@ namespace CelestialTravels0_1.Places
             //This is the meet and potatos of the instance(battles and rewards and shit)
 
             Console.WriteLine("you are in instance 81");
-            Console.ReadLine();
+            StandardMessages.ReturnToContinue();
+
 
             // This is where you travel out of the instance back to the planet
-            Console.WriteLine("Sending you back to the SpacePort");
-            Console.WriteLine("Return to continue...");
-            Console.ReadLine();
-            gameContext.SpacePort.SpacePortOptions(gameContext);
+            gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
+
 
         }
     }

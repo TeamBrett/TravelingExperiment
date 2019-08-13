@@ -25,6 +25,8 @@ namespace CelestialTravels0_1.Monsters
 
         public Monster CreateGreenMonster(GameContext gameContext)
         {
+            PlayerAttackCalculator.CalculatePlayerAttack(gameContext);
+
             Monster greenMonster01 = new Monster();
             {
                 greenMonster01.Name = "Green Monster";
@@ -38,6 +40,8 @@ namespace CelestialTravels0_1.Monsters
 
         public Monster CreateRedMonster(GameContext gameContext)
         {
+            PlayerAttackCalculator.CalculatePlayerAttack(gameContext);
+
             Monster redMonster01 = new Monster();
             {
                 redMonster01.Name = "Red Monster";
