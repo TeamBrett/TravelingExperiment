@@ -1,7 +1,7 @@
 ﻿using System;
 
 using CelestialTravels0_1.GameContexts;
-
+using CelestialTravels0_1.Verifications;
 
 namespace CelestialTravels0_1
 {
@@ -19,27 +19,12 @@ namespace CelestialTravels0_1
             Console.WriteLine("2) Quit Now... This game sucks already");
             Console.WriteLine();
             Console.WriteLine("Select an option");
-            int userInput;
-            while (true)
-            {
-                if (int.TryParse(Console.ReadLine(), out userInput))
-                {
-                    if (userInput >= 0 && userInput < 3)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("please enter an integer between zero and 2");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Input is not valid, try entering an integer");
-                }
-            }
+            var tempUserInput = Console.ReadLine();
 
-            switch(userInput)
+            var playerSelection = Verify.UserInputForNumberedOptionMenu(tempUserInput, 3);
+
+
+            switch(playerSelection)
             {
                 case 0:
                     // New game
