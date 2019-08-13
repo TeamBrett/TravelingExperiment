@@ -17,21 +17,21 @@ namespace CelestialTravels0_1.Verifications
             }
         }
 
-        public static int UserInputForNumberedOptionMenu(int min, int max)
+        public static int UserInputForNumberedOptionMenu(int max)
         {
             int playerSelection;
             while (true)
             {
                 if (int.TryParse(Console.ReadLine(), out int playerInput))
                 {
-                    if (playerInput >= min && playerInput <= max)
+                    if (playerInput >= 0 && playerInput <= max)
                     {
                         playerSelection = playerInput;
                         break;
                     }
                     else
                     {
-                        Console.WriteLine("please enter an integer between " + min + " and " + max);
+                        Console.WriteLine("please enter an integer between 0 and " + max);
                     }
                 }
                 else

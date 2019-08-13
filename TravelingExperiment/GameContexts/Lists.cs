@@ -12,5 +12,7 @@ namespace CelestialTravels0_1.GameContexts
         public List<SpacePort> listSpacePort { get; set; } = new List<SpacePort>();
         public List<Instance> listInstance { get; set; } = new List<Instance>();
 
+        public List<string> GenderList { get; set; } = new List<string> { "Male", "Female", "NonBinary" };
+
     }
 }

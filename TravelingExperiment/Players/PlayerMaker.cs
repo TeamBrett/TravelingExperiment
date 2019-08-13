@@ -23,30 +23,28 @@ namespace CelestialTravels0_1.Players
 
             do
             {
-                GenderOptions.ListGenders();
+                var menuMax = MenuOptions.ListOptions(gameContext.List.GenderList);
 
                 Console.WriteLine($"\nWhat is your gender? ");
 
-                var enteredGender = Console.ReadLine();
-
-                // Verify Gender 
+                var enteredGender = Verify.UserInputForNumberedOptionMenu(menuMax);
 
 
-                if (enteredGender == "Male")
+                if (enteredGender == 0)
                 {
                     gameContext.Player.Gender = "Male";
                     Console.WriteLine($"\n{ gameContext.Player.Name} is {gameContext.Player.Gender}\n");
                     genderValid = true;
                 }
 
-                else if (enteredGender == "Female")
+                else if (enteredGender == 1)
                 {
                     gameContext.Player.Gender = "Female";
                     Console.WriteLine($"\n{ gameContext.Player.Name} is {gameContext.Player.Gender}\n");
                     genderValid = true;
                 }
 
-                else if (enteredGender == "NonBinary")
+                else if (enteredGender == 2)
                 {
                     gameContext.Player.Gender = "NonBinary";
                     Console.WriteLine($"\n{ gameContext.Player.Name} is {gameContext.Player.Gender}\n");
