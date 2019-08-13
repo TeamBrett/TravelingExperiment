@@ -123,19 +123,19 @@ namespace CelestialTravels0_1.Fights
             if (attacker == gameContext.Player)
             {
                 Console.WriteLine("Choose which weapon to attack with (enter the number) ");
-                gameContext.PlayerInventory.EunumerateWeapons();
+                gameContext.PlayerInventory.EunumerateWeapons(gameContext);
                 int ChosenWeaponToAttackWith;
                 while(true)
                 {
                     if (int.TryParse(Console.ReadLine(), out ChosenWeaponToAttackWith))
                     {
-                        if (ChosenWeaponToAttackWith >= 0 && ChosenWeaponToAttackWith < gameContext.PlayerInventory.WeaponList.Count)
+                        if (ChosenWeaponToAttackWith >= 0 && ChosenWeaponToAttackWith < gameContext.List.WeaponList.Count)
                         {
                             break;
                         }
                         else
                         {
-                            Console.WriteLine("please enter an integer between zero and " + (gameContext.PlayerInventory.WeaponList.Count - 1));
+                            Console.WriteLine("please enter an integer between zero and " + (gameContext.List.WeaponList.Count - 1));
                         }
                     }
                     else
@@ -145,11 +145,11 @@ namespace CelestialTravels0_1.Fights
                 }
                 
 
-                gameContext.Player.WeaponDamageCurrent = gameContext.PlayerInventory.WeaponList[ChosenWeaponToAttackWith].Attack;
+                gameContext.Player.WeaponDamageCurrent = gameContext.List.WeaponList[ChosenWeaponToAttackWith].Attack;
 
                 PlayerAttackCalculator.CalculatePlayerAttack(gameContext);
 
-                gameContext.PlayerInventory.WeaponList[ChosenWeaponToAttackWith].DurabilityCurrent -= 1;
+                gameContext.List.WeaponList[ChosenWeaponToAttackWith].DurabilityCurrent -= 1;
             }
 
         }
