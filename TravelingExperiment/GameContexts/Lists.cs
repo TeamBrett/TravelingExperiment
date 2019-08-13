@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 using CelestialTravels0_1.Places;
-
+using CelestialTravels0_1.Weapons;
 
 namespace CelestialTravels0_1.GameContexts
 {
@@ -16,7 +16,8 @@ namespace CelestialTravels0_1.GameContexts
         public List<string> GenderList { get; set; } = new List<string> { "Male", "Female", "NonBinary" };
         public List<string> RaceList { get; set; } = new List<string> { "Lizarian", "Cepholarian", "Fuzzarian" };
         public List<string> JobList { get; set; } = new List<string> { "Navigator", "Gunslinger", "Timebender" };
-
+        // Weapons Lists
+        public List<Weapon> WeaponList { get; set; } = new List<Weapon>();
 
 
     }

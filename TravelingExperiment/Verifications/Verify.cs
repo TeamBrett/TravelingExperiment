@@ -1,5 +1,8 @@
 ﻿using System;
 
+using CelestialTravels0_1.GameContexts;
+
+
 
 namespace CelestialTravels0_1.Verifications
 {
@@ -7,7 +10,7 @@ namespace CelestialTravels0_1.Verifications
     {
         public static bool StringIsNotNull(string input)
         {
-            if(input.Length > 0)
+            if (input.Length > 0)
             {
                 return true;
             }
@@ -24,14 +27,14 @@ namespace CelestialTravels0_1.Verifications
             {
                 if (int.TryParse(Console.ReadLine(), out int playerInput))
                 {
-                    if (playerInput >= 0 && playerInput <= max)
+                    if (playerInput >= 0 && playerInput < max)
                     {
                         playerSelection = playerInput;
                         break;
                     }
                     else
                     {
-                        Console.WriteLine("please enter an integer between 0 and " + max);
+                        Console.WriteLine("please enter an integer between 0 and " + (max - 1));
                     }
                 }
                 else
@@ -40,6 +43,20 @@ namespace CelestialTravels0_1.Verifications
                 }
             }
             return playerSelection;
+        }
+
+        public static bool HasEnoughMoneyToPurchase(GameContext gameContext, int price)
+        {
+            if (price <= gameContext.Player.Credits)
+            {
+                gameContext.Player.Credits -= price;
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("You cannot afford this");
+                return false;
+            }
         }
     }
 }

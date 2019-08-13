@@ -1,6 +1,8 @@
 ﻿using System;
 
 using CelestialTravels0_1.GameContexts;
+using CelestialTravels0_1.Verifications;
+
 
 
 namespace CelestialTravels0_1.Places
@@ -13,12 +15,15 @@ namespace CelestialTravels0_1.Places
         {
             while (true)
             {
+                // Heal Player
                 Console.WriteLine();
                 Console.WriteLine(gameContext.Player.Name + " fully healed");
                 Console.WriteLine();
                 gameContext.Player.HitPointsCurrent = gameContext.Player.HitPointsTotal;
+
+                // Repair Weapons
                 Console.WriteLine(@"Choose which weapon to repair (enter the number).  Or type ""exit"" to exit.");
-                gameContext.PlayerInventory.EunumerateWeapons();
+                gameContext.Inventory.EunumerateWeapons(gameContext);
                 string tempUserInput;
                 int ChosenWeaponToRepair;
                 tempUserInput = Console.ReadLine();
@@ -29,33 +34,17 @@ namespace CelestialTravels0_1.Places
                 }
                 else
                 {
-                    //Checks to see if the input is an int
-                    if (int.TryParse(tempUserInput, out ChosenWeaponToRepair)) 
+                    ChosenWeaponToRepair = Verify.UserInputForNumberedOptionMenu(gameContext.List.WeaponList.Count);
+
+                    // Verify player has enough credits
+                    var price = gameContext.List.WeaponList[ChosenWeaponToRepair].DurabilityMax - gameContext.List.WeaponList[ChosenWeaponToRepair].DurabilityCurrent;
+
+                    if(Verify.HasEnoughMoneyToPurchase(gameContext, price))
                     {
-                        // Checks that the user input is a valid int.
-                        if (ChosenWeaponToRepair >= 0 && ChosenWeaponToRepair < gameContext.PlayerInventory.WeaponList.Count) 
-                        {
-                            // Checks that the player has enough Credits to buy the repair.
-                            if(gameContext.PlayerInventory.WeaponList[ChosenWeaponToRepair].DurabilityMax - gameContext.PlayerInventory.WeaponList[ChosenWeaponToRepair].DurabilityCurrent <= gameContext.Player.Credits)
-                            {
-                                gameContext.Player.Credits -= gameContext.PlayerInventory.WeaponList[ChosenWeaponToRepair].DurabilityMax - gameContext.PlayerInventory.WeaponList[ChosenWeaponToRepair].DurabilityCurrent;
-                                gameContext.PlayerInventory.WeaponList[ChosenWeaponToRepair].DurabilityCurrent = gameContext.PlayerInventory.WeaponList[ChosenWeaponToRepair].DurabilityMax;
-                                Console.WriteLine();
-                                Console.WriteLine(gameContext.PlayerInventory.WeaponList[ChosenWeaponToRepair].Name + " has been repaired");
-                            }
-                            else
-                            {
-                                Console.WriteLine("You do not have enough Credits to repair this item.");
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine("please enter an integer between zero and " + (gameContext.PlayerInventory.WeaponList.Count - 1));
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Input is not valid, try entering an integer");
+                        gameContext.List.WeaponList[ChosenWeaponToRepair].DurabilityCurrent = gameContext.List.WeaponList[ChosenWeaponToRepair].DurabilityMax;
+                        Console.WriteLine();
+                        Console.WriteLine(gameContext.List.WeaponList[ChosenWeaponToRepair].Name + " has been repaired");
+                        StandardMessages.ReturnToContinue();
                     }
                 }
             }

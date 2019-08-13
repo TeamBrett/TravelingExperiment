@@ -1,13 +1,14 @@
 ﻿using System;
 
 using CelestialTravels0_1.GameContexts;
+using CelestialTravels0_1.Verifications;
+
 
 
 namespace CelestialTravels0_1.Places
 {
     public class SpacePort : Place
     {
-
         public void SpacePortOptions(GameContext gameContext)
         {
             int playerSelection;
@@ -28,27 +29,8 @@ namespace CelestialTravels0_1.Places
             Console.WriteLine();
             Console.WriteLine("Please enter your selection");
 
-            int playerInput;
-            while (true)
-            {
-                if (int.TryParse(Console.ReadLine(), out playerInput))
-                {
-                    if (playerInput >= 0 && playerInput <= 8)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("please enter an integer between zero and " + (8));
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Input is not valid, try entering an integer");
-                }
-            }
-
-            playerSelection = playerInput;
+            playerSelection = Verify.UserInputForNumberedOptionMenu(8);
+            
             switch (playerSelection)
             {
                 case 0:
