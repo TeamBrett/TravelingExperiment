@@ -35,6 +35,7 @@ namespace CelestialTravels0_1.Players
             Console.WriteLine($"ARMOR SKILL:........{gameContext.Player.ArmorSkill}");
             Console.WriteLine($"NAVIGATION SKILL:...{gameContext.Player.NavigationSkill}");
             Console.WriteLine($"TIME SKILL:.........{gameContext.Player.TimeSkill}");
+            StandardMessages.ReturnToContinue();
         }
     }
 }

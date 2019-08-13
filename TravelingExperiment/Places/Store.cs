@@ -130,7 +130,7 @@ namespace CelestialTravels0_1.Places
                     }
                 case 7:
                     {
-                        gameContext.Store.ConsumablesDepartment(gameContext);
+                        gameContext.Store.StoreOptions(gameContext);
                         break;
                     }
             }
@@ -160,6 +160,7 @@ namespace CelestialTravels0_1.Places
                             Console.WriteLine();
                             Console.WriteLine($"You bought " + quantitySelection + " " + consumable.Name + " for " + (quantitySelection * consumable.Price) + " Credits");
                             Console.WriteLine();
+                            StandardMessages.ReturnToContinue();
 
                             gameContext.Store.ConsumablesDepartment(gameContext);
 

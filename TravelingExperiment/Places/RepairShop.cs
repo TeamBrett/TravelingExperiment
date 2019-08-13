@@ -32,6 +32,16 @@ namespace CelestialTravels0_1.Places
                 {
                     gameContext.SpacePort.SpacePortOptions(gameContext);
                 }
+                else if(tempUserInput == "drop")
+                {
+                    Console.WriteLine(@"Choose which weapon to drop (enter the number).  Or type ""exit"" to exit.");
+                    gameContext.Inventory.EunumerateWeapons(gameContext);
+
+                    var ChosenWeaponToDrop = Verify.UserInputForNumberedOptionMenuWithExit(gameContext, tempUserInput, gameContext.List.WeaponList.Count);
+
+                    gameContext.List.WeaponList.RemoveAt(ChosenWeaponToDrop);
+
+                }
                 else
                 {
                     ChosenWeaponToRepair = Verify.UserInputForNumberedOptionMenu(tempUserInput, gameContext.List.WeaponList.Count);

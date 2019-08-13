@@ -73,6 +73,7 @@ namespace CelestialTravels0_1.Weapons
             Console.WriteLine("\n");
             Console.WriteLine("Your new weapon's name is " + temporaryWeaponNameVariable);
             Console.WriteLine("\n");
+            StandardMessages.ReturnToContinue();
             return temporaryWeaponNameVariable;
         }
     }
