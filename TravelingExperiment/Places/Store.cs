@@ -251,7 +251,10 @@ namespace CelestialTravels0_1.Places
 
             var ChosenWeaponToDrop = Verify.UserInputForNumberedOptionMenuWithExit(gameContext, tempUserInput, gameContext.List.WeaponList.Count);
 
+            Console.WriteLine(gameContext.List.WeaponList[ChosenWeaponToDrop].Type + " " + gameContext.List.WeaponList[ChosenWeaponToDrop].Name + "has ben dropped");
+
             gameContext.List.WeaponList.RemoveAt(ChosenWeaponToDrop);
+            
         }
     }
 }
