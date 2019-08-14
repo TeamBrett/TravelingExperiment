@@ -1,14 +1,26 @@
 ﻿using System;
 
 using CelestialTravels0_1.GameContexts;
-
-
+using CelestialTravels0_1.UserInterface;
 
 namespace CelestialTravels0_1.Verifications
 {
-    public static class Verify
+    // bf: a common name for a class like this is "Validator".
+    public class Verify
     {
-        public static bool StringIsNotNull(string input)
+        private readonly IInputOutput io;
+
+        public Verify(IInputOutput userInterface)
+        {
+            this.io = userInterface;
+        }
+
+        internal Verify()
+        {
+            this.io = new ConsoleInputOutput();
+        }
+
+        public bool StringIsNotNull(string input)
         {
             if (input.Length > 0)
             {
@@ -20,46 +32,7 @@ namespace CelestialTravels0_1.Verifications
             }
         }
 
-        public static int UserInputForNumberedOptionMenu(string tempUserInput, int max)
-        {
-            int playerSelection;
-            while (true)
-            {
-                if (int.TryParse(tempUserInput, out int playerInput))
-                {
-                    if (playerInput >= 0 && playerInput < max)
-                    {
-                        playerSelection = playerInput;
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("please enter an integer between 0 and " + (max - 1));
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Input is not valid, try entering an integer");
-                }
-            }
-            return playerSelection;
-        }
-
-        public static int UserInputForNumberedOptionMenuWithExit(GameContext gameContext, string tempUserInput, int max)
-        {
-            if (tempUserInput == "exit")
-            {
-                gameContext.SpacePort.SpacePortOptions(gameContext);
-                return -1;
-            }
-            else
-            {
-                var playerSelection = Verify.UserInputForNumberedOptionMenu(tempUserInput, 3);
-                return playerSelection;
-            }
-        }
-
-        public static bool HasEnoughMoneyToPurchase(GameContext gameContext, int price)
+        public bool HasEnoughMoneyToPurchase(GameContext gameContext, int price)
         {
             if (price <= gameContext.Player.Credits)
             {
@@ -68,7 +41,7 @@ namespace CelestialTravels0_1.Verifications
             }
             else
             {
-                Console.WriteLine("You cannot afford this");
+                this.io.WriteLine("You cannot afford this");
                 return false;
             }
         }

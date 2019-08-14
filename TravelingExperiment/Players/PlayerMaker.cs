@@ -1,9 +1,8 @@
 ﻿using System;
 
 using CelestialTravels0_1.GameContexts;
+using CelestialTravels0_1.UserInterface;
 using CelestialTravels0_1.Verifications;
-
-
 
 namespace CelestialTravels0_1.Players
 {
@@ -11,30 +10,26 @@ namespace CelestialTravels0_1.Players
     {
         public void CreatePlayer(GameContext gameContext)
         {
-            gameContext.Player.Name = GetPlayerName();
+            gameContext.Player.Name = this.GetPlayerName();
 
-            
             // Gender selection
             var menuMax = MenuOptions.ListOptions(gameContext.List.GenderList);
 
             Console.WriteLine($"\nWhat is your gender? ");
             var tempUserInput = Console.ReadLine();
 
-            var enteredGender = Verify.UserInputForNumberedOptionMenu(tempUserInput, menuMax);
-
+            var enteredGender = new InteractionService().GetUserInputForNumberedOptionMenu(tempUserInput, menuMax);
 
             if (enteredGender == 0)
             {
                 gameContext.Player.Gender = "Male";
                 Console.WriteLine($"\n{ gameContext.Player.Name} is {gameContext.Player.Gender}\n");
             }
-
             else if (enteredGender == 1)
             {
                 gameContext.Player.Gender = "Female";
                 Console.WriteLine($"\n{ gameContext.Player.Name} is {gameContext.Player.Gender}\n");
             }
-
             else if (enteredGender == 2)
             {
                 gameContext.Player.Gender = "NonBinary";
@@ -42,26 +37,23 @@ namespace CelestialTravels0_1.Players
             }
 
             // Race Selection
-
             menuMax = MenuOptions.ListOptions(gameContext.List.RaceList);
 
             Console.WriteLine("\nWhat is your race?");
             tempUserInput = Console.ReadLine();
 
-            var enteredRace = Verify.UserInputForNumberedOptionMenu(tempUserInput, menuMax);
+            var enteredRace = new InteractionService().GetUserInputForNumberedOptionMenu(tempUserInput, menuMax);
 
             if (enteredRace == 0)
             {
                 gameContext.Player.Race = "Lizarian";
                 Console.WriteLine($"\n{ gameContext.Player.Name} is a {gameContext.Player.Gender} {gameContext.Player.Race}\n");
             }
-
             else if (enteredRace == 1)
             {
                 gameContext.Player.Race = "Cepholarian";
                 Console.WriteLine($"\n{ gameContext.Player.Name} is a {gameContext.Player.Gender} {gameContext.Player.Race}\n");
             }
-
             else if (enteredRace == 2)
             {
                 gameContext.Player.Race = "Fuzzarian";
@@ -69,13 +61,12 @@ namespace CelestialTravels0_1.Players
             }
 
             // Job Selection
-
             menuMax = MenuOptions.ListOptions(gameContext.List.JobList);
 
             Console.WriteLine("\nWhat is your job?");
             tempUserInput = Console.ReadLine();
 
-            var enteredJob = Verify.UserInputForNumberedOptionMenu(tempUserInput, menuMax);
+            var enteredJob = new InteractionService().GetUserInputForNumberedOptionMenu(tempUserInput, menuMax);
 
             if (enteredJob == 0)
             {
@@ -86,11 +77,11 @@ namespace CelestialTravels0_1.Players
                 {
                     Console.WriteLine($"{gameContext.Player.Name} the Navi >*^,^,^~~~");
                 }
+
                 Console.WriteLine("NavigationSkill +5\n");
                 gameContext.PlayerStats.PrintPlayerStats(gameContext);
                 StandardMessages.ReturnToContinue();
             }
-
             else if (enteredJob == 1)
             {
                 gameContext.Player.Job = "Gunslinger";
@@ -100,7 +91,6 @@ namespace CelestialTravels0_1.Players
                 gameContext.PlayerStats.PrintPlayerStats(gameContext);
                 StandardMessages.ReturnToContinue();
             }
-
             else if (enteredJob == 2)
             {
                 gameContext.Player.Job = "Timebender";
@@ -121,7 +111,7 @@ namespace CelestialTravels0_1.Players
                 name = Console.ReadLine();
 
                 // Verification here
-                if (Verify.StringIsNotNull(name))
+                if (new Verify().StringIsNotNull(name))
                 {
                     Console.WriteLine($"Hello { name} \n");
                     break;
@@ -131,8 +121,8 @@ namespace CelestialTravels0_1.Players
                     Console.WriteLine("You must enter a valid name");
                 }
             }
+
             return name;
         }
-
     }
 }

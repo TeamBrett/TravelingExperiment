@@ -1,28 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using CelestialTravels0_1.Bases;
-using CelestialTravels0_1.Consumables;
+﻿using CelestialTravels0_1.Consumables;
 using CelestialTravels0_1.Consumables.EnergyKits;
 using CelestialTravels0_1.Consumables.HealthKits;
 using CelestialTravels0_1.Fights;
 using CelestialTravels0_1.GameContexts;
 using CelestialTravels0_1.Monsters;
+using CelestialTravels0_1.Persistence;
 using CelestialTravels0_1.Places;
 using CelestialTravels0_1.Players;
-using CelestialTravels0_1.Save_Load;
 using CelestialTravels0_1.Travels;
-using CelestialTravels0_1.Verifications;
 using CelestialTravels0_1.Weapons;
-
-
 
 namespace CelestialTravels0_1
 {
-    class Program
+    public static class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             // Variables that go into GameContext
             var list = new Lists();
@@ -52,7 +44,6 @@ namespace CelestialTravels0_1
             var blaster = new Weapon() { Price = player.Level * 150 };
             var doubleBlaster = new Weapon() { Price = player.Level * 300 };
             var photonSword = new Weapon() { Price = player.Level * 450 };
-
 
             // Mechanics for Fighting
             var fight = new Fight();
@@ -97,7 +88,6 @@ namespace CelestialTravels0_1
             };
 
             // Monster Creation for Fighting
-
             var whiteMonster01 = monsterMaker.CreateWhiteMonster(gameContext);
             var whiteMonster02 = monsterMaker.CreateWhiteMonster(gameContext);
             var whiteMonster03 = monsterMaker.CreateWhiteMonster(gameContext);
@@ -118,11 +108,9 @@ namespace CelestialTravels0_1
             gameContext.RedMonster02 = redMonster02;
             gameContext.RedMonster03 = redMonster03;
 
-
             // Creating base variables
             var place = new Place();
             var startUpScreen = new StartUpScreen();
-
 
             // Creating JumpGates
             var jumpGate1 = new JumpGate() { InSolarSystem = 1, Name = "jg1" };
@@ -216,29 +204,10 @@ namespace CelestialTravels0_1
             gameContext.List.listInstance.Add(instance80);
             gameContext.List.listInstance.Add(instance81);
 
-
             // Test area
 
-
-
-
-
-
-
-
-
-
             // Game Starts here
-
             startUpScreen.StartUp(gameContext);
-
-
-
-
-
-
-
-
         }
     }
 }

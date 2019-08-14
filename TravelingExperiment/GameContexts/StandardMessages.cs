@@ -10,6 +10,6 @@ namespace CelestialTravels0_1.GameContexts
         {
             Console.WriteLine("Return to continue...");
             Console.ReadLine();
-        } 
+        }
     }
 }

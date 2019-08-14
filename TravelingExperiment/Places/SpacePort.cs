@@ -1,9 +1,7 @@
 ﻿using System;
 
 using CelestialTravels0_1.GameContexts;
-using CelestialTravels0_1.Verifications;
-
-
+using CelestialTravels0_1.UserInterface;
 
 namespace CelestialTravels0_1.Places
 {
@@ -29,8 +27,8 @@ namespace CelestialTravels0_1.Places
             Console.WriteLine();
             Console.WriteLine("Please enter your selection");
             var tempUserInput = Console.ReadLine();
-            playerSelection = Verify.UserInputForNumberedOptionMenu(tempUserInput, 9);
-            
+            playerSelection = new InteractionService().GetUserInputForNumberedOptionMenu(tempUserInput, 9);
+
             switch (playerSelection)
             {
                 case 0:
@@ -75,7 +73,6 @@ namespace CelestialTravels0_1.Places
                     gameContext.SpacePort.SpacePortOptions(gameContext);
                     break;
             }
-
         }
     }
 }

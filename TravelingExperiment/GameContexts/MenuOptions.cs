@@ -13,6 +13,7 @@ namespace CelestialTravels0_1.GameContexts
             {
                 Console.WriteLine(list.IndexOf(thing) + ") " + thing);
             }
+
             return menuMax;
         }
     }

@@ -5,6 +5,13 @@ VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CelestialTravels0_1", "TravelingExperiment\CelestialTravels0_1.csproj", "{B26D1938-8A9B-472F-8570-D062A57F9101}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{F1DD64CB-FD4F-4CFD-9A40-57EB775EBEF2}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Flemco\Aklesia\Common.ruleset = ..\..\Flemco\Aklesia\Common.ruleset
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelestialTravels.Unit.Tests", "CelestialTravels.Unit.Tests\CelestialTravels.Unit.Tests.csproj", "{7605B756-75FC-418A-B017-A8E8647C7A1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +22,10 @@ Global
 		{B26D1938-8A9B-472F-8570-D062A57F9101}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B26D1938-8A9B-472F-8570-D062A57F9101}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B26D1938-8A9B-472F-8570-D062A57F9101}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7605B756-75FC-418A-B017-A8E8647C7A1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7605B756-75FC-418A-B017-A8E8647C7A1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7605B756-75FC-418A-B017-A8E8647C7A1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7605B756-75FC-418A-B017-A8E8647C7A1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

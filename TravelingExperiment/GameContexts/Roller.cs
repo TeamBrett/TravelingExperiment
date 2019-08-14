@@ -1,7 +1,5 @@
 ﻿using System;
 
-
-
 namespace CelestialTravels0_1.GameContexts
 {
     public class Roller

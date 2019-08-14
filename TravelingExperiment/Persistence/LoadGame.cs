@@ -1,17 +1,15 @@
 ﻿using System;
 using System.IO;
+using CelestialTravels0_1.GameContexts;
 using Newtonsoft.Json;
 
-using CelestialTravels0_1.GameContexts;
-
-
-namespace CelestialTravels0_1.Save_Load
+namespace CelestialTravels0_1.Persistence
 {
     public class LoadGame
     {
         public void Load(GameContext gameContext)
         {
-            while(true)
+            while (true)
             {
                 try
                 {
@@ -23,11 +21,12 @@ namespace CelestialTravels0_1.Save_Load
                     {
                         Console.WriteLine(file);
                     }
+
                     Console.WriteLine(@"Enter the name of the file you wish to load (do not include the c:\CelestialTravels\save\)");
                     Console.WriteLine(@"Enter ""exit"" to exit Load Game");
 
                     var gameToLoad = Console.ReadLine();
-                    if(gameToLoad == "exit")
+                    if (gameToLoad == "exit")
                     {
                         break;
                     }
@@ -36,11 +35,12 @@ namespace CelestialTravels0_1.Save_Load
                     GameContext gameContextLoad = JsonConvert.DeserializeObject<GameContext>(File.ReadAllText(@"c:\CelestialTravels\Save\" + gameToLoad + ".json"));
                     gameContext = gameContextLoad;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Console.WriteLine("Something went wrong");
                     Console.WriteLine(ex.ToString());
                 }
+
                 Console.WriteLine();
                 Console.WriteLine("Game Loaded");
                 Console.WriteLine();
@@ -48,7 +48,6 @@ namespace CelestialTravels0_1.Save_Load
 
                 gameContext.SpacePort.SpacePortOptions(gameContext);
                 break;
-
             }
         }
     }

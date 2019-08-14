@@ -2,26 +2,19 @@
 
 using CelestialTravels0_1.GameContexts;
 
-
 namespace CelestialTravels0_1.Places
-
 {
     public class Instance : Place
     {
         public string InSpacePort { get; set; }
-
-
-
 
         public void Instance1(GameContext gameContext)
         {
             // PlayerMaker part of the game
             gameContext.PlayerMaker.CreatePlayer(gameContext);
 
-
-            //This is the meet and potatos of the instance(battles and rewards and shit)
-
-            // need to fix the formating of all this text 
+            // This is the meet and potatos of the instance(battles and rewards and shit)
+            // need to fix the formating of all this text.
             Console.WriteLine("After a childhood of loving protection, and peace, an evil race of Space Sharks have/n shown up at your home planet of" +
                 "Fae.  In their invasion they have decapitated your parents, disembowled your siblings, and stolen everything you ever had.  You are" +
                 "left to torment, and starvation in a blood bath.");
@@ -56,10 +49,8 @@ namespace CelestialTravels0_1.Places
 
             Console.WriteLine(@"Hey thanks for the Cash and Gun man!");
 
-
             // Weapon Made/Received
             gameContext.WeaponMaker.CreateWeaponBlaster(gameContext);
-
 
             if (gameContext.Player.Credits < 100)
             {
@@ -84,208 +75,172 @@ namespace CelestialTravels0_1.Places
 
         public void Instance2(GameContext gameContext)
         {
-            //This is the meet and potatos of the instance(battles and rewards and shit)
-
+            // This is the meet and potatos of the instance(battles and rewards and shit)
             Console.WriteLine("you are in instance 2");
             StandardMessages.ReturnToContinue();
+
             // This is where you travel out of the instance back to the planet
             gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
-
-
         }
 
         public void Instance10(GameContext gameContext)
         {
-            //This is the meet and potatos of the instance(battles and rewards and shit)
-
+            // This is the meet and potatos of the instance(battles and rewards and shit)
             Console.WriteLine("you are in instance 10");
             StandardMessages.ReturnToContinue();
+
             // This is where you travel out of the instance back to the planet
             gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
-
-
         }
 
         public void Instance11(GameContext gameContext)
         {
-            //This is the meet and potatos of the instance(battles and rewards and shit)
-
+            // This is the meet and potatos of the instance(battles and rewards and shit)
             Console.WriteLine("you are in instance 11");
             StandardMessages.ReturnToContinue();
+
             // This is where you travel out of the instance back to the planet
             gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
-
-
         }
 
         public void Instance20(GameContext gameContext)
         {
-            //This is the meet and potatos of the instance(battles and rewards and shit)
-
+            // This is the meet and potatos of the instance(battles and rewards and shit)
             Console.WriteLine("you are in instance 20");
             StandardMessages.ReturnToContinue();
+
             // This is where you travel out of the instance back to the planet
             gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
-
-
         }
 
         public void Instance21(GameContext gameContext)
         {
-            //This is the meet and potatos of the instance(battles and rewards and shit)
-
+            // This is the meet and potatos of the instance(battles and rewards and shit)
             Console.WriteLine("you are in instance 21");
             StandardMessages.ReturnToContinue();
+
             // This is where you travel out of the instance back to the planet
             gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
-
-
         }
 
         public void Instance30(GameContext gameContext)
         {
-            //This is the meet and potatos of the instance(battles and rewards and shit)
-
+            // This is the meet and potatos of the instance(battles and rewards and shit)
             Console.WriteLine("you are in instance 30");
             StandardMessages.ReturnToContinue();
+
             // This is where you travel out of the instance back to the planet
             gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
-
-
         }
 
         public void Instance31(GameContext gameContext)
         {
-            //This is the meet and potatos of the instance(battles and rewards and shit)
-
+            // This is the meet and potatos of the instance(battles and rewards and shit)
             Console.WriteLine("you are in instance 31");
             StandardMessages.ReturnToContinue();
+
             // This is where you travel out of the instance back to the planet
             gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
-
-
         }
 
         public void Instance40(GameContext gameContext)
         {
-            //This is the meet and potatos of the instance(battles and rewards and shit)
-
+            // This is the meet and potatos of the instance(battles and rewards and shit)
             Console.WriteLine("you are in instance 40");
             StandardMessages.ReturnToContinue();
+
             // This is where you travel out of the instance back to the planet
             gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
-
-
         }
 
         public void Instance41(GameContext gameContext)
         {
-            //This is the meet and potatos of the instance(battles and rewards and shit)
-
+            // This is the meet and potatos of the instance(battles and rewards and shit)
             Console.WriteLine("you are in instance 41");
             StandardMessages.ReturnToContinue();
+
             // This is where you travel out of the instance back to the planet
             gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
-
-
         }
 
         public void Instance50(GameContext gameContext)
         {
-            //This is the meet and potatos of the instance(battles and rewards and shit)
-
+            // This is the meet and potatos of the instance(battles and rewards and shit)
             Console.WriteLine("you are in instance 50");
             StandardMessages.ReturnToContinue();
+
             // This is where you travel out of the instance back to the planet
             gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
-
-
         }
 
         public void Instance51(GameContext gameContext)
         {
-            //This is the meet and potatos of the instance(battles and rewards and shit)
-
+            // This is the meet and potatos of the instance(battles and rewards and shit)
             Console.WriteLine("you are in instance 51");
             StandardMessages.ReturnToContinue();
+
             // This is where you travel out of the instance back to the planet
             gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
-
-
         }
 
         public void Instance60(GameContext gameContext)
         {
-            //This is the meet and potatos of the instance(battles and rewards and shit)
-
+            // This is the meet and potatos of the instance(battles and rewards and shit)
             Console.WriteLine("you are in instance 60");
             StandardMessages.ReturnToContinue();
+
             // This is where you travel out of the instance back to the planet
             gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
-
-
         }
 
         public void Instance61(GameContext gameContext)
         {
-            //This is the meet and potatos of the instance(battles and rewards and shit)
-
+            // This is the meet and potatos of the instance(battles and rewards and shit)
             Console.WriteLine("you are in instance 61");
             StandardMessages.ReturnToContinue();
+
             // This is where you travel out of the instance back to the planet
             gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
-
-
         }
 
         public void Instance70(GameContext gameContext)
         {
-            //This is the meet and potatos of the instance(battles and rewards and shit)
-
+            // This is the meet and potatos of the instance(battles and rewards and shit)
             Console.WriteLine("you are in instance 70");
             StandardMessages.ReturnToContinue();
+
             // This is where you travel out of the instance back to the planet
             gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
-
-
         }
 
         public void Instance71(GameContext gameContext)
         {
-            //This is the meet and potatos of the instance(battles and rewards and shit)
-
+            // This is the meet and potatos of the instance(battles and rewards and shit)
             Console.WriteLine("you are in instance 71");
             StandardMessages.ReturnToContinue();
+
             // This is where you travel out of the instance back to the planet
             gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
-
-
         }
 
         public void Instance80(GameContext gameContext)
         {
-            //This is the meet and potatos of the instance(battles and rewards and shit)
-
+            // This is the meet and potatos of the instance(battles and rewards and shit)
             Console.WriteLine("you are in instance 80");
             StandardMessages.ReturnToContinue();
+
             // This is where you travel out of the instance back to the planet
             gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
-
-
         }
 
         public void Instance81(GameContext gameContext)
         {
-            //This is the meet and potatos of the instance(battles and rewards and shit)
-
+            // This is the meet and potatos of the instance(battles and rewards and shit)
             Console.WriteLine("you are in instance 81");
             StandardMessages.ReturnToContinue();
 
-
             // This is where you travel out of the instance back to the planet
             gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
-
-
         }
     }
 }

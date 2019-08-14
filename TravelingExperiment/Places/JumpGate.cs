@@ -1,18 +1,14 @@
 ﻿using System;
 
 using CelestialTravels0_1.GameContexts;
-using CelestialTravels0_1.Verifications;
-
+using CelestialTravels0_1.UserInterface;
 
 namespace CelestialTravels0_1.Places
 {
     public class JumpGate : Place
     {
-
-
         public void JumpGateOptions(GameContext gameContext)
         {
-
             Console.WriteLine("You are in " + gameContext.Player.JumpGateLocation);
             Console.WriteLine("0) Travel to SpacePort in solar system (Not yet implimented)");
             Console.WriteLine("1) Travel to nearby JumpGate (Not yet implimented)");
@@ -21,8 +17,7 @@ namespace CelestialTravels0_1.Places
 
             var tempUserInput = Console.ReadLine();
 
-            var playerSelection = Verify.UserInputForNumberedOptionMenu(tempUserInput, 2);
-
+            var playerSelection = new InteractionService().GetUserInputForNumberedOptionMenu(tempUserInput, 2);
 
             switch (playerSelection)
             {

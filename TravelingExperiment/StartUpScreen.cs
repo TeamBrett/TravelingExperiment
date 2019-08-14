@@ -1,12 +1,20 @@
 ﻿using System;
 
 using CelestialTravels0_1.GameContexts;
+using CelestialTravels0_1.UserInterface;
 using CelestialTravels0_1.Verifications;
 
 namespace CelestialTravels0_1
 {
     public class StartUpScreen
     {
+        private readonly InteractionService interactionService;
+
+        public StartUpScreen()
+        {
+            this.interactionService = new InteractionService();
+        }
+
         public void StartUp(GameContext gameContext)
         {
             Console.WriteLine("WELCOME TO CELESTIAL TRAVELS");
@@ -21,10 +29,9 @@ namespace CelestialTravels0_1
             Console.WriteLine("Select an option");
             var tempUserInput = Console.ReadLine();
 
-            var playerSelection = Verify.UserInputForNumberedOptionMenu(tempUserInput, 3);
+            var playerSelection = this.interactionService.GetUserInputForNumberedOptionMenu(tempUserInput, 3);
 
-
-            switch(playerSelection)
+            switch (playerSelection)
             {
                 case 0:
                     // New game
@@ -39,7 +46,6 @@ namespace CelestialTravels0_1
                     // Quit the fucking game
                     Environment.Exit(0);
                     break;
-
             }
         }
     }

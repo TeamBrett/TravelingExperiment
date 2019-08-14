@@ -3,7 +3,6 @@
 using CelestialTravels0_1.GameContexts;
 using CelestialTravels0_1.Players;
 
-
 namespace CelestialTravels0_1.Monsters
 {
     public class MonsterMaker
@@ -12,13 +11,13 @@ namespace CelestialTravels0_1.Monsters
         {
             PlayerAttackCalculator.CalculatePlayerAttack(gameContext);
 
-            Monster whiteMonster01 = new Monster()
+            Monster whiteMonster01 = new Monster
             {
                 Name = "White Monster",
                 Level = gameContext.Player.Level,
-                Attack = (gameContext.Player.BaseAttack) - (gameContext.Player.BaseAttack / 2),
-                HitPointsCurrent = (gameContext.Player.HitPointsTotal - (gameContext.Player.HitPointsTotal / 2)),
-                HitPointsTotal = (gameContext.Player.HitPointsTotal - (gameContext.Player.HitPointsTotal / 2)),
+                Attack = gameContext.Player.BaseAttack - (gameContext.Player.BaseAttack / 2),
+                HitPointsCurrent = gameContext.Player.HitPointsTotal - (gameContext.Player.HitPointsTotal / 2),
+                HitPointsTotal = gameContext.Player.HitPointsTotal - (gameContext.Player.HitPointsTotal / 2),
             };
             return whiteMonster01;
         }
@@ -27,14 +26,15 @@ namespace CelestialTravels0_1.Monsters
         {
             PlayerAttackCalculator.CalculatePlayerAttack(gameContext);
 
-            Monster greenMonster01 = new Monster();
+            Monster greenMonster01 = new Monster
             {
-                greenMonster01.Name = "Green Monster";
-                greenMonster01.Level = gameContext.Player.Level;
-                greenMonster01.Attack = (gameContext.Player.Attack - (gameContext.Player.Attack / 2));
-                greenMonster01.HitPointsCurrent = (gameContext.Player.HitPointsTotal);
-                greenMonster01.HitPointsTotal = (gameContext.Player.HitPointsTotal);
-            }
+                Name = "Green Monster",
+                Level = gameContext.Player.Level,
+                Attack = gameContext.Player.Attack - (gameContext.Player.Attack / 2),
+                HitPointsCurrent = gameContext.Player.HitPointsTotal,
+                HitPointsTotal = gameContext.Player.HitPointsTotal,
+            };
+
             return greenMonster01;
         }
 
@@ -42,14 +42,15 @@ namespace CelestialTravels0_1.Monsters
         {
             PlayerAttackCalculator.CalculatePlayerAttack(gameContext);
 
-            Monster redMonster01 = new Monster();
+            Monster redMonster01 = new Monster
             {
-                redMonster01.Name = "Red Monster";
-                redMonster01.Level = gameContext.Player.Level;
-                redMonster01.Attack = (gameContext.Player.Attack - (gameContext.Player.Attack / 2));
-                redMonster01.HitPointsCurrent = (gameContext.Player.HitPointsTotal + (gameContext.Player.HitPointsTotal / 2));
-                redMonster01.HitPointsTotal = (gameContext.Player.HitPointsTotal + (gameContext.Player.HitPointsTotal / 2));
-            }
+                Name = "Red Monster",
+                Level = gameContext.Player.Level,
+                Attack = gameContext.Player.Attack - (gameContext.Player.Attack / 2),
+                HitPointsCurrent = gameContext.Player.HitPointsTotal + (gameContext.Player.HitPointsTotal / 2),
+                HitPointsTotal = gameContext.Player.HitPointsTotal + (gameContext.Player.HitPointsTotal / 2),
+            };
+
             return redMonster01;
         }
     }

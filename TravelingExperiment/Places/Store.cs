@@ -2,13 +2,19 @@
 
 using CelestialTravels0_1.Consumables;
 using CelestialTravels0_1.GameContexts;
-using CelestialTravels0_1.Verifications;
-
+using CelestialTravels0_1.UserInterface;
 
 namespace CelestialTravels0_1.Places
 {
     public class Store
     {
+        private readonly InteractionService interactionService;
+
+        public Store()
+        {
+            this.interactionService = new InteractionService();
+        }
+
         public void StoreOptions(GameContext gameContext)
         {
             gameContext.Player.Credits = 500000;
@@ -28,11 +34,9 @@ namespace CelestialTravels0_1.Places
             tempUserInput = Console.ReadLine();
 
             // Input verification and exit.
+            playerSelection = this.interactionService.GetUserInputForNumberedOptionMenu(tempUserInput, 3);
 
-            playerSelection = Verify.UserInputForNumberedOptionMenu(tempUserInput, 3);
-
-
-            switch(playerSelection)
+            switch (playerSelection)
             {
                 case 0:
                     {
@@ -41,6 +45,7 @@ namespace CelestialTravels0_1.Places
 
                         break;
                     }
+
                 case 1:
                     {
                         // Weapons
@@ -48,6 +53,7 @@ namespace CelestialTravels0_1.Places
 
                         break;
                     }
+
                 case 2:
                     {
                         // Exit
@@ -56,8 +62,6 @@ namespace CelestialTravels0_1.Places
                     }
             }
         }
-
-
 
         public void ConsumablesDepartment(GameContext gameContext)
         {
@@ -80,66 +84,69 @@ namespace CelestialTravels0_1.Places
             Console.WriteLine(@"Please select a consumable");
             tempUserInput = Console.ReadLine();
 
-            playerSelection = Verify.UserInputForNumberedOptionMenu(tempUserInput, 8);
+            playerSelection = this.interactionService.GetUserInputForNumberedOptionMenu(tempUserInput, 8);
 
             switch (playerSelection)
             {
-                
                 case 0:
                     {
                         gameContext.Store.BuyConsumable(gameContext, gameContext.HealthKitSmall);
 
                         break;
                     }
+
                 case 1:
                     {
                         gameContext.Store.BuyConsumable(gameContext, gameContext.HealthKitLarge);
 
                         break;
                     }
+
                 case 2:
                     {
-
                         gameContext.Store.BuyConsumable(gameContext, gameContext.HealthKitTotal);
 
                         break;
                     }
+
                 case 3:
                     {
                         gameContext.Store.BuyConsumable(gameContext, gameContext.EnergyKitSmall);
 
                         break;
                     }
+
                 case 4:
                     {
                         gameContext.Store.BuyConsumable(gameContext, gameContext.EnergyKitLarge);
 
                         break;
                     }
+
                 case 5:
                     {
                         gameContext.Store.BuyConsumable(gameContext, gameContext.EnergyKitTotal);
 
                         break;
                     }
+
                 case 6:
                     {
                         gameContext.Store.BuyConsumable(gameContext, gameContext.SmokeGrenade);
 
                         break;
                     }
+
                 case 7:
                     {
                         gameContext.Store.StoreOptions(gameContext);
                         break;
                     }
             }
-
         }
 
         public void BuyConsumable(GameContext gameContext, Consumable consumable)
         {
-            
             int quantitySelection;
 
             while (true)
@@ -154,7 +161,7 @@ namespace CelestialTravels0_1.Places
                     {
                         if (gameContext.Player.Credits > (quantitySelection * consumable.Price))
                         {
-                            gameContext.Player.Credits -= (quantitySelection * consumable.Price);
+                            gameContext.Player.Credits -= quantitySelection * consumable.Price;
                             gameContext.Player.HealthKitSmallCount += quantitySelection;
 
                             Console.WriteLine();
@@ -197,13 +204,10 @@ namespace CelestialTravels0_1.Places
             Console.WriteLine(@"Please select a weapon");
             tempUserInput = Console.ReadLine();
 
-            playerSelection = Verify.UserInputForNumberedOptionMenu(tempUserInput, 5);
-
-
+            playerSelection = this.interactionService.GetUserInputForNumberedOptionMenu(tempUserInput, 5);
 
             switch (playerSelection)
             {
-
                 case 0:
                     {
                         // Create Blaster
@@ -211,18 +215,21 @@ namespace CelestialTravels0_1.Places
 
                         break;
                     }
+
                 case 1:
                     {
                         // Create Double Blaster
                         gameContext.WeaponMaker.CreateWeaponDoubleBlaster(gameContext);
                         break;
                     }
+
                 case 2:
                     {
                         // Create Photon Sword
                         gameContext.WeaponMaker.CreateWeaponPhotonSword(gameContext);
                         break;
                     }
+
                 case 3:
                     {
                         // Drop Weapon
@@ -230,6 +237,7 @@ namespace CelestialTravels0_1.Places
 
                         break;
                     }
+
                 case 4:
                     {
                         // Exit Department
@@ -238,8 +246,8 @@ namespace CelestialTravels0_1.Places
                         break;
                     }
             }
-            gameContext.Store.WeaponsDepartment(gameContext);
 
+            gameContext.Store.WeaponsDepartment(gameContext);
         }
 
         public void DropWeapon(GameContext gameContext)
@@ -249,12 +257,11 @@ namespace CelestialTravels0_1.Places
 
             var tempUserInput = Console.ReadLine();
 
-            var ChosenWeaponToDrop = Verify.UserInputForNumberedOptionMenuWithExit(gameContext, tempUserInput, gameContext.List.WeaponList.Count);
+            var chosenWeaponToDrop = this.interactionService.GetUserInputForNumberedOptionMenuWithExit(gameContext, tempUserInput, gameContext.List.WeaponList.Count);
 
-            Console.WriteLine(gameContext.List.WeaponList[ChosenWeaponToDrop].Type + " " + gameContext.List.WeaponList[ChosenWeaponToDrop].Name + "has ben dropped");
+            Console.WriteLine(gameContext.List.WeaponList[chosenWeaponToDrop].Type + " " + gameContext.List.WeaponList[chosenWeaponToDrop].Name + "has ben dropped");
 
-            gameContext.List.WeaponList.RemoveAt(ChosenWeaponToDrop);
-            
+            gameContext.List.WeaponList.RemoveAt(chosenWeaponToDrop);
         }
     }
 }
