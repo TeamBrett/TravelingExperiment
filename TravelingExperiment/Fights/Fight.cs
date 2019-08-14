@@ -3,6 +3,7 @@
 using CelestialTravels0_1.Bases;
 using CelestialTravels0_1.GameContexts;
 using CelestialTravels0_1.Players;
+using CelestialTravels0_1.Verifications;
 
 
 namespace CelestialTravels0_1.Fights
@@ -42,8 +43,7 @@ namespace CelestialTravels0_1.Fights
                 // Apply damage to defender
                 defender.HitPointsCurrent = defender.HitPointsCurrent - damage;
                 Console.WriteLine("Defender's HP  " + defender.HitPointsCurrent + "\n");
-                Console.WriteLine("Return to continue");
-                Console.ReadLine();
+                StandardMessages.ReturnToContinue();
 
                 // End fight and declare winner or switch roles 
                 if (defender.HitPointsCurrent <= 0)
@@ -113,7 +113,7 @@ namespace CelestialTravels0_1.Fights
                 Console.WriteLine("Monster wins the toss and is the Attacker");
                 Console.WriteLine("player health   " + defender.HitPointsCurrent);
                 Console.WriteLine("Monster health   " + attacker.HitPointsCurrent);
-                Console.WriteLine("");
+                Console.WriteLine();
 
             }
         }
@@ -124,32 +124,16 @@ namespace CelestialTravels0_1.Fights
             {
                 Console.WriteLine("Choose which weapon to attack with (enter the number) ");
                 gameContext.PlayerInventory.EunumerateWeapons(gameContext);
-                int ChosenWeaponToAttackWith;
-                while(true)
-                {
-                    if (int.TryParse(Console.ReadLine(), out ChosenWeaponToAttackWith))
-                    {
-                        if (ChosenWeaponToAttackWith >= 0 && ChosenWeaponToAttackWith < gameContext.List.WeaponList.Count)
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("please enter an integer between zero and " + (gameContext.List.WeaponList.Count - 1));
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Input is not valid, try entering an integer");
-                    }
-                }
-                
+                int chosenWeaponToAttackWith;
+                var tempUserInput = Console.ReadLine();
 
-                gameContext.Player.WeaponDamageCurrent = gameContext.List.WeaponList[ChosenWeaponToAttackWith].Attack;
+                chosenWeaponToAttackWith = Verify.UserInputForNumberedOptionMenu(tempUserInput, gameContext.List.WeaponList.Count);
+
+                gameContext.Player.WeaponDamageCurrent = gameContext.List.WeaponList[chosenWeaponToAttackWith].Attack;
 
                 PlayerAttackCalculator.CalculatePlayerAttack(gameContext);
 
-                gameContext.List.WeaponList[ChosenWeaponToAttackWith].DurabilityCurrent -= 1;
+                gameContext.List.WeaponList[chosenWeaponToAttackWith].DurabilityCurrent -= 1;
             }
 
         }
