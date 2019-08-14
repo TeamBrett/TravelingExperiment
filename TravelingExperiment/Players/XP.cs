@@ -1,9 +1,8 @@
-﻿using CelestialTravels0_1.GameContexts;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-
+using CelestialTravels0_1.GameContexts;
 
 namespace CelestialTravels0_1.Players
 {
@@ -20,34 +19,26 @@ namespace CelestialTravels0_1.Players
 
                 // Modify all necissary player stats here
 
-
                 // Spells added by level here
-
-                CheckForNewSpells(gameContext);
+                this.CheckForNewSpells(gameContext);
 
             }
         }
 
         public void CheckForNewSpells(GameContext gameContext)
         {
-            if(gameContext.Player.Level == 2)
+            if (gameContext.Player.Level == 2)
             {
-                switch(gameContext.Player.Job)
+                switch (gameContext.Player.Job)
                 {
                     case "Timebender":
-                        {
-                            break;
-                        }
+                        break;
                     case "Navigator":
-                        {
-                            break;
-                        }
+                        break;
                     case "Gunslinger":
-                        {
-                            gameContext.List.SpellList.Add(gameContext.VirtualGun);
-                            Console.WriteLine("You received a new spell... Virtual Gun!");
-                            break;
-                        }
+                        gameContext.List.SpellList.Add(gameContext.VirtualGun);
+                        Console.WriteLine("You received a new spell... Virtual Gun!");
+                        break;
                 }
             }
         }
