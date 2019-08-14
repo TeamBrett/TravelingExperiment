@@ -53,7 +53,7 @@ namespace CelestialTravels0_1
             var blaster = new Weapon() { Price = player.Level * 150 };
             var doubleBlaster = new Weapon() { Price = player.Level * 300 };
             var photonSword = new Weapon() { Price = player.Level * 450 };
-            var virtualGun = new VirtualGun();
+            var virtualGun = new VirtualGun() { Description = "Spend Energy to deal Damage to your opponent", Name = "Virtual Gun", UsedBy = "Gunslinger" };
 
 
             // Mechanics for Fighting

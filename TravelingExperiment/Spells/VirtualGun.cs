@@ -21,6 +21,7 @@ namespace CelestialTravels0_1.Spells
 {
     public class VirtualGun : Spell
     {
+
         public void Use(GameContext gameContext)
         {
             Console.WriteLine("How much Energy would you like to use?");

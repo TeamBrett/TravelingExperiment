@@ -126,8 +126,9 @@ namespace CelestialTravels0_1.Fights
 
         public void ChooseWeaponToAttackWith(Character attacker, GameContext gameContext)
         {
-                Console.WriteLine("Choose which weapon to attack with (enter the number) ");
+                
                 gameContext.PlayerInventory.EunumerateWeapons(gameContext);
+                Console.WriteLine("Choose which weapon to attack with (enter the number) ");
                 int chosenWeaponToAttackWith;
                 var tempUserInput = Console.ReadLine();
 
@@ -156,7 +157,13 @@ namespace CelestialTravels0_1.Fights
                 case 0:
                     {
                         // Use Spell
+                        gameContext.PlayerInventory.EnumerateSpells(gameContext);
+                        Console.WriteLine("Choose a spell to use (Enter the number)");
+                        tempUserInput = Console.ReadLine();
+                        var chosenSpellToAttackWith = Verify.UserInputForNumberedOptionMenu(tempUserInput, gameContext.List.SpellList.Count);
 
+                        // THIS IS GOING TO NEED TO BE FLESHED OUT  
+                        gameContext.VirtualGun.Use(gameContext);
 
                     }
                 case 1:
