@@ -54,6 +54,8 @@ namespace CelestialTravels0_1.GameContexts
         public Weapon DoubleBlaster { get; set; }
 
         public Weapon PhotonSword { get; set; }
+      
+        public VirtualGun VirtualGun { get; set; }
 
         // Consumables
         public HealthKitSmall HealthKitSmall { get; set; }

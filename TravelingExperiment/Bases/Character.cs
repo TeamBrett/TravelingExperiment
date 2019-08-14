@@ -14,7 +14,9 @@ namespace CelestialTravels0_1.Bases
 
         public int Credits { get; set; }
 
-        public double Experience { get; set; }
+        public double XP { get; set; }
+
+        public double XpNeededForLevelUp { get; set; } = 100;
 
         public double HitPointsCurrent { get; set; } = 100;
 

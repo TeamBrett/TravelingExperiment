@@ -7,6 +7,8 @@ using CelestialTravels0_1.Monsters;
 using CelestialTravels0_1.Persistence;
 using CelestialTravels0_1.Places;
 using CelestialTravels0_1.Players;
+using CelestialTravels0_1.Persistence;
+using CelestialTravels0_1.Spells;
 using CelestialTravels0_1.Travels;
 using CelestialTravels0_1.Weapons;
 
@@ -44,6 +46,7 @@ namespace CelestialTravels0_1
             var blaster = new Weapon() { Price = player.Level * 150 };
             var doubleBlaster = new Weapon() { Price = player.Level * 300 };
             var photonSword = new Weapon() { Price = player.Level * 450 };
+            var virtualGun = new VirtualGun() { Description = "Spend Energy to deal Damage to your opponent", Name = "Virtual Gun", UsedBy = "Gunslinger" };
 
             // Mechanics for Fighting
             var fight = new Fight();
@@ -85,6 +88,7 @@ namespace CelestialTravels0_1
                 Blaster = blaster,
                 DoubleBlaster = doubleBlaster,
                 PhotonSword = photonSword,
+                VirtualGun = virtualGun,
             };
 
             // Monster Creation for Fighting

@@ -68,6 +68,13 @@ namespace CelestialTravels0_1.Places
 
             gameContext.Fight.DoFight(gameContext);
 
+
+            // DELETE THIS LATER
+            gameContext.Player.XP += 100;  // DELETE THIS LATER
+            // DELETE THIS LATER
+
+
+
             // This is where you travel out of the instance back to the planet
             gameContext.Player.SpacePortLocation = "sp1";
             gameContext.Travel.ReturnToSpacePortFromInstance(gameContext);
