@@ -19,7 +19,7 @@ namespace CelestialTravels0_1.Players
             Console.WriteLine("");
 
             Console.WriteLine($"CREDITS:............{gameContext.Player.Credits}");
-            Console.WriteLine($"EXPERIENCE:.........{gameContext.Player.Experience}");
+            Console.WriteLine($"EXPERIENCE:.........{gameContext.Player.XP}");
             Console.WriteLine($"LEVEL:..............{gameContext.Player.Level}");
             Console.WriteLine("");
 

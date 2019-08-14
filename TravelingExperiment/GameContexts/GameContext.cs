@@ -8,6 +8,7 @@ using CelestialTravels0_1.Monsters;
 using CelestialTravels0_1.Places;
 using CelestialTravels0_1.Players;
 using CelestialTravels0_1.Save_Load;
+using CelestialTravels0_1.Spells;
 using CelestialTravels0_1.Travels;
 using CelestialTravels0_1.Weapons;
 
@@ -37,6 +38,8 @@ namespace CelestialTravels0_1.GameContexts
         public Weapon Blaster { get; set; }
         public Weapon DoubleBlaster { get; set; }
         public Weapon PhotonSword { get; set; }
+        public VirtualGun VirtualGun { get; set; }
+
 
 
         // Consumables

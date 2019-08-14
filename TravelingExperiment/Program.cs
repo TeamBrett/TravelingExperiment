@@ -12,6 +12,7 @@ using CelestialTravels0_1.Monsters;
 using CelestialTravels0_1.Places;
 using CelestialTravels0_1.Players;
 using CelestialTravels0_1.Save_Load;
+using CelestialTravels0_1.Spells;
 using CelestialTravels0_1.Travels;
 using CelestialTravels0_1.Verifications;
 using CelestialTravels0_1.Weapons;
@@ -52,6 +53,7 @@ namespace CelestialTravels0_1
             var blaster = new Weapon() { Price = player.Level * 150 };
             var doubleBlaster = new Weapon() { Price = player.Level * 300 };
             var photonSword = new Weapon() { Price = player.Level * 450 };
+            var virtualGun = new VirtualGun();
 
 
             // Mechanics for Fighting
@@ -94,6 +96,7 @@ namespace CelestialTravels0_1
                 Blaster = blaster,
                 DoubleBlaster = doubleBlaster,
                 PhotonSword = photonSword,
+                VirtualGun = virtualGun,
             };
 
             // Monster Creation for Fighting

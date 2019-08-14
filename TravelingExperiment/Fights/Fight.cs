@@ -27,23 +27,29 @@ namespace CelestialTravels0_1.Fights
 
             while (fightOver == false)
             {
-                // Select Weapon
+                // Choose Spell or Weapon
+                if(attacker == gameContext.Player)
+                {
+                    ChooseSpellOrWeapon(gameContext, attacker, defender);
+                }
+                else // Computer's attack turn
+                {
+                    // Rolling
+                    attacker.Roll = gameContext.Roller.GetRandomNumber(1, 12);
+                    Console.WriteLine("attacker's roll " + attacker.Roll + "\n");
 
-                ChooseWeaponToAttackWith(attacker, gameContext);
+                    // Calculate Damage
+                    var damage = (attacker.Roll / 10) * attacker.Attack;
+                    Console.WriteLine("Damage " + (damage) + "\n");
 
+                    // Apply damage to defender
+                    defender.HitPointsCurrent = defender.HitPointsCurrent - damage;
+                    Console.WriteLine("Defender's HP  " + defender.HitPointsCurrent + "\n");
+                    StandardMessages.ReturnToContinue();
+                }
+                
 
-                // Rolling
-                attacker.Roll = gameContext.Roller.GetRandomNumber(1, 12);
-                Console.WriteLine("attacker's roll " + attacker.Roll + "\n");
-
-                // Calculate Damage
-                var damage = (attacker.Roll / 10) * attacker.Attack;
-                Console.WriteLine("Damage " + (damage) + "\n");
-
-                // Apply damage to defender
-                defender.HitPointsCurrent = defender.HitPointsCurrent - damage;
-                Console.WriteLine("Defender's HP  " + defender.HitPointsCurrent + "\n");
-                StandardMessages.ReturnToContinue();
+                
 
                 // End fight and declare winner or switch roles 
                 if (defender.HitPointsCurrent <= 0)
@@ -69,7 +75,7 @@ namespace CelestialTravels0_1.Fights
             if (winner.Name == gameContext.Player.Name)
             {
                 gameContext.Player = (Player)winner;
-                gameContext.Player.Experience += looser.HitPointsTotal;
+                gameContext.Player.XP += looser.HitPointsTotal / 2;
                 gameContext.Player.HitPointsCurrent = gameContext.Player.HitPointsTotal;
 
 
@@ -120,8 +126,6 @@ namespace CelestialTravels0_1.Fights
 
         public void ChooseWeaponToAttackWith(Character attacker, GameContext gameContext)
         {
-            if (attacker == gameContext.Player)
-            {
                 Console.WriteLine("Choose which weapon to attack with (enter the number) ");
                 gameContext.PlayerInventory.EunumerateWeapons(gameContext);
                 int chosenWeaponToAttackWith;
@@ -134,8 +138,56 @@ namespace CelestialTravels0_1.Fights
                 PlayerAttackCalculator.CalculatePlayerAttack(gameContext);
 
                 gameContext.List.WeaponList[chosenWeaponToAttackWith].DurabilityCurrent -= 1;
-            }
+        }
 
+        public void ChooseSpellOrWeapon(GameContext gameContext, Character attacker, Character defender)
+        {
+            Console.WriteLine("0) Use a Spell");
+            Console.WriteLine("1) Attack with a Weapon");
+            Console.WriteLine("2) Use a Consumable");
+            Console.WriteLine();
+            Console.WriteLine("Please select an action using its number");
+            var tempUserInput = Console.ReadLine();
+
+            var playerSelection = Verify.UserInputForNumberedOptionMenu(tempUserInput, 3);
+
+            switch(playerSelection)
+            {
+                case 0:
+                    {
+                        // Use Spell
+
+
+                    }
+                case 1:
+                    {
+                        // Attack with Weapon
+
+                        // Select Weapon
+
+                        ChooseWeaponToAttackWith(attacker, gameContext);
+
+
+                        // Rolling
+                        attacker.Roll = gameContext.Roller.GetRandomNumber(1, 12);
+                        Console.WriteLine("attacker's roll " + attacker.Roll + "\n");
+
+                        // Calculate Damage
+                        var damage = (attacker.Roll / 10) * attacker.Attack;
+                        Console.WriteLine("Damage " + (damage) + "\n");
+
+                        // Apply damage to defender
+                        defender.HitPointsCurrent = defender.HitPointsCurrent - damage;
+                        Console.WriteLine("Defender's HP  " + defender.HitPointsCurrent + "\n");
+                        StandardMessages.ReturnToContinue();
+
+                        break;
+                    }
+                case 2:
+                    {
+                        // Use a Consumable
+                    }
+            }
         }
     }
 }
