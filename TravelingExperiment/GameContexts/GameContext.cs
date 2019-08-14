@@ -10,6 +10,7 @@ using CelestialTravels0_1.Players;
 using CelestialTravels0_1.Persistence;
 using CelestialTravels0_1.Travels;
 using CelestialTravels0_1.Weapons;
+using CelestialTravels0_1.Spells;
 
 namespace CelestialTravels0_1.GameContexts
 {
@@ -54,7 +55,7 @@ namespace CelestialTravels0_1.GameContexts
         public Weapon DoubleBlaster { get; set; }
 
         public Weapon PhotonSword { get; set; }
-      
+
         public VirtualGun VirtualGun { get; set; }
 
         // Consumables

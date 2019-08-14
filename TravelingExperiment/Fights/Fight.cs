@@ -3,6 +3,7 @@
 using CelestialTravels0_1.Bases;
 using CelestialTravels0_1.GameContexts;
 using CelestialTravels0_1.Players;
+using CelestialTravels0_1.UserInterface;
 using CelestialTravels0_1.Verifications;
 
 namespace CelestialTravels0_1.Fights
@@ -22,11 +23,13 @@ namespace CelestialTravels0_1.Fights
             while (fightOver == false)
             {
                 // Choose Spell or Weapon
-                if(attacker == gameContext.Player)
+                if (attacker == gameContext.Player)
                 {
-                    ChooseSpellOrWeapon(gameContext, attacker, defender);
+                    this.ChooseSpellOrWeapon(gameContext, attacker, defender);
                 }
-                else // Computer's attack turn
+
+                // Computer's attack turn
+                else
                 {
                     // Rolling
                     attacker.Roll = gameContext.Roller.GetRandomNumber(1, 12);
@@ -111,7 +114,7 @@ namespace CelestialTravels0_1.Fights
                 int chosenWeaponToAttackWith;
                 var tempUserInput = Console.ReadLine();
 
-                chosenWeaponToAttackWith = Verify.UserInputForNumberedOptionMenu(tempUserInput, gameContext.List.WeaponList.Count);
+                chosenWeaponToAttackWith = new InteractionService().GetUserInputForNumberedOptionMenu(tempUserInput, gameContext.List.WeaponList.Count);
 
                 gameContext.Player.WeaponDamageCurrent = gameContext.List.WeaponList[chosenWeaponToAttackWith].Attack;
 
@@ -129,46 +132,41 @@ namespace CelestialTravels0_1.Fights
             Console.WriteLine("Please select an action using its number");
             var tempUserInput = Console.ReadLine();
 
-            var playerSelection = Verify.UserInputForNumberedOptionMenu(tempUserInput, 3);
+            var playerSelection = new InteractionService().GetUserInputForNumberedOptionMenu(tempUserInput, 3);
 
-            switch(playerSelection)
+            switch (playerSelection)
             {
                 case 0:
-                    {
-                        // Use Spell
-                        gameContext.PlayerInventory.EnumerateSpells(gameContext);
-                        Console.WriteLine("Choose a spell to use (Enter the number)");
-                        tempUserInput = Console.ReadLine();
-                        var chosenSpellToAttackWith = Verify.UserInputForNumberedOptionMenu(tempUserInput, gameContext.List.SpellList.Count);
+                    // Use Spell
+                    gameContext.PlayerInventory.EnumerateSpells(gameContext);
+                    Console.WriteLine("Choose a spell to use (Enter the number)");
+                    tempUserInput = Console.ReadLine();
+                    var chosenSpellToAttackWith = new InteractionService().GetUserInputForNumberedOptionMenu(tempUserInput, gameContext.List.SpellList.Count);
 
-                        // THIS IS GOING TO NEED TO BE FLESHED OUT  
-                        gameContext.VirtualGun.Use(gameContext);
-
-                    }
+                    // THIS IS GOING TO NEED TO BE FLESHED OUT
+                    gameContext.VirtualGun.Use(gameContext);
+                    break;
                 case 1:
-                    {
-                        // Attack with Weapon
-                        gameContext.List.WeaponList[ChosenWeaponToAttackWith].DurabilityCurrent -= 1;
+                    // Attack with Weapon
+                    gameContext.List.WeaponList[playerSelection].DurabilityCurrent -= 1;
 
-                        // Rolling
-                        attacker.Roll = gameContext.Roller.GetRandomNumber(1, 12);
-                        Console.WriteLine("attacker's roll " + attacker.Roll + "\n");
+                    // Rolling
+                    attacker.Roll = gameContext.Roller.GetRandomNumber(1, 12);
+                    Console.WriteLine("attacker's roll " + attacker.Roll + "\n");
 
-                        // Calculate Damage
-                        var damage = (attacker.Roll / 10) * attacker.Attack;
-                        Console.WriteLine("Damage " + (damage) + "\n");
+                    // Calculate Damage
+                    var damage = (attacker.Roll / 10) * attacker.Attack;
+                    Console.WriteLine("Damage " + (damage) + "\n");
 
-                        // Apply damage to defender
-                        defender.HitPointsCurrent = defender.HitPointsCurrent - damage;
-                        Console.WriteLine("Defender's HP  " + defender.HitPointsCurrent + "\n");
-                        StandardMessages.ReturnToContinue();
+                    // Apply damage to defender
+                    defender.HitPointsCurrent = defender.HitPointsCurrent - damage;
+                    Console.WriteLine("Defender's HP  " + defender.HitPointsCurrent + "\n");
+                    StandardMessages.ReturnToContinue();
 
-                        break;
-                    }
+                    break;
                 case 2:
-                    {
-                        // Use a Consumable
-                    }
+                    // Use a Consumable
+                    break;
             }
         }
     }

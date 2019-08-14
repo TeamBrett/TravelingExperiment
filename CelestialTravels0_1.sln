@@ -5,12 +5,12 @@ VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CelestialTravels0_1", "TravelingExperiment\CelestialTravels0_1.csproj", "{B26D1938-8A9B-472F-8570-D062A57F9101}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{F1DD64CB-FD4F-4CFD-9A40-57EB775EBEF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CelestialTravels.Unit.Tests", "CelestialTravels.Unit.Tests\CelestialTravels.Unit.Tests.csproj", "{7605B756-75FC-418A-B017-A8E8647C7A1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E828BDF7-9F12-41F9-B70C-1C85C6708033}"
 	ProjectSection(SolutionItems) = preProject
 		Common.ruleset = Common.ruleset
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelestialTravels.Unit.Tests", "CelestialTravels.Unit.Tests\CelestialTravels.Unit.Tests.csproj", "{7605B756-75FC-418A-B017-A8E8647C7A1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

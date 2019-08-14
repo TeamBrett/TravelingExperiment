@@ -9,19 +9,18 @@ using CelestialTravels0_1.Consumables.HealthKits;
 using CelestialTravels0_1.Fights;
 using CelestialTravels0_1.GameContexts;
 using CelestialTravels0_1.Monsters;
+using CelestialTravels0_1.Persistence;
 using CelestialTravels0_1.Places;
 using CelestialTravels0_1.Players;
-using CelestialTravels0_1.Save_Load;
 using CelestialTravels0_1.Travels;
+using CelestialTravels0_1.UserInterface;
 using CelestialTravels0_1.Verifications;
 using CelestialTravels0_1.Weapons;
-
 
 namespace CelestialTravels0_1.Spells
 {
     public class VirtualGun : Spell
     {
-
         public void Use(GameContext gameContext)
         {
             Console.WriteLine("How much Energy would you like to use?");
@@ -29,7 +28,7 @@ namespace CelestialTravels0_1.Spells
 
             var tempUserInput = Console.ReadLine();
 
-            var playerSelection = Verify.UserInputForNumberedOptionMenu(tempUserInput, (int)gameContext.Player.EnergyCurrent);
+            var playerSelection = new InteractionService().GetUserInputForNumberedOptionMenu(tempUserInput, (int)gameContext.Player.EnergyCurrent);
 
             gameContext.Player.EnergyTotal -= playerSelection;
 
