@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CelestialTravels0_1", "Trav
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{F1DD64CB-FD4F-4CFD-9A40-57EB775EBEF2}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\Flemco\Aklesia\Common.ruleset = ..\..\Flemco\Aklesia\Common.ruleset
+		Common.ruleset = Common.ruleset
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelestialTravels.Unit.Tests", "CelestialTravels.Unit.Tests\CelestialTravels.Unit.Tests.csproj", "{7605B756-75FC-418A-B017-A8E8647C7A1E}"
