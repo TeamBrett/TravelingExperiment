@@ -35,11 +35,6 @@ namespace DataGetter
 
                 Console.WriteLine("player 2 id: " + player2.Id);
                 Console.ReadLine();
-
-
-                var battleResults = new BattleResults();
-
-                this.battleResultsDao.Insert(battleResults);
             }
         }
 
